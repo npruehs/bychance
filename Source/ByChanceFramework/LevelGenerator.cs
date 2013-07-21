@@ -21,13 +21,17 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using ByChanceFramework.Base2D;
+
 using ByChanceFramework.Base3D;
 using ByChanceFramework.PostProc;
 using NLog;
 
 namespace ByChanceFramework
 {
+    using ByChance.Base2D;
+
+    using Npruehs.GrabBag.Math.Vectors;
+
     /// <summary>
     /// Represents the main hub for the level generation process.
     /// <para>
@@ -117,7 +121,7 @@ namespace ByChanceFramework
                 throw new ArgumentOutOfRangeException("levelHeight", levelHeight, "The height of the level must be greater than 0.0f.");
             }
 
-            Level2D level = new Level2D(levelWidth, levelHeight);
+            Level2D level = new Level2D(new Vector2F(levelWidth, levelHeight));
 
             GenerateLevel<ChunkTemplate2D, Chunk2D>(chunkLibrary, level, random);
 
@@ -358,7 +362,7 @@ namespace ByChanceFramework
                 if (freeContext.Source is Chunk2D)
                 {
                     Chunk2D chunk2D = (Chunk2D) freeContext.Source;
-                    logger.Info("Expanding level at " + chunk2D.X + " | " + chunk2D.Y);
+                    logger.Info("Expanding level at " + chunk2D.Position.ToString());
                 }
                 else if (freeContext.Source is Chunk3D)
                 {

@@ -42,6 +42,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Vendor\NLog\NLog.dll</HintPath>
     </Reference>
+    <Reference Include="Npruehs.GrabBag.Math">
+      <HintPath>..\..\Vendor\Npruehs.GrabBag\Npruehs.GrabBag.Math.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>

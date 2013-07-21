@@ -23,6 +23,8 @@ using System.Collections.Generic;
 
 namespace ByChanceFramework
 {
+    using System.Collections.ObjectModel;
+
     /// <summary>
     /// Represents a template that is used for creating similar chunks, which
     /// in turn make up a level. Chunk templates define the positions of all
@@ -54,6 +56,15 @@ namespace ByChanceFramework
         /// </summary>
         protected int weight;
 
+        public ReadOnlyCollection<Context> Contexts
+        {
+            get{return new ReadOnlyCollection<Context>(this.contexts);}
+        }
+
+        public ReadOnlyCollection<Anchor> Anchors
+        {
+            get {return new ReadOnlyCollection<Anchor>(this.anchors);}
+        } 
 
         /// <summary>
         /// Gets or sets the unique chunk library-wide index of this chunk template.

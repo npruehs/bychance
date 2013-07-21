@@ -1,30 +1,35 @@
-﻿/*
- * Copyright 2011 Nick Pruehs, Denis Vaz Alves.
- * 
- * This file is part of the ByChance Framework.
- *
- * The ByChance Framework is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, either version 3 of the License,
- * or (at your option) any later version.
- * 
- * The ByChance Framework is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with the ByChance Framework.  If not, see
- * <http://www.gnu.org/licenses/>.
- */
-
-using System;
-
-namespace ByChanceFramework.Base2D
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Chunk2D.cs" company="Nick Pruehs, Denis Vaz Alves">
+//   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
+//   
+//   This file is part of the ByChance Framework.
+//   
+//   The ByChance Framework is free software: you can redistribute it and/or
+//   modify it under the terms of the GNU Lesser General Public License as
+//   published by the Free Software Foundation, either version 3 of the License,
+//   or (at your option) any later version.
+//   
+//   The ByChance Framework is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU Lesser General Public License for more details.
+//   
+//   You should have received a copy of the GNU Lesser General Public License
+//   along with the ByChance Framework.  If not, see
+//   <http://www.gnu.org/licenses/>.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+namespace ByChance.Base2D
 {
+    using System;
+
+    using ByChanceFramework;
+
+    using Npruehs.GrabBag.Math.Vectors;
+
     /// <summary>
     /// <para>
-    /// Represents the main building block that make up a 2D level, providing
+    /// Main building block that make up a 2D level, providing
     /// extents, position and rotation.
     /// </para>
     /// <para>
@@ -34,72 +39,80 @@ namespace ByChanceFramework.Base2D
     /// being picked to be added next.
     /// </para>
     /// </summary>
-    sealed public class Chunk2D : Chunk
+    public sealed class Chunk2D : Chunk
     {
-        /// <summary>
-        /// Gets or sets the width of this chunk.
-        /// </summary>
-        public float Width { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the height of this chunk.
-        /// </summary>
-        public float Height { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the x-coordinate of the position of this chunk within the level.
-        /// </summary>
-        public float X { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the y-coordinate of the position of this chunk within the level.
-        /// </summary>
-        public float Y { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the clock-wise rotation of this chunk within the level, in degrees.
-        /// </summary>
-        public float Rotation { get; private set; }
-
+        #region Constructors and Destructors
 
         /// <summary>
         /// Constructs a new chunk with a reference to the passed chunk template,
         /// using that template's width and height and performing deep copies of
         /// the lists of contexts and anchors of that template.
         /// </summary>
-        /// <param name="chunkTemplate">The chunk template the new chunk will be based on.</param>
+        /// <param name="chunkTemplate">Chunk template the new chunk will be based on.</param>
         /// <seealso cref="Chunk.ChunkTemplate"/>
-        /// <exception cref="ArgumentNullException">The passed <c>template</c> is null.</exception>
-        /// <exception cref="ArgumentException">The passed template is not of the type <c>ChunkTemplate2D</c>.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="chunkTemplate"/> is null.</exception>
+        /// <exception cref="ArgumentException"><paramref name="chunkTemplate"/> is not of the type <see cref="ChunkTemplate2D"/>.</exception>
         public Chunk2D(ChunkTemplate chunkTemplate)
             : base(chunkTemplate)
         {
-            // check the type of the passed template
-            if (!(chunkTemplate is ChunkTemplate2D))
+            ChunkTemplate2D chunkTemplate2D = chunkTemplate as ChunkTemplate2D;
+
+            // Check the type of the passed template.
+            if (chunkTemplate2D == null)
             {
-                throw new ArgumentException("Passed template isn't of type ChunkTemplate2D and therefore invalid.", "chunkTemplate");
+                throw new ArgumentException("Passed template isn't of type ChunkTemplate2D.", "chunkTemplate");
             }
 
-            Context2D context;
-            Anchor2D anchor;
+            // Copy template extents.
+            this.Extents = chunkTemplate2D.Extents;
 
-            // copy template extents
-            Width = ((ChunkTemplate2D)chunkTemplate).Width;
-            Height = ((ChunkTemplate2D)chunkTemplate).Height;
-
-            // perform deep copies of the context and anchor lists of the template
-            for (int i = 0; i < chunkTemplate.GetContextCount(); i++)
+            // Perform deep copies of the context and anchor lists of the template.
+            foreach (Context2D context in chunkTemplate2D.Contexts)
             {
-                context = (Context2D)chunkTemplate.GetContextByIndex(i);
-                contexts.Add(new Context2D(context, this));
+                this.contexts.Add(new Context2D(context, this));
             }
 
-            for (int j = 0; j < chunkTemplate.GetAnchorCount(); j++)
+            foreach (Anchor2D anchor in chunkTemplate2D.Anchors)
             {
-                anchor = (Anchor2D)chunkTemplate.GetAnchorByIndex(j);
-                anchors.Add(new Anchor2D(anchor, this));
+                this.anchors.Add(new Anchor2D(anchor, this));
             }
         }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        ///     Width and height of this chunk.
+        /// </summary>
+        public Vector2F Extents { get; private set; }
+
+        /// <summary>
+        ///     Position of this chunk within the level.
+        /// </summary>
+        public Vector2F Position { get; private set; }
+
+        /// <summary>
+        /// Clock-wise rotation of this chunk within the level, in degrees.
+        /// </summary>
+        public float Rotation { get; private set; }
+
+        #endregion
+
+        #region Public Methods and Operators
+
+        /// <summary>
+        /// Returns the position of this chunk within the level as string.
+        /// </summary>
+        /// <returns>Position of this chunk within the level.</returns>
+        public override string ToString()
+        {
+            return this.Position.ToString();
+        }
+
+        #endregion
+
+        #region Methods
 
         /// <summary>
         /// Rotates this chunk clock-wise by 90°, changing the positions of all
@@ -108,22 +121,12 @@ namespace ByChanceFramework.Base2D
         /// <returns><c>true</c>, while the chunk hasn't been rotated by 360° in every direction, and <c>false</c> otherwise.</returns>
         internal override bool Rotate()
         {
-            float centerX;
-            float centerY;
+            var center = this.Extents / 2;
 
-            float originX;
-            float originY;
-
-            float tempWidth;
-
-            centerX = Width / 2;
-            centerY = Height / 2;
-
-            foreach (Context2D context in contexts)
+            foreach (Context2D context in this.contexts)
             {
-                // translate context position to chunk origin
-                originX = context.RelativePosX - centerX;
-                originY = context.RelativePosY - centerY;
+                // Translate context position to chunk origin.
+                var origin = context.RelativePosition - center;
 
                 /*
                  * Each point (x, y) in a cartesian coordinate system can be written as
@@ -150,17 +153,18 @@ namespace ByChanceFramework.Base2D
                  * 
                  * After that, we have to translate the context position back in the rotated chunk's coordinate system.
                  */
-                context.RelativePosX = -originY + centerY; 
-                context.RelativePosY = originX + centerX;
+                var contextRelativePosX = -origin.Y + center.Y;
+                var contextRelativePosY = origin.X + center.X;
+
+                context.RelativePosition = new Vector2F(contextRelativePosX, contextRelativePosY);
             }
 
-            // switch width and height
-            tempWidth = Width;
-            Width = Height;
-            Height = tempWidth;
+            // Switch width and height.
+            this.Extents = new Vector2F(this.Extents.Y, this.Extents.X);
 
-            Rotation += 90;
-            return Rotation < 360;
+            // Update rotation.
+            this.Rotation += 90;
+            return this.Rotation < 360;
         }
 
         /// <summary>
@@ -168,44 +172,31 @@ namespace ByChanceFramework.Base2D
         /// relative positions of all anchors of this chunk to match its
         /// rotation.
         /// </summary>
-        /// <param name="x">The new x-coordinate of the position of this chunk within the level.</param>
-        /// <param name="y">The new y-coordinate of the position of this chunk within the level.</param>
-        internal void SetPosition(float x, float y)
+        /// <param name="position">New position of this chunk within the level.</param>
+        internal void SetPosition(Vector2F position)
         {
-            float centerX;
-            float centerY;
+            // Set new position.
+            this.Position = position;
 
-            float originX;
-            float originY;
+            // Rotate anchors if necessary.
+            var center = this.Extents / 2;
 
-            // set new position
-            this.X = x;
-            this.Y = y;
-
-            // rotate anchors if necessary
-            centerX = Width / 2;
-            centerY = Height / 2;
-
-            if (Rotation > 0)
+            if (this.Rotation > 0)
             {
-                foreach (Anchor2D anchor in anchors)
+                foreach (Anchor2D anchor in this.anchors)
                 {
-                    originX = anchor.RelativePosX - centerX;
-                    originY = anchor.RelativePosY - centerY;
+                    var origin = anchor.RelativePosition - center;
 
-                    anchor.RelativePosX = originX * (float)Math.Cos(Rotation) - originY * (float)Math.Sin(Rotation) + centerY;
-                    anchor.RelativePosY = originY * (float)Math.Cos(Rotation) + originX * (float)Math.Sin(Rotation) + centerX;
+                    var anchorRelativePositionX = origin.X * (float)Math.Cos(this.Rotation)
+                                                  - origin.Y * (float)Math.Sin(this.Rotation) + center.Y;
+                    var anchorRelativePositionY = origin.Y * (float)Math.Cos(this.Rotation)
+                                                  + origin.X * (float)Math.Sin(this.Rotation) + center.X;
+
+                    anchor.RelativePosition = new Vector2F(anchorRelativePositionX, anchorRelativePositionY);
                 }
             }
         }
 
-        /// <summary>
-        /// Returns the position of this chunk within the level as string.
-        /// </summary>
-        /// <returns>The position of this chunk within the level.</returns>
-        public override string ToString()
-        {
-            return X + " | " + Y;
-        }
+        #endregion
     }
 }
