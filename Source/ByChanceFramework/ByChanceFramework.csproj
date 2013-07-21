@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62E29ABD-FA2D-480F-A9C6-166A7982FACE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ByChance</RootNamespace>
+    <AssemblyName>ByChance</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ByChance.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ByChance.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Vendor\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base3D\Anchor3D.cs" />
+    <Compile Include="Base2D\Chunk2D.cs" />
+    <Compile Include="Base3D\Chunk3D.cs" />
+    <Compile Include="Base3D\ChunkTemplate3D.cs" />
+    <Compile Include="Base3D\Level3D.cs" />
+    <Compile Include="Geom\Box.cs" />
+    <Compile Include="Chunk.cs" />
+    <Compile Include="ChunkLibrary.cs" />
+    <Compile Include="Base2D\Context2D.cs" />
+    <Compile Include="Base2D\Anchor2D.cs" />
+    <Compile Include="Base3D\Context3D.cs" />
+    <Compile Include="Base2D\ChunkTemplate2D.cs" />
+    <Compile Include="ChunkTemplate.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Anchor.cs" />
+    <Compile Include="Base2D\Level2D.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="LevelGenerator.cs" />
+    <Compile Include="PostProc\AlignAdjacentContextsPolicy.cs" />
+    <Compile Include="PostProc\DiscardOpenChunksPolicy.cs" />
+    <Compile Include="PostProc\DiscardOpenContextsPolicy.cs" />
+    <Compile Include="PostProc\IPostProcessingPolicy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Geom\Rectangle.cs" />
+    <Compile Include="RandomNumberGeneratorQ.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

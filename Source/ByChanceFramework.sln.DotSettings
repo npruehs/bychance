@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File62802F86593A1947A3B4A800D5C599DC/RelativePriority/@EntryValue">1</s:Double>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=File62802F86593A1947A3B4A800D5C599DC/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=62802F86593A1947A3B4A800D5C599DC/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=62802F86593A1947A3B4A800D5C599DC/RelativePath/@EntryValue">..\ByChanceFramework\Npruehs.GrabBag.DotSettings</s:String>
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=62802F86593A1947A3B4A800D5C599DC/AbsolutePath/@EntryValue">D:\Dev\Repositories\ByChance\Source\ByChanceFramework\Npruehs.GrabBag.DotSettings</s:String></wpf:ResourceDictionary>
