@@ -1,113 +1,88 @@
-﻿/*
- * Copyright 2011 Nick Pruehs, Denis Vaz Alves.
- * 
- * This file is part of the ByChance Framework.
- *
- * The ByChance Framework is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, either version 3 of the License,
- * or (at your option) any later version.
- * 
- * The ByChance Framework is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with the ByChance Framework.  If not, see
- * <http://www.gnu.org/licenses/>.
- */
-
-namespace ByChanceFramework.Base3D
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Anchor3D.cs" company="Nick Pruehs, Denis Vaz Alves">
+//   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
+//   
+//   This file is part of the ByChance Framework.
+//   
+//   The ByChance Framework is free software: you can redistribute it and/or
+//   modify it under the terms of the GNU Lesser General Public License as
+//   published by the Free Software Foundation, either version 3 of the License,
+//   or (at your option) any later version.
+//   
+//   The ByChance Framework is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU Lesser General Public License for more details.
+//   
+//   You should have received a copy of the GNU Lesser General Public License
+//   along with the ByChance Framework.  If not, see
+//   <http://www.gnu.org/licenses/>.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+namespace ByChance.Base3D
 {
+    using ByChanceFramework;
+
+    using Npruehs.GrabBag.Math.Vectors;
+
     /// <summary>
-    /// Represents a placeholder for game elements in 3D levels that can be
+    /// Placeholder for game elements in 3D levels that can be
     /// filled after the level generation process.
     /// </summary>
-    sealed public class Anchor3D : Anchor
+    public sealed class Anchor3D : Anchor
     {
-        /// <summary>
-        /// Gets or sets the x-coordinate of the position of this anchor relative to the
-        /// position of the chunk it belongs to.
-        /// </summary>
-        public float RelativePosX { get; internal set; }
-
-        /// <summary>
-        /// Gets or sets the y-coordinate of the position of this anchor relative to the
-        /// position of the chunk it belongs to.
-        /// </summary>
-        public float RelativePosY { get; internal set; }
-
-        /// <summary>
-        /// Gets or sets the z-coordinate of the position of this anchor relative to the
-        /// position of the chunk it belongs to.
-        /// </summary>
-        public float RelativePosZ { get; internal set; }
-
-        /// <summary>
-        /// Gets the x-coordinate of the absolute position of this anchor within the level.
-        /// </summary>
-        public float AbsolutePosX
-        {
-            get { return ((Chunk3D)Source).X + RelativePosX; }
-        }
-
-        /// <summary>
-        /// Gets the y-coordinate of the absolute position of this anchor within the level.
-        /// </summary>
-        public float AbsolutePosY
-        {
-            get { return ((Chunk3D)Source).Y + RelativePosY; }
-        }
-
-        /// <summary>
-        /// Gets the z-coordinate of the absolute position of this anchor within the level.
-        /// </summary>
-        public float AbsolutePosZ
-        {
-            get { return ((Chunk3D)Source).Z + RelativePosZ; }
-        }
-
+        #region Constructors and Destructors
 
         /// <summary>
         /// Constructs a new anchor of the specified category and with the passed
         /// position relative to the position of the chunk it belongs to.
         /// </summary>
-        /// <param name="relativePosX">
-        /// The x-coordinate of the position of the new anchor relative to the
+        /// <param name="relativePosition">
+        /// Position of the new anchor relative to the
         /// position of the chunk it belongs to.
         /// </param>
-        /// <param name="relativePosY">
-        /// The y-coordinate of the position of the new anchor relative to the
-        /// position of the chunk it belongs to.
-        /// </param>
-        /// <param name="relativePosZ">
-        /// The z-coordinate of the position of the new anchor relative to the
-        /// position of the chunk it belongs to.
-        /// </param>
-        /// <param name="tag">The category of the new anchor.</param>
-        internal Anchor3D(float relativePosX, float relativePosY, float relativePosZ, string tag)
+        /// <param name="tag">Category of the new anchor.</param>
+        internal Anchor3D(Vector3F relativePosition, string tag)
             : base(tag)
         {
-            this.RelativePosX = relativePosX;
-            this.RelativePosY = relativePosY;
-            this.RelativePosZ = relativePosZ;
+            this.RelativePosition = relativePosition;
         }
 
         /// <summary>
         /// Constructs a new anchor with the same index and relative position
         /// as the passed one and attaches it to the specified chunk.
         /// </summary>
-        /// <param name="template">The anchor whose attributes to copy.</param>
-        /// <param name="source">The chunk to attach the new anchor to.</param>
+        /// <param name="template">Anchor whose attributes to copy.</param>
+        /// <param name="source">Chunk to attach the new anchor to.</param>
         internal Anchor3D(Anchor3D template, Chunk3D source)
             : base(template.Tag)
         {
             this.Index = template.Index;
             this.source = source;
-            this.RelativePosX = template.RelativePosX;
-            this.RelativePosY = template.RelativePosY;
-            this.RelativePosZ = template.RelativePosZ;
+            this.RelativePosition = template.RelativePosition;
         }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Absolute position of this anchor within the level.
+        /// </summary>
+        public Vector3F AbsolutePosition
+        {
+            get
+            {
+                return ((Chunk3D)this.Source).Position + this.RelativePosition;
+            }
+        }
+
+        /// <summary>
+        /// Position of this anchor relative to the
+        /// position of the chunk it belongs to.
+        /// </summary>
+        public Vector3F RelativePosition { get; internal set; }
+
+        #endregion
     }
 }

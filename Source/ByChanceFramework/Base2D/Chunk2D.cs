@@ -179,21 +179,23 @@ namespace ByChance.Base2D
             this.Position = position;
 
             // Rotate anchors if necessary.
+            if (this.Rotation <= 0)
+            {
+                return;
+            }
+
             var center = this.Extents / 2;
 
-            if (this.Rotation > 0)
+            foreach (Anchor2D anchor in this.anchors)
             {
-                foreach (Anchor2D anchor in this.anchors)
-                {
-                    var origin = anchor.RelativePosition - center;
+                var origin = anchor.RelativePosition - center;
 
-                    var anchorRelativePositionX = origin.X * (float)Math.Cos(this.Rotation)
-                                                  - origin.Y * (float)Math.Sin(this.Rotation) + center.Y;
-                    var anchorRelativePositionY = origin.Y * (float)Math.Cos(this.Rotation)
-                                                  + origin.X * (float)Math.Sin(this.Rotation) + center.X;
+                var anchorRelativePositionX = (origin.X * (float)Math.Cos(this.Rotation))
+                                              - (origin.Y * (float)Math.Sin(this.Rotation)) + center.Y;
+                var anchorRelativePositionY = (origin.Y * (float)Math.Cos(this.Rotation))
+                                              + (origin.X * (float)Math.Sin(this.Rotation)) + center.X;
 
-                    anchor.RelativePosition = new Vector2F(anchorRelativePositionX, anchorRelativePositionY);
-                }
+                anchor.RelativePosition = new Vector2F(anchorRelativePositionX, anchorRelativePositionY);
             }
         }
 

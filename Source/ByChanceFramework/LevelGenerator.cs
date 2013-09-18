@@ -22,13 +22,13 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-using ByChanceFramework.Base3D;
 using ByChanceFramework.PostProc;
 using NLog;
 
 namespace ByChanceFramework
 {
     using ByChance.Base2D;
+    using ByChance.Base3D;
 
     using Npruehs.GrabBag.Math.Vectors;
 
@@ -203,7 +203,7 @@ namespace ByChanceFramework
                 throw new ArgumentOutOfRangeException("levelDepth", levelDepth, "The depth of the level must be greater than 0.0f.");
             }
 
-            Level3D level = new Level3D(levelWidth, levelHeight, levelDepth);
+            Level3D level = new Level3D(new Vector3F(levelWidth, levelHeight, levelDepth));
 
             GenerateLevel<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random);
 
@@ -367,7 +367,7 @@ namespace ByChanceFramework
                 else if (freeContext.Source is Chunk3D)
                 {
                     Chunk3D chunk3D = (Chunk3D) freeContext.Source;
-                    logger.Info("Expanding level at " + chunk3D.X + " | " + chunk3D.Y + " | " + chunk3D.Z);
+                    logger.Info("Expanding level at " + chunk3D.Position.X + " | " + chunk3D.Position.Y + " | " + chunk3D.Position.Z);
                 }
 
                 // clear candidate lists after each iteration

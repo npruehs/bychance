@@ -100,12 +100,12 @@ namespace ByChance.Base2D
 
             if (freeContext2D == null)
             {
-                throw new ArgumentException("Passed free context isn't of type Context2D.", "freeContext");
+                throw new ArgumentException("Free context isn't of type Context2D.", "freeContext");
             }
 
             if (newContext2D == null)
             {
-                throw new ArgumentException("Passed new context isn't of type Context2D.", "newContext");
+                throw new ArgumentException("New context isn't of type Context2D.", "newContext");
             }
 
             Chunk2D newChunk = (Chunk2D)newContext.Source;
@@ -150,12 +150,12 @@ namespace ByChance.Base2D
 
             if (existingContext2D == null)
             {
-                throw new ArgumentException("Passed existing context isn't of type Context2D.", "existingContext");
+                throw new ArgumentException("Existing context isn't of type Context2D.", "existingContext");
             }
 
             if (possibleContext2D == null)
             {
-                throw new ArgumentException("Passed possible context isn't of type Context2D.", "possibleContext");
+                throw new ArgumentException("Possible context isn't of type Context2D.", "possibleContext");
             }
 
             RectangleF levelRectangle = new RectangleF(Vector2F.Zero, this.Extents);

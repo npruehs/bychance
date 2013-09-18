@@ -44,7 +44,7 @@ namespace ByChance.Base2D
         /// position of the chunk it belongs to.
         /// </param>
         internal Context2D(Vector2F relativePosition)
-            : this(relativePosition, "")
+            : this(relativePosition, string.Empty)
         {
         }
 
@@ -69,7 +69,7 @@ namespace ByChance.Base2D
         /// </summary>
         /// <param name="template">Context whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new context to.</param>
-        internal Context2D(Context2D template, Chunk source)
+        internal Context2D(Context2D template, Chunk2D source)
             : base(template.Tag)
         {
             this.Index = template.Index;

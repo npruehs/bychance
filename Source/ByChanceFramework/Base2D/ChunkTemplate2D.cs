@@ -46,7 +46,7 @@ namespace ByChance.Base2D
         /// <param name="extents">Width and height of the chunks to construct a new template for.</param>
         /// <seealso cref="ChunkTemplate.DEFAULT_WEIGHT"/>
         public ChunkTemplate2D(Vector2F extents)
-            : this(extents, DEFAULT_WEIGHT, "", false)
+            : this(extents, DEFAULT_WEIGHT, string.Empty, false)
         {
         }
 
@@ -185,7 +185,7 @@ namespace ByChance.Base2D
         /// template and sets its chunk-wide unique index.
         /// </summary>
         /// <param name="anchor">Anchor to add to this template.</param>
-        private void AddAnchor(Anchor anchor)
+        private void AddAnchor(Anchor2D anchor)
         {
             anchor.Index = this.anchors.Count;
             this.anchors.Add(anchor);
@@ -196,7 +196,7 @@ namespace ByChance.Base2D
         /// template and sets its chunk-wide unique index.
         /// </summary>
         /// <param name="context">Context to add to this template.</param>
-        private void AddContext(Context context)
+        private void AddContext(Context2D context)
         {
             context.Index = this.contexts.Count;
             this.contexts.Add(context);

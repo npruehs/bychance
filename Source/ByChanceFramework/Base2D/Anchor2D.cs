@@ -54,7 +54,7 @@ namespace ByChance.Base2D
         /// </summary>
         /// <param name="template">Anchor whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new anchor to.</param>
-        internal Anchor2D(Anchor2D template, Chunk source)
+        internal Anchor2D(Anchor2D template, Chunk2D source)
             : base(template.Tag)
         {
             this.Index = template.Index;
