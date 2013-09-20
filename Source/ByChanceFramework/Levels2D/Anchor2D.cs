@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Anchor3D.cs" company="Nick Pruehs, Denis Vaz Alves">
+// <copyright file="Anchor2D.cs" company="Nick Pruehs, Denis Vaz Alves">
 //   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
 //   
 //   This file is part of the ByChance Framework.
@@ -19,17 +19,17 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Base3D
+namespace ByChance.Levels2D
 {
     using ByChance.Core;
 
     using Npruehs.GrabBag.Math.Vectors;
 
     /// <summary>
-    /// Placeholder for game elements in 3D levels that can be
+    /// Placeholder for game elements in 2D levels that can be
     /// filled after the level generation process.
     /// </summary>
-    public sealed class Anchor3D : Anchor
+    public sealed class Anchor2D : Anchor
     {
         #region Constructors and Destructors
 
@@ -42,7 +42,7 @@ namespace ByChance.Base3D
         /// position of the chunk it belongs to.
         /// </param>
         /// <param name="tag">Category of the new anchor.</param>
-        internal Anchor3D(Vector3F relativePosition, string tag)
+        internal Anchor2D(Vector2F relativePosition, string tag)
             : base(tag)
         {
             this.RelativePosition = relativePosition;
@@ -54,7 +54,7 @@ namespace ByChance.Base3D
         /// </summary>
         /// <param name="template">Anchor whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new anchor to.</param>
-        internal Anchor3D(Anchor3D template, Chunk3D source)
+        internal Anchor2D(Anchor2D template, Chunk2D source)
             : base(template.Tag)
         {
             this.Index = template.Index;
@@ -69,11 +69,11 @@ namespace ByChance.Base3D
         /// <summary>
         /// Absolute position of this anchor within the level.
         /// </summary>
-        public Vector3F AbsolutePosition
+        public Vector2F AbsolutePosition
         {
             get
             {
-                return ((Chunk3D)this.Source).Position + this.RelativePosition;
+                return ((Chunk2D)this.Source).Position + this.RelativePosition;
             }
         }
 
@@ -81,7 +81,7 @@ namespace ByChance.Base3D
         /// Position of this anchor relative to the
         /// position of the chunk it belongs to.
         /// </summary>
-        public Vector3F RelativePosition { get; internal set; }
+        public Vector2F RelativePosition { get; internal set; }
 
         #endregion
     }

@@ -47,27 +47,27 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base3D\Anchor3D.cs" />
-    <Compile Include="Base2D\Chunk2D.cs" />
-    <Compile Include="Base3D\Chunk3D.cs" />
-    <Compile Include="Base3D\ChunkTemplate3D.cs" />
-    <Compile Include="Base3D\Level3D.cs" />
+    <Compile Include="Levels3D\Anchor3D.cs" />
+    <Compile Include="Levels2D\Chunk2D.cs" />
+    <Compile Include="Levels3D\Chunk3D.cs" />
+    <Compile Include="Levels3D\ChunkTemplate3D.cs" />
+    <Compile Include="Levels3D\Level3D.cs" />
     <Compile Include="Core\Chunk.cs" />
     <Compile Include="Core\ChunkLibrary.cs" />
-    <Compile Include="Base2D\Context2D.cs" />
-    <Compile Include="Base2D\Anchor2D.cs" />
-    <Compile Include="Base3D\Context3D.cs" />
-    <Compile Include="Base2D\ChunkTemplate2D.cs" />
+    <Compile Include="Levels2D\Context2D.cs" />
+    <Compile Include="Levels2D\Anchor2D.cs" />
+    <Compile Include="Levels3D\Context3D.cs" />
+    <Compile Include="Levels2D\ChunkTemplate2D.cs" />
     <Compile Include="Core\ChunkTemplate.cs" />
     <Compile Include="Core\Context.cs" />
     <Compile Include="Core\Anchor.cs" />
-    <Compile Include="Base2D\Level2D.cs" />
+    <Compile Include="Levels2D\Level2D.cs" />
     <Compile Include="Core\Level.cs" />
     <Compile Include="Core\LevelGenerator.cs" />
-    <Compile Include="PostProc\AlignAdjacentContextsPolicy.cs" />
-    <Compile Include="PostProc\DiscardOpenChunksPolicy.cs" />
-    <Compile Include="PostProc\DiscardOpenContextsPolicy.cs" />
-    <Compile Include="PostProc\IPostProcessingPolicy.cs" />
+    <Compile Include="PostProcessing\AlignAdjacentContextsPolicy.cs" />
+    <Compile Include="PostProcessing\DiscardOpenChunksPolicy.cs" />
+    <Compile Include="PostProcessing\DiscardOpenContextsPolicy.cs" />
+    <Compile Include="PostProcessing\IPostProcessingPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

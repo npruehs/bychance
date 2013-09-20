@@ -26,9 +26,9 @@ namespace ByChance.Core
     using System.Linq;
     using System.Reflection;
 
-    using ByChance.Base2D;
-    using ByChance.Base3D;
-    using ByChance.PostProc;
+    using ByChance.Levels2D;
+    using ByChance.Levels3D;
+    using ByChance.PostProcessing;
 
     using Npruehs.GrabBag.Math.Vectors;
     using Npruehs.GrabBag.Util;

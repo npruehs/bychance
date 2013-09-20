@@ -19,7 +19,7 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.PostProc
+namespace ByChance.PostProcessing
 {
     using System;
     using System.Linq;

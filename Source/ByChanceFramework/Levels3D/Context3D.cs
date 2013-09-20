@@ -19,7 +19,7 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Base3D
+namespace ByChance.Levels3D
 {
     using System;
 
