@@ -21,6 +21,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ByChance.PostProc
 {
+    using ByChance.Core;
+
     using ByChanceFramework;
 
     /// <summary>

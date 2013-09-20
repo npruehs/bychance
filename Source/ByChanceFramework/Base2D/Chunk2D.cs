@@ -23,13 +23,13 @@ namespace ByChance.Base2D
 {
     using System;
 
-    using ByChanceFramework;
+    using ByChance.Core;
 
     using Npruehs.GrabBag.Math.Vectors;
 
     /// <summary>
     /// <para>
-    /// Main building block that make up a 2D level, providing
+    /// Main building block that makes up a 2D level, providing
     /// extents, position and rotation.
     /// </para>
     /// <para>
@@ -69,12 +69,12 @@ namespace ByChance.Base2D
             // Perform deep copies of the context and anchor lists of the template.
             foreach (Context2D context in chunkTemplate2D.Contexts)
             {
-                this.contexts.Add(new Context2D(context, this));
+                this.Contexts.Add(new Context2D(context, this));
             }
 
             foreach (Anchor2D anchor in chunkTemplate2D.Anchors)
             {
-                this.anchors.Add(new Anchor2D(anchor, this));
+                this.Anchors.Add(new Anchor2D(anchor, this));
             }
         }
 
@@ -123,7 +123,7 @@ namespace ByChance.Base2D
         {
             var center = this.Extents / 2;
 
-            foreach (Context2D context in this.contexts)
+            foreach (Context2D context in this.Contexts)
             {
                 // Translate context position to chunk origin.
                 var origin = context.RelativePosition - center;
@@ -186,7 +186,7 @@ namespace ByChance.Base2D
 
             var center = this.Extents / 2;
 
-            foreach (Anchor2D anchor in this.anchors)
+            foreach (Anchor2D anchor in this.Anchors)
             {
                 var origin = anchor.RelativePosition - center;
 

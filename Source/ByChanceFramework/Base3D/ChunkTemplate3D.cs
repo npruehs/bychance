@@ -23,7 +23,7 @@ namespace ByChance.Base3D
 {
     using System;
 
-    using ByChanceFramework;
+    using ByChance.Core;
 
     using Npruehs.GrabBag.Math.Vectors;
 
@@ -44,9 +44,9 @@ namespace ByChance.Base3D
         /// template may not be rotated by the level generator.
         /// </summary>
         /// <param name="extents">Width, height and depth of the chunks to construct a new template for.</param>
-        /// <seealso cref="ChunkTemplate.DEFAULT_WEIGHT"/>
+        /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         public ChunkTemplate3D(Vector3F extents)
-            : this(extents, DEFAULT_WEIGHT, string.Empty, false)
+            : this(extents, DefaultWeight, string.Empty, false)
         {
         }
 
@@ -71,11 +71,11 @@ namespace ByChance.Base3D
         /// </summary>
         /// <param name="extents">Width, height and depth of the chunks to construct a new template for.</param>
         /// <param name="tag">Category of the new chunk template.</param>
-        /// <seealso cref="ChunkTemplate.DEFAULT_WEIGHT"/>
+        /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         /// <seealso cref="ChunkTemplate.Tag"/>
         /// <exception cref="ArgumentNullException"><paramref name="tag"/> is null.</exception>
         public ChunkTemplate3D(Vector3F extents, string tag)
-            : this(extents, DEFAULT_WEIGHT, tag, false)
+            : this(extents, DefaultWeight, tag, false)
         {
         }
 
@@ -86,9 +86,9 @@ namespace ByChance.Base3D
         /// </summary>
         /// <param name="extents">Width, height and depth of the chunks to construct a new template for.</param>
         /// <param name="allowChunkRotation">Whether the level generator is allowed to rotate chunks created with the template by 90°, or not.</param>
-        /// <seealso cref="ChunkTemplate.DEFAULT_WEIGHT"/>
+        /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         public ChunkTemplate3D(Vector3F extents, bool allowChunkRotation)
-            : this(extents, DEFAULT_WEIGHT, string.Empty, allowChunkRotation)
+            : this(extents, DefaultWeight, string.Empty, allowChunkRotation)
         {
         }
 
@@ -205,8 +205,8 @@ namespace ByChance.Base3D
         /// <param name="anchor">Anchor to add to this template.</param>
         private void AddAnchor(Anchor3D anchor)
         {
-            anchor.Index = this.anchors.Count;
-            this.anchors.Add(anchor);
+            anchor.Index = this.AnchorCount;
+            this.Anchors.Add(anchor);
         }
 
         /// <summary>
@@ -216,8 +216,8 @@ namespace ByChance.Base3D
         /// <param name="context">Context to add to this template.</param>
         private void AddContext(Context3D context)
         {
-            context.Index = this.contexts.Count;
-            this.contexts.Add(context);
+            context.Index = this.ContextCount;
+            this.Contexts.Add(context);
         }
 
         #endregion

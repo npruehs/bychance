@@ -24,6 +24,8 @@ namespace ByChance.PostProc
     using System;
     using System.Linq;
 
+    using ByChance.Core;
+
     using ByChanceFramework;
 
     /// <summary>

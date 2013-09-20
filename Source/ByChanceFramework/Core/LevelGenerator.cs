@@ -26,6 +26,7 @@ namespace ByChanceFramework
 {
     using ByChance.Base2D;
     using ByChance.Base3D;
+    using ByChance.Core;
     using ByChance.PostProc;
 
     using Npruehs.GrabBag.Math.Vectors;
@@ -262,7 +263,7 @@ namespace ByChanceFramework
             {
                 throw new ArgumentNullException("chunkLibrary");
             }
-            else if (chunkLibrary.GetChunkTemplateCount() <= 0)
+            else if (chunkLibrary.Count <= 0)
             {
                 throw new ArgumentException("The chunk library is empty. The level generation process requires at least one chunk template.", "chunkLibrary");
             }
@@ -277,7 +278,7 @@ namespace ByChanceFramework
                 throw new ArgumentNullException("random");
             }
 
-            chunkTemplate = chunkLibrary.GetChunkTemplateByIndex(0);
+            chunkTemplate = chunkLibrary[0];
 
             if (chunkTemplate is ChunkTemplate2D)
             {
@@ -304,20 +305,20 @@ namespace ByChanceFramework
                 this.LogMessage("Level is a 3D level.");
             }
 
-            this.LogMessage("Level has " + level.GetLevelChunkCount() + " chunk(s).");
-            this.LogMessage("Chunk Library has " + chunkLibrary.GetChunkTemplateCount() + " chunk template(s).");
+            this.LogMessage("Level has " + level.LevelChunkCount + " chunk(s).");
+            this.LogMessage("Chunk Library has " + chunkLibrary.Count + " chunk template(s).");
             this.LogMessage("RNG uses a seed of " + random.Seed + ".");
 
             startTime = DateTime.Now;
-            chunkQuantities = new int[chunkLibrary.GetChunkTemplateCount()];
+            chunkQuantities = new int[chunkLibrary.Count];
 
             // check if level has a starting chunk
-            if (level.GetLevelChunkCount() <= 0)
+            if (level.LevelChunkCount <= 0)
             {
                 // if not set one randomly
-                randomChunkIndex = (int)random.RandomRangeUInt32((uint)chunkLibrary.GetChunkTemplateCount());
+                randomChunkIndex = (int)random.RandomRangeUInt32((uint)chunkLibrary.Count);
 
-                chunkTemplate = chunkLibrary.GetChunkTemplateByIndex(randomChunkIndex);
+                chunkTemplate = chunkLibrary[randomChunkIndex];
 
                 possibleChunk = ConstructChunkFromTemplate(chunkTemplate);
                 
@@ -333,10 +334,10 @@ namespace ByChanceFramework
                     passedTime = DateTime.Now - startTime;
 
                     this.LogMessage("Level Generation took " + passedTime.Seconds + "." + passedTime.Milliseconds + " seconds.");
-                    this.LogMessage("Generated level contains " + level.GetLevelChunkCount() + " chunks:");
+                    this.LogMessage("Generated level contains " + level.LevelChunkCount + " chunks:");
                     for (int i = 0; i < chunkQuantities.Length; i++)
                     {
-                        this.LogMessage("\t" + chunkQuantities[i] * 100 / level.GetLevelChunkCount() + "% of the chunks are instances of chunk " + i + ".");
+                        this.LogMessage("\t" + chunkQuantities[i] * 100 / level.LevelChunkCount + "% of the chunks are instances of chunk " + i + ".");
                     }
 
                     // after finishing the level generation, start the post-processing
@@ -375,18 +376,18 @@ namespace ByChanceFramework
                 candidateContexts.Clear();
 
                 // filter chunk library for compatible chunk candidates
-                for (int i = 0; i < chunkLibrary.GetChunkTemplateCount(); i++)
+                for (int i = 0; i < chunkLibrary.Count; i++)
                 {
-                    chunkTemplate = chunkLibrary.GetChunkTemplateByIndex(i);
+                    chunkTemplate = chunkLibrary[i];
 
                     possibleChunk = ConstructChunkFromTemplate(chunkTemplate);
 
                     keepTrying = true;
                     while (keepTrying)
                     {
-                        for (int j = 0; j < possibleChunk.GetContextCount(); j++)
+                        for (int j = 0; j < possibleChunk.ContextCount; j++)
                         {
-                            possibleContext = possibleChunk.GetContextByIndex(j);
+                            possibleContext = possibleChunk.GetContext(j);
                             if (CanBeAligned(possibleContext, freeContext) &&
                                 level.FitsLevelGeometry(freeContext, possibleContext))
                             {
@@ -427,7 +428,7 @@ namespace ByChanceFramework
 
                     chunkCandidate = chunkCandidates[i];
 
-                    effectiveWeights.Add(GetEffectiveWeight(freeContext, chunkCandidate.GetContextByIndex(candidateContexts[i]), chunkQuantities[chunkCandidate.Index]));
+                    effectiveWeights.Add(GetEffectiveWeight(freeContext, chunkCandidate.GetContext(candidateContexts[i]), chunkQuantities[chunkCandidate.Index]));
                 }
 
                 // compute the sum of all effective chunk weights
@@ -449,7 +450,7 @@ namespace ByChanceFramework
                     {
                         // integrate selected chunk into level
                         compatibleChunk = chunkCandidates[i];
-                        compatibleContext = compatibleChunk.GetContextByIndex(candidateContexts[i]);
+                        compatibleContext = compatibleChunk.GetContext(candidateContexts[i]);
                         
                         level.AddChunk(freeContext, compatibleContext);
                         this.LogMessage("Added chunk with ID " + compatibleChunk.Index + " to the level.");

@@ -23,6 +23,8 @@ namespace ByChance.Base2D
 {
     using System;
 
+    using ByChance.Core;
+
     using ByChanceFramework;
 
     using Npruehs.GrabBag.Math.Geometry;
@@ -69,7 +71,7 @@ namespace ByChance.Base2D
         #region Public Methods and Operators
 
         /// <summary>
-        /// Adds a chunk to the list of existing chunks in the level.
+        /// Adds a chunk to this level.
         /// <para>
         /// This is done by aligning the given open context of an existing level chunk with the open context
         /// of the new chunk and then adding the chunk to the chunk list.
@@ -120,7 +122,7 @@ namespace ByChance.Base2D
             freeContext2D.AlignTo(newContext2D);
 
             // Add the new chunk to the level chunks.
-            this.chunks.Add(newChunk);
+            this.Chunks.Add(newChunk);
         }
 
         /// <summary>
@@ -168,7 +170,7 @@ namespace ByChance.Base2D
             }
 
             // Check if possible context overlaps with existing chunks.
-            foreach (var chunk in this.chunks)
+            foreach (var chunk in this.Chunks)
             {
                 RectangleF chunkRectangle = new RectangleF(chunk.Position, chunk.Extents);
                 if (chunkRectangle.Intersects(possibleChunkRectangle))
@@ -239,7 +241,7 @@ namespace ByChance.Base2D
 
             chunk.SetPosition(startPosition);
 
-            this.chunks.Add(chunk);
+            this.Chunks.Add(chunk);
         }
 
         #endregion

@@ -23,6 +23,8 @@ namespace ByChance.Base3D
 {
     using System;
 
+    using ByChance.Core;
+
     using ByChanceFramework;
 
     using Npruehs.GrabBag.Math.Geometry;
@@ -74,18 +76,18 @@ namespace ByChance.Base3D
         #region Public Methods and Operators
 
         /// <summary>
+        /// Adds a chunk to this level.
         /// <para>
-        /// Aligns the given open context of an existing level chunk with the open context
-        /// of the new chunk and adds the chunk to the list of level chunks.
+        /// This is done by aligning the given open context of an existing level chunk with the open context
+        /// of the new chunk and then adding the chunk to the chunk list.
         /// </para>
         /// <para>
-        /// <i>Note that the new chunk is assumed to fit the level geometry.
+        /// <i>Note that the new chunk is assumed to fit the level geometry. See 
         /// <see cref="FitsLevelGeometry(Context, Context)"/> for further information on how to check this first.</i>
         /// </para>
         /// </summary>
-        /// <param name="freeContext">Level context to add the new chunk at.</param>
+        /// <param name="freeContext">Context to add the new chunk at.</param>
         /// <param name="newContext">Context of the new chunk to be aligned to the existing level.</param>
-        /// <exception cref="ArgumentNullException"><paramref name="freeContext"/> or <paramref name="newContext"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="freeContext"/> or <paramref name="newContext"/> is not of the type <see cref="Context3D"/>.</exception>
         public override void AddChunk(Context freeContext, Context newContext)
         {
@@ -124,7 +126,7 @@ namespace ByChance.Base3D
             freeContext3D.AlignTo(newContext3D);
 
             // Add new chunk to the level chunks.
-            this.chunks.Add(newChunk);
+            this.Chunks.Add(newChunk);
         }
 
         /// <summary>
@@ -169,7 +171,7 @@ namespace ByChance.Base3D
             }
 
             // Check if possible context overlaps with existing Chunks.
-            foreach (var chunk in this.chunks)
+            foreach (var chunk in this.Chunks)
             {
                 var existingChunkBox = new BoxF(chunk.Position, chunk.Extents);
                 if (existingChunkBox.Intersects(possibleChunkBox))
@@ -241,7 +243,7 @@ namespace ByChance.Base3D
 
             chunk.SetPosition(startPosition);
 
-            this.chunks.Add(chunk);
+            this.Chunks.Add(chunk);
         }
 
         #endregion

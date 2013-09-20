@@ -23,13 +23,13 @@ namespace ByChance.Base3D
 {
     using System;
 
-    using ByChanceFramework;
+    using ByChance.Core;
 
     using Npruehs.GrabBag.Math.Vectors;
 
     /// <summary>
     /// <para>
-    /// Main building block that make up a 3D level, providing
+    /// Main building block that makes up a 3D level, providing
     /// extents, position and rotation.
     /// </para>
     /// <para>
@@ -67,12 +67,12 @@ namespace ByChance.Base3D
             // Perform deep copies of the context and anchor lists of the template.
             foreach (Context3D context in chunkTemplate.Contexts)
             {
-                this.contexts.Add(new Context3D(context, this));
+                this.Contexts.Add(new Context3D(context, this));
             }
 
             foreach (Anchor3D anchor in chunkTemplate.Anchors)
             {
-                this.anchors.Add(new Anchor3D(anchor, this));
+                this.Anchors.Add(new Anchor3D(anchor, this));
             }
         }
 
@@ -149,7 +149,7 @@ namespace ByChance.Base3D
 
             if (this.Rotation.Z > 0)
             {
-                foreach (Anchor3D anchor in this.anchors)
+                foreach (Anchor3D anchor in this.Anchors)
                 {
                     var origin = anchor.RelativePosition - center;
 
@@ -165,7 +165,7 @@ namespace ByChance.Base3D
 
             if (this.Rotation.X > 0)
             {
-                foreach (Anchor3D anchor in this.anchors)
+                foreach (Anchor3D anchor in this.Anchors)
                 {
                     var origin = anchor.RelativePosition - center;
 
@@ -181,7 +181,7 @@ namespace ByChance.Base3D
 
             if (this.Rotation.Y > 0)
             {
-                foreach (Anchor3D anchor in this.anchors)
+                foreach (Anchor3D anchor in this.Anchors)
                 {
                     var origin = anchor.RelativePosition - center;
 
@@ -208,7 +208,7 @@ namespace ByChance.Base3D
             var center = this.Extents / 2;
 
             // Change the positions of all contexts.
-            foreach (Context3D context in this.contexts)
+            foreach (Context3D context in this.Contexts)
             {
                 var origin = context.RelativePosition - center;
 
@@ -246,7 +246,7 @@ namespace ByChance.Base3D
             var center = this.Extents / 2;
 
             // Change the positions of all contexts.
-            foreach (Context3D context in this.contexts)
+            foreach (Context3D context in this.Contexts)
             {
                 var origin = context.RelativePosition - center;
 
@@ -282,7 +282,7 @@ namespace ByChance.Base3D
             var center = this.Extents / 2;
 
             // Change the positions of all contexts.
-            foreach (Context3D context in this.contexts)
+            foreach (Context3D context in this.Contexts)
             {
                 var origin = context.RelativePosition - center;
 

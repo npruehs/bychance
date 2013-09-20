@@ -21,7 +21,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ByChance.Base2D
 {
-    using ByChanceFramework;
+    using ByChance.Core;
 
     using Npruehs.GrabBag.Math.Vectors;
 
@@ -58,7 +58,7 @@ namespace ByChance.Base2D
             : base(template.Tag)
         {
             this.Index = template.Index;
-            this.source = source;
+            this.Source = source;
             this.RelativePosition = template.RelativePosition;
         }
 
