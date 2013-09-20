@@ -30,13 +30,12 @@ namespace ByChance.Core
     using ByChance.Levels3D;
     using ByChance.PostProcessing;
 
-    using Npruehs.GrabBag.Math.Vectors;
     using Npruehs.GrabBag.Util;
 
     /// <summary>
     /// Generates a level based on a given chunk library.
     /// </summary>
-    public class LevelGenerator
+    public abstract class LevelGenerator
     {
         #region Fields
 
@@ -106,161 +105,6 @@ namespace ByChance.Core
         }
 
         /// <summary>
-        /// Generates a 2D level using the given chunk library and level.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="level">Level to fill during the level generation process.</param>
-        public void GenerateLevel(ChunkLibrary<ChunkTemplate2D> chunkLibrary, Level2D level)
-        {
-            Random2 random = new Random2();
-
-            this.GenerateLevel(chunkLibrary, level, random);
-        }
-
-        /// <summary>
-        /// Generates a 2D level using the given chunk library, level and random number generator.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="level">Level to fill during the level generation process.</param>
-        /// <param name="random">Random number generator to use for the level generation.</param>
-        public void GenerateLevel(
-            ChunkLibrary<ChunkTemplate2D> chunkLibrary, Level2D level, Random2 random)
-        {
-            this.GenerateLevel<ChunkTemplate2D, Chunk2D>(chunkLibrary, level, random);
-        }
-
-        /// <summary>
-        /// Generates a 2D level using the given chunk library and desired dimensions for the level.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="levelExtents">Width and height the resulting level should have.</param>
-        /// <returns>Generated level with the desired width and height.</returns>
-        public Level2D GenerateLevel(ChunkLibrary<ChunkTemplate2D> chunkLibrary, Vector2F levelExtents)
-        {
-            Random2 random = new Random2();
-
-            return this.GenerateLevel(chunkLibrary, levelExtents, random);
-        }
-
-        /// <summary>
-        /// Generates a 2D level using the given chunk library, desired dimensions for the level and random number generator.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="levelExtents">Width and height the resulting level should have.</param>
-        /// <param name="random">Random number generator to use for the level generation.</param>
-        /// <returns>Generated level with the desired width and height.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// Level width or height is smaller than or equal to zero.
-        /// </exception>
-        public Level2D GenerateLevel(
-            ChunkLibrary<ChunkTemplate2D> chunkLibrary, Vector2F levelExtents, Random2 random)
-        {
-            if (levelExtents.X <= 0f)
-            {
-                throw new ArgumentOutOfRangeException("levelExtents", "Level width must be greater than zero.");
-            }
-
-            if (levelExtents.Y <= 0f)
-            {
-                throw new ArgumentOutOfRangeException("levelExtents", "Level height must be greater than zero.");
-            }
-
-            Level2D level = new Level2D(levelExtents);
-
-            this.GenerateLevel<ChunkTemplate2D, Chunk2D>(chunkLibrary, level, random);
-
-            return level;
-        }
-
-        /// <summary>
-        /// Generates a 3D level with the given chunk library and level.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="level">Level to fill during the level generation process.</param>
-        public void GenerateLevel(ChunkLibrary<ChunkTemplate3D> chunkLibrary, Level3D level)
-        {
-            Random2 random = new Random2();
-
-            this.GenerateLevel(chunkLibrary, level, random);
-        }
-
-        /// <summary>
-        /// Generates a 3D level with the given chunk library, level and random number generator.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="level">Level to fill during the level generation process.</param>
-        /// <param name="random">Random number generator to use for the level generation.</param>
-        public void GenerateLevel(
-            ChunkLibrary<ChunkTemplate3D> chunkLibrary, Level3D level, Random2 random)
-        {
-            this.GenerateLevel<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random);
-        }
-
-        /// <summary>
-        /// Generates a 3D level with the given chunk library and desired dimensions for the level.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="levelExtents">Width, height and depth the resulting level should have.</param>
-        /// <returns>Generated level with the desired width, height and depth.</returns>
-        public Level3D GenerateLevel(ChunkLibrary<ChunkTemplate3D> chunkLibrary, Vector3F levelExtents)
-        {
-            Random2 random = new Random2();
-
-            return this.GenerateLevel(chunkLibrary, levelExtents, random);
-        }
-
-        /// <summary>
-        /// Generates a 3D level with the given chunk library, desired dimensions for the level and random number generator.
-        /// </summary>
-        /// <param name="chunkLibrary">
-        /// Chunk library that holds all chunk templates to use for the level generation.
-        /// </param>
-        /// <param name="levelExtents">Width, height and depth the resulting level should have.</param>
-        /// <param name="random">Random number generator to use for the level generation.</param>
-        /// <returns>Generated level with the desired width, height and depth.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// Level width, height or depth is smaller than or equal to zero.
-        /// </exception>
-        public Level3D GenerateLevel(
-            ChunkLibrary<ChunkTemplate3D> chunkLibrary, Vector3F levelExtents, Random2 random)
-        {
-            if (levelExtents.X <= 0f)
-            {
-                throw new ArgumentOutOfRangeException("levelExtents", "Level width must be greater than zero.");
-            }
-
-            if (levelExtents.Y <= 0f)
-            {
-                throw new ArgumentOutOfRangeException("levelExtents", "Level height must be greater than zero.");
-            }
-
-            if (levelExtents.Z <= 0f)
-            {
-                throw new ArgumentOutOfRangeException("levelExtents", "Level depth must be greater than zero.");
-            }
-
-            Level3D level = new Level3D(levelExtents);
-
-            this.GenerateLevel<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random);
-
-            return level;
-        }
-
-        /// <summary>
         /// Gets the effective weight of a chunk.
         /// <para>
         /// By default this method returns the weight of the chunk candidate to which <paramref name="secondContext"/> belongs to.
@@ -306,15 +150,7 @@ namespace ByChance.Core
         /// <exception cref="ArgumentException">
         /// The type of the passed <c>chunktemplate</c> doesn't match the desired chunk type.
         /// </exception>
-        private static Chunk ConstructChunkFromTemplate(ChunkTemplate chunkTemplate)
-        {
-            if (chunkTemplate is ChunkTemplate2D)
-            {
-                return new Chunk2D(chunkTemplate);
-            }
-
-            return new Chunk3D(chunkTemplate);
-        }
+        protected abstract Chunk ConstructChunkFromTemplate(ChunkTemplate chunkTemplate);
 
         /// <summary>
         /// Generates a level with the given chunk library, level and random number generator.
@@ -332,7 +168,7 @@ namespace ByChance.Core
         /// <exception cref="ArgumentException">
         ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
         /// </exception>
-        private void GenerateLevel<TChunkTemplate, TChunk>(
+        protected void GenerateLevel<TChunkTemplate, TChunk>(
             ChunkLibrary<TChunkTemplate> chunkLibrary, Level<TChunk> level, Random2 random)
             where TChunkTemplate : ChunkTemplate where TChunk : Chunk
         {
@@ -380,9 +216,9 @@ namespace ByChance.Core
             if (level.LevelChunkCount <= 0)
             {
                 // Set starting chunk randomly.
-                int randomChunkIndex = random.NextInt32(chunkLibrary.Count);
+                var randomChunkIndex = random.NextInt32(chunkLibrary.Count);
                 chunkTemplate = chunkLibrary[randomChunkIndex];
-                possibleChunk = ConstructChunkFromTemplate(chunkTemplate);
+                possibleChunk = this.ConstructChunkFromTemplate(chunkTemplate);
                 level.SetRandomStartingChunk(possibleChunk, random);
             }
 
@@ -455,7 +291,7 @@ namespace ByChance.Core
                 for (var i = 0; i < chunkLibrary.Count; i++)
                 {
                     chunkTemplate = chunkLibrary[i];
-                    possibleChunk = ConstructChunkFromTemplate(chunkTemplate);
+                    possibleChunk = this.ConstructChunkFromTemplate(chunkTemplate);
 
                     var keepTrying = true;
 
@@ -518,7 +354,7 @@ namespace ByChance.Core
                 this.LogMessage(string.Format("Calculated total weight: {0}.", totalWeight));
 
                 // Pick a random chunk
-                int randomWeight = random.NextInt32(totalWeight);
+                var randomWeight = random.NextInt32(totalWeight);
                 this.LogMessage("Calculated random weight: " + randomWeight);
 
                 for (var i = 0; i < chunkCandidates.Count; i++)

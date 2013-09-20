@@ -28,7 +28,7 @@ namespace ByChance.Core
     /// Collection of user-defined chunk templates.
     /// </summary>
     /// <typeparam name="T">Type of the chunk templates of this chunk library.</typeparam>
-    public class ChunkLibrary<T>
+    public abstract class ChunkLibrary<T>
         where T : ChunkTemplate
     {
         #region Fields

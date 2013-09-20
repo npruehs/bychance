@@ -47,9 +47,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Levels2D\ChunkLibrary2D.cs" />
+    <Compile Include="Levels2D\LevelGenerator2D.cs" />
     <Compile Include="Levels3D\Anchor3D.cs" />
     <Compile Include="Levels2D\Chunk2D.cs" />
     <Compile Include="Levels3D\Chunk3D.cs" />
+    <Compile Include="Levels3D\ChunkLibrary3D.cs" />
     <Compile Include="Levels3D\ChunkTemplate3D.cs" />
     <Compile Include="Levels3D\Level3D.cs" />
     <Compile Include="Core\Chunk.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="Levels2D\Level2D.cs" />
     <Compile Include="Core\Level.cs" />
     <Compile Include="Core\LevelGenerator.cs" />
+    <Compile Include="Levels3D\LevelGenerator3D.cs" />
     <Compile Include="PostProcessing\AlignAdjacentContextsPolicy.cs" />
     <Compile Include="PostProcessing\DiscardOpenChunksPolicy.cs" />
     <Compile Include="PostProcessing\DiscardOpenContextsPolicy.cs" />
