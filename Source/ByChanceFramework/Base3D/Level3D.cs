@@ -25,10 +25,9 @@ namespace ByChance.Base3D
 
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     using Npruehs.GrabBag.Math.Geometry;
     using Npruehs.GrabBag.Math.Vectors;
+    using Npruehs.GrabBag.Util;
 
     /// <summary>
     /// 3D level of a given width, height and depth that consists of a number of chunks.
@@ -194,7 +193,7 @@ namespace ByChance.Base3D
         /// </param>
         /// <exception cref="ArgumentNullException"><paramref name="chunk"/> or <paramref name="random"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="chunk"/> is not of the type <seealso cref="Chunk3D"/>.</exception>
-        public override void SetRandomStartingChunk(Chunk chunk, RandomNumberGeneratorQ random)
+        public override void SetRandomStartingChunk(Chunk chunk, Random2 random)
         {
             if (chunk == null)
             {
@@ -213,9 +212,9 @@ namespace ByChance.Base3D
                 throw new ArgumentNullException("random");
             }
 
-            var startX = random.RandomFloat() * (this.Extents.X - chunk3D.Extents.X);
-            var startY = random.RandomFloat() * (this.Extents.Y - chunk3D.Extents.Y);
-            var startZ = random.RandomFloat() * (this.Extents.Z - chunk3D.Extents.Z);
+            var startX = random.NextFloat() * (this.Extents.X - chunk3D.Extents.X);
+            var startY = random.NextFloat() * (this.Extents.Y - chunk3D.Extents.Y);
+            var startZ = random.NextFloat() * (this.Extents.Z - chunk3D.Extents.Z);
 
             this.SetStartingChunk(chunk3D, new Vector3F(startX, startY, startZ));
         }

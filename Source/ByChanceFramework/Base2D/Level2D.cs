@@ -25,10 +25,9 @@ namespace ByChance.Base2D
 
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     using Npruehs.GrabBag.Math.Geometry;
     using Npruehs.GrabBag.Math.Vectors;
+    using Npruehs.GrabBag.Util;
 
     /// <summary>
     /// 2D level of a given width and height that consists of a number of chunks.
@@ -193,7 +192,7 @@ namespace ByChance.Base2D
         /// </param>
         /// <exception cref="ArgumentNullException"><paramref name="chunk"/> or <paramref name="random"/> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException"><paramref name="chunk"/> is not of the type <seealso cref="Chunk2D"/>.</exception>
-        public override void SetRandomStartingChunk(Chunk chunk, RandomNumberGeneratorQ random)
+        public override void SetRandomStartingChunk(Chunk chunk, Random2 random)
         {
             if (chunk == null)
             {
@@ -212,8 +211,8 @@ namespace ByChance.Base2D
                 throw new ArgumentNullException("random");
             }
 
-            var startX = random.RandomFloat() * (this.Extents.X - chunk2D.Extents.X);
-            var startY = random.RandomFloat() * (this.Extents.Y - chunk2D.Extents.Y);
+            var startX = random.NextFloat() * (this.Extents.X - chunk2D.Extents.X);
+            var startY = random.NextFloat() * (this.Extents.Y - chunk2D.Extents.Y);
 
             this.SetStartingChunk(chunk2D, new Vector2F(startX, startY));
         }

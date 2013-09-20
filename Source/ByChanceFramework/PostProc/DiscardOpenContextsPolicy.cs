@@ -26,8 +26,6 @@ namespace ByChance.PostProc
 
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     /// <summary>
     /// <para>
     /// Finds all contexts within the processed level and

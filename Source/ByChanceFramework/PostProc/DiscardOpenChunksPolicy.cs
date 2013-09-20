@@ -26,8 +26,6 @@ namespace ByChance.PostProc
 
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     /// <summary>
     /// <para>
     /// Finds all chunks within the processed level that have open contexts and

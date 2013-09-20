@@ -25,7 +25,7 @@ namespace ByChance.Core
     using System.Collections.Generic;
     using System.Linq;
 
-    using ByChanceFramework;
+    using Npruehs.GrabBag.Util;
 
     /// <summary>
     /// Level that consists of a number of chunks.
@@ -201,7 +201,7 @@ namespace ByChance.Core
         /// <param name="chunk">Chunk that will be the starting point of the level generation process.</param>
         /// <param name="random">Instance of the random number generator to use for determining the random position
         /// of the starting chunk.</param>
-        public abstract void SetRandomStartingChunk(Chunk chunk, RandomNumberGeneratorQ random);
+        public abstract void SetRandomStartingChunk(Chunk chunk, Random2 random);
 
         #endregion
     }
