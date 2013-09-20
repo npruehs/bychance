@@ -26,6 +26,7 @@ namespace ByChance.Core
     using System.Linq;
     using System.Reflection;
 
+    using ByChance.Configuration;
     using ByChance.Levels2D;
     using ByChance.Levels3D;
     using ByChance.PostProcessing;
@@ -43,6 +44,22 @@ namespace ByChance.Core
         /// Post-processing policies that will be applied after the level generation.
         /// </summary>
         private readonly List<IPostProcessingPolicy> postProcessingPolicies = new List<IPostProcessingPolicy>();
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Constructs a new level generator with default configuration.
+        /// </summary>
+        protected LevelGenerator()
+        {
+            this.Configuration = new LevelGeneratorConfiguration
+                {
+                    ChunkDistribution = new ChunkDistribution(), 
+                    ContextAlignmentRestriction = new ContextAlignmentRestriction()
+                };
+        }
 
         #endregion
 
@@ -65,6 +82,15 @@ namespace ByChance.Core
 
         #endregion
 
+        #region Public Properties
+
+        /// <summary>
+        /// Configuration of this level generator.
+        /// </summary>
+        public LevelGeneratorConfiguration Configuration { get; set; }
+
+        #endregion
+
         #region Public Methods and Operators
 
         /// <summary>
@@ -84,44 +110,11 @@ namespace ByChance.Core
         }
 
         /// <summary>
-        /// Checks if the two passed contexts can be aligned, or not.
-        /// This relation is assumed to be symmetric i.e., if <c>first</c> and <c>second</c>
-        /// can be aligned, then <c>second</c> and <c>first</c> can be aligned, too.
-        /// </summary>
-        /// <param name="first">First context to check.</param>
-        /// <param name="second">Second context to check.</param>
-        /// <returns><c>true</c>, if the two contexts can be aligned, and <c>false</c> otherwise.</returns>
-        public virtual bool CanBeAligned(Context first, Context second)
-        {
-            return true;
-        }
-
-        /// <summary>
         /// Clears the list of post-processing policies that will be applied after the level generation.
         /// </summary>
         public void ClearPostProcessingPolicies()
         {
             this.postProcessingPolicies.Clear();
-        }
-
-        /// <summary>
-        /// Gets the effective weight of a chunk.
-        /// <para>
-        /// By default this method returns the weight of the chunk candidate to which <paramref name="secondContext"/> belongs to.
-        /// <paramref name="firstContext"/> and <paramref name="occurrences"/> are passed additionally to provide means of comparisons 
-        /// for custom implementations of the method by clients. 
-        /// </para>
-        /// </summary>
-        /// <param name="firstContext">Open context of the existing chunk to which the new chunk candidate will be attached to.</param>
-        /// <param name="secondContext">Open context of the chunk candidate.</param>
-        /// <param name="occurrences">
-        /// Number of times chunks similar to the chunk of <paramref name="secondContext"/> (i.e. based on the same template) 
-        /// already exist in the level.
-        /// </param>
-        /// <returns>Non-negative integer that represents the effective weight of the chunk candidate.</returns>
-        public virtual int GetEffectiveWeight(Context firstContext, Context secondContext, int occurrences)
-        {
-            return secondContext.Source.Weight;
         }
 
         /// <summary>
@@ -300,7 +293,9 @@ namespace ByChance.Core
                         for (var j = 0; j < possibleChunk.ContextCount; j++)
                         {
                             var possibleContext = possibleChunk.GetContext(j);
-                            if (!this.CanBeAligned(possibleContext, freeContext)
+                            if (
+                                !this.Configuration.ContextAlignmentRestriction.CanBeAligned(
+                                    possibleContext, freeContext)
                                 || !level.FitsLevelGeometry(freeContext, possibleContext))
                             {
                                 continue;
@@ -343,7 +338,7 @@ namespace ByChance.Core
                     var chunkCandidate = chunkCandidates[i];
 
                     effectiveWeights.Add(
-                        this.GetEffectiveWeight(
+                        this.Configuration.ChunkDistribution.GetEffectiveWeight(
                             freeContext, 
                             chunkCandidate.GetContext(candidateContexts[i]), 
                             chunkQuantities[chunkCandidate.Index]));

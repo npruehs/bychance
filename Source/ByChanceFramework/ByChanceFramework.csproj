@@ -47,6 +47,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ChunkDistribution.cs" />
+    <Compile Include="Configuration\ContextAlignmentRestriction.cs" />
+    <Compile Include="Configuration\LevelGeneratorConfiguration.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />
     <Compile Include="Levels2D\LevelGenerator2D.cs" />
     <Compile Include="Levels3D\Anchor3D.cs" />

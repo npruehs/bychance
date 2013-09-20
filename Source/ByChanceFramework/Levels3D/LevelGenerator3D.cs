@@ -31,7 +31,7 @@ namespace ByChance.Levels3D
     /// <summary>
     /// Generates a 3D level based on a given chunk library.
     /// </summary>
-    public class LevelGenerator3D : LevelGenerator
+    public sealed class LevelGenerator3D : LevelGenerator
     {
         #region Public Methods and Operators
 

@@ -31,7 +31,7 @@ namespace ByChance.PostProcessing
     /// according to the level generator that build the processed level.
     /// </summary>
     /// <seealso cref="Offset"/>
-    /// <seealso cref="LevelGenerator.CanBeAligned(Context, Context)"/>
+    /// <seealso cref="Configuration.ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
     public class AlignAdjacentContextsPolicy : IPostProcessingPolicy
     {
         #region Constructors and Destructors
@@ -68,7 +68,7 @@ namespace ByChance.PostProcessing
         /// <param name="levelGenerator">Level generator that built the level to be processed.</param>
         /// <param name="level">Level to process.</param>
         /// <seealso cref="Offset"/>
-        /// <seealso cref="LevelGenerator.CanBeAligned(Context, Context)"/>
+        /// <seealso cref="Configuration.ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
         /// <exception cref="ArgumentNullException"><paramref name="levelGenerator"/> or <paramref name="level"/> is <c>null</c>.</exception>
         public void Process<T>(LevelGenerator levelGenerator, Level<T> level) where T : Chunk
         {
@@ -96,7 +96,7 @@ namespace ByChance.PostProcessing
                     var secondContext = openContexts[j];
 
                     if (firstContext.IsAdjacentTo(secondContext, this.Offset)
-                        && levelGenerator.CanBeAligned(firstContext, secondContext))
+                        && levelGenerator.Configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
                     {
                         firstContext.AlignTo(secondContext);
 
