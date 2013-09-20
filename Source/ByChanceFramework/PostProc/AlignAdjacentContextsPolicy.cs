@@ -25,15 +25,13 @@ namespace ByChance.PostProc
 
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     /// <summary>
     /// Aligns all open contexts in the processed level that are within the offset
     /// specified at the construction of this policy and are allowed to be aligned
     /// according to the level generator that build the processed level.
     /// </summary>
     /// <seealso cref="Offset"/>
-    /// <seealso cref="ByChanceFramework.LevelGenerator.CanBeAligned(Context, Context)"/>
+    /// <seealso cref="LevelGenerator.CanBeAligned(Context, Context)"/>
     public class AlignAdjacentContextsPolicy : IPostProcessingPolicy
     {
         #region Constructors and Destructors
@@ -70,7 +68,7 @@ namespace ByChance.PostProc
         /// <param name="levelGenerator">Level generator that built the level to be processed.</param>
         /// <param name="level">Level to process.</param>
         /// <seealso cref="Offset"/>
-        /// <seealso cref="ByChanceFramework.LevelGenerator.CanBeAligned(Context, Context)"/>
+        /// <seealso cref="LevelGenerator.CanBeAligned(Context, Context)"/>
         /// <exception cref="ArgumentNullException"><paramref name="levelGenerator"/> or <paramref name="level"/> is <c>null</c>.</exception>
         public void Process<T>(LevelGenerator levelGenerator, Level<T> level) where T : Chunk
         {

@@ -23,8 +23,6 @@ namespace ByChance.PostProc
 {
     using ByChance.Core;
 
-    using ByChanceFramework;
-
     /// <summary>
     /// <para>
     /// Encapsulates some way of processing a level after it has been
@@ -43,7 +41,7 @@ namespace ByChance.PostProc
     /// Each post-processing policy has access to the level generator that
     /// build the level that is to be processed, in order to determine which
     /// contexts can be aligned, for example.
-    /// <see cref="ByChanceFramework.LevelGenerator.AddPostProcessingPolicy(IPostProcessingPolicy)"/>
+    /// <see cref="LevelGenerator.AddPostProcessingPolicy(IPostProcessingPolicy)"/>
     /// in order to learn more about how to teach the level generator which
     /// policies it should apply.
     /// </para>
