@@ -1,25 +1,28 @@
-﻿/*
- * Copyright 2011 Nick Pruehs, Denis Vaz Alves.
- * 
- * This file is part of the ByChance Framework.
- *
- * The ByChance Framework is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, either version 3 of the License,
- * or (at your option) any later version.
- * 
- * The ByChance Framework is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public License
- * along with the ByChance Framework.  If not, see
- * <http://www.gnu.org/licenses/>.
- */
-
-namespace ByChanceFramework.PostProc
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IPostProcessingPolicy.cs" company="Nick Pruehs, Denis Vaz Alves">
+//   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
+//   
+//   This file is part of the ByChance Framework.
+//   
+//   The ByChance Framework is free software: you can redistribute it and/or
+//   modify it under the terms of the GNU Lesser General Public License as
+//   published by the Free Software Foundation, either version 3 of the License,
+//   or (at your option) any later version.
+//   
+//   The ByChance Framework is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   GNU Lesser General Public License for more details.
+//   
+//   You should have received a copy of the GNU Lesser General Public License
+//   along with the ByChance Framework.  If not, see
+//   <http://www.gnu.org/licenses/>.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+namespace ByChance.PostProc
 {
+    using ByChanceFramework;
+
     /// <summary>
     /// <para>
     /// Encapsulates some way of processing a level after it has been
@@ -49,17 +52,17 @@ namespace ByChanceFramework.PostProc
     /// </summary>
     public interface IPostProcessingPolicy
     {
-        /// <summary>
-        /// Gets or sets the level generator that built the level to be processed.
-        /// </summary>
-        LevelGenerator LevelGenerator { get; set; }
+        #region Public Methods and Operators
 
         /// <summary>
         /// Processes the passed finished level following the rules defined by
         /// the level generator that build that level.
         /// </summary>
         /// <typeparam name="T">Type of the chunks the level consists of.</typeparam>
-        /// <param name="level">The level to process.</param>
-        void Process<T>(Level<T> level) where T : Chunk;
+        /// <param name="levelGenerator">Level generator that built the level to be processed.</param>
+        /// <param name="level">Level to process.</param>
+        void Process<T>(LevelGenerator levelGenerator, Level<T> level) where T : Chunk;
+
+        #endregion
     }
 }

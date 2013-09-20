@@ -22,13 +22,11 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-using ByChanceFramework.PostProc;
-using NLog;
-
 namespace ByChanceFramework
 {
     using ByChance.Base2D;
     using ByChance.Base3D;
+    using ByChance.PostProc;
 
     using Npruehs.GrabBag.Math.Vectors;
 
@@ -45,8 +43,10 @@ namespace ByChanceFramework
         /// The list of post-processing policies that will be processed after the level generation.
         /// </summary>
         private List<IPostProcessingPolicy> postProcessingPolicies = new List<IPostProcessingPolicy>();
-        
-        private Logger logger = LogManager.GetCurrentClassLogger();
+
+        public delegate void LogDelegate(string message);
+
+        public event LogDelegate Log;
 
         /// <summary>
         /// Flag that shows if the generated level is supposed to be a 2D level or not.
@@ -294,19 +294,19 @@ namespace ByChanceFramework
             }
 
             // initialize log
-            logger.Info("ByChance Framework version " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ".");
+            this.LogMessage("ByChance Framework version " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ".");
             if (is2DLevel)
             {
-                logger.Info("Level is a 2D level.");
+                this.LogMessage("Level is a 2D level.");
             }
             else
             {
-                logger.Info("Level is a 3D level.");
+                this.LogMessage("Level is a 3D level.");
             }
 
-            logger.Info("Level has " + level.GetLevelChunkCount() + " chunk(s).");
-            logger.Info("Chunk Library has " + chunkLibrary.GetChunkTemplateCount() + " chunk template(s).");
-            logger.Info("RNG uses a seed of " + random.Seed + ".");
+            this.LogMessage("Level has " + level.GetLevelChunkCount() + " chunk(s).");
+            this.LogMessage("Chunk Library has " + chunkLibrary.GetChunkTemplateCount() + " chunk template(s).");
+            this.LogMessage("RNG uses a seed of " + random.Seed + ".");
 
             startTime = DateTime.Now;
             chunkQuantities = new int[chunkLibrary.GetChunkTemplateCount()];
@@ -332,28 +332,28 @@ namespace ByChanceFramework
                 {
                     passedTime = DateTime.Now - startTime;
 
-                    logger.Info("Level Generation took " + passedTime.Seconds + "." + passedTime.Milliseconds + " seconds.");
-                    logger.Info("Generated level contains " + level.GetLevelChunkCount() + " chunks:");
+                    this.LogMessage("Level Generation took " + passedTime.Seconds + "." + passedTime.Milliseconds + " seconds.");
+                    this.LogMessage("Generated level contains " + level.GetLevelChunkCount() + " chunks:");
                     for (int i = 0; i < chunkQuantities.Length; i++)
                     {
-                        logger.Info("\t" + chunkQuantities[i] * 100 / level.GetLevelChunkCount() + "% of the chunks are instances of chunk " + i + ".");
+                        this.LogMessage("\t" + chunkQuantities[i] * 100 / level.GetLevelChunkCount() + "% of the chunks are instances of chunk " + i + ".");
                     }
 
                     // after finishing the level generation, start the post-processing
                     if (postProcessingPolicies.Count > 0)
                     {
-                        logger.Info("Beginning post-processing.");
+                        this.LogMessage("Beginning post-processing.");
 
                         startTime = DateTime.Now;
 
                         foreach (IPostProcessingPolicy policy in postProcessingPolicies)
                         {
-                            policy.Process<U>(level);
+                            policy.Process<U>(this, level);
                         }
 
                         passedTime = DateTime.Now - startTime;
 
-                        logger.Info("Post-processing took " + passedTime.Seconds + "." + passedTime.Milliseconds + " seconds.");
+                        this.LogMessage("Post-processing took " + passedTime.Seconds + "." + passedTime.Milliseconds + " seconds.");
                     }
 
                     return;
@@ -362,12 +362,12 @@ namespace ByChanceFramework
                 if (freeContext.Source is Chunk2D)
                 {
                     Chunk2D chunk2D = (Chunk2D) freeContext.Source;
-                    logger.Info("Expanding level at " + chunk2D.Position.ToString());
+                    this.LogMessage("Expanding level at " + chunk2D.Position.ToString());
                 }
                 else if (freeContext.Source is Chunk3D)
                 {
                     Chunk3D chunk3D = (Chunk3D) freeContext.Source;
-                    logger.Info("Expanding level at " + chunk3D.Position.X + " | " + chunk3D.Position.Y + " | " + chunk3D.Position.Z);
+                    this.LogMessage("Expanding level at " + chunk3D.Position.X + " | " + chunk3D.Position.Y + " | " + chunk3D.Position.Z);
                 }
 
                 // clear candidate lists after each iteration
@@ -400,7 +400,7 @@ namespace ByChanceFramework
 
                         if (keepTrying && possibleChunk.AllowChunkRotation)
                         {
-                            logger.Info("* Trying to rotate chunk with ID " + possibleChunk.Index + ".");
+                            this.LogMessage("* Trying to rotate chunk with ID " + possibleChunk.Index + ".");
                             keepTrying = possibleChunk.Rotate();
                         }
                         else
@@ -409,13 +409,13 @@ namespace ByChanceFramework
                         }
                     }
                 }
-                logger.Info("Found " + chunkCandidates.Count + " chunk candidates.");
+                this.LogMessage("Found " + chunkCandidates.Count + " chunk candidates.");
 
                 // if no candidates are available for the selected context, block and ignore it in further iterations
                 if (chunkCandidates.Count == 0)
                 {
                     freeContext.Blocked = true;
-                    logger.Info("Blocked context for further iterations.");
+                    this.LogMessage("Blocked context for further iterations.");
                     continue;
                 }
 
@@ -436,11 +436,11 @@ namespace ByChanceFramework
                 {
                     totalWeight += effectiveWeight;
                 }
-                logger.Info("Calculated total weight: " + totalWeight);
+                this.LogMessage("Calculated total weight: " + totalWeight);
 
                 // pick a random chunk
                 randomWeight = (int)random.RandomRangeUInt32((uint)totalWeight);
-                logger.Info("Calculated random weight: " + randomWeight);
+                this.LogMessage("Calculated random weight: " + randomWeight);
                 for (int i = 0; i < chunkCandidates.Count; i++)
                 {
                     randomWeight -= effectiveWeights[i];
@@ -452,12 +452,21 @@ namespace ByChanceFramework
                         compatibleContext = compatibleChunk.GetContextByIndex(candidateContexts[i]);
                         
                         level.AddChunk(freeContext, compatibleContext);
-                        logger.Info("Added chunk with ID " + compatibleChunk.Index + " to the level.");
+                        this.LogMessage("Added chunk with ID " + compatibleChunk.Index + " to the level.");
 
                         chunkQuantities[compatibleContext.Source.Index]++;
                         break;
                     }
                 }
+            }
+        }
+
+        public void LogMessage(string message)
+        {
+            var handler = this.Log;
+            if (handler != null)
+            {
+                handler(message);
             }
         }
 
@@ -510,7 +519,6 @@ namespace ByChanceFramework
             }
 
             postProcessingPolicies.Add(policy);
-            policy.LevelGenerator = this;
         }
 
         /// <summary>

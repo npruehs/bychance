@@ -38,10 +38,6 @@
     <DocumentationFile>bin\Release\ByChance.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Vendor\NLog\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="Npruehs.GrabBag.Math">
       <HintPath>..\..\Vendor\Npruehs.GrabBag\Npruehs.GrabBag.Math.dll</HintPath>
     </Reference>
@@ -71,11 +67,6 @@
     <Compile Include="PostProc\IPostProcessingPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RandomNumberGeneratorQ.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
