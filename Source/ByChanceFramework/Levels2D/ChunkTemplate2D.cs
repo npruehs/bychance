@@ -6,6 +6,7 @@
 namespace ByChance.Levels2D
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using ByChance.Core;
 
@@ -29,6 +30,7 @@ namespace ByChance.Levels2D
         /// </summary>
         /// <param name="extents">Width and height of the chunks to construct a new template for.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents)
             : this(extents, DefaultWeight, string.Empty, false)
         {
@@ -58,6 +60,7 @@ namespace ByChance.Levels2D
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         /// <seealso cref="ChunkTemplate.Tag"/>
         /// <exception cref="ArgumentNullException"><paramref name="tag"/> is null.</exception>
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents, string tag)
             : this(extents, DefaultWeight, tag, false)
         {
@@ -71,6 +74,7 @@ namespace ByChance.Levels2D
         /// <param name="extents">Width and height of the chunks to construct a new template for.</param>
         /// <param name="allowChunkRotation">Whether the level generator is allowed to rotate chunks created with the template by 90°, or not.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents, bool allowChunkRotation)
             : this(extents, DefaultWeight, string.Empty, allowChunkRotation)
         {
@@ -169,7 +173,7 @@ namespace ByChance.Levels2D
         /// template and sets its chunk-wide unique index.
         /// </summary>
         /// <param name="anchor">Anchor to add to this template.</param>
-        private void AddAnchor(Anchor2D anchor)
+        private void AddAnchor(Anchor anchor)
         {
             anchor.Index = this.AnchorCount;
             this.ChunkTemplateAnchors.Add(anchor);
@@ -180,7 +184,7 @@ namespace ByChance.Levels2D
         /// template and sets its chunk-wide unique index.
         /// </summary>
         /// <param name="context">Context to add to this template.</param>
-        private void AddContext(Context2D context)
+        private void AddContext(Context context)
         {
             context.Index = this.ContextCount;
             this.ChunkTemplateContexts.Add(context);

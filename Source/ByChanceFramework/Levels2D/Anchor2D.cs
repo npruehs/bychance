@@ -38,7 +38,7 @@ namespace ByChance.Levels2D
         /// </summary>
         /// <param name="template">Anchor whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new anchor to.</param>
-        internal Anchor2D(Anchor2D template, Chunk2D source)
+        internal Anchor2D(Anchor2D template, Chunk source)
             : base(template.Tag)
         {
             this.Index = template.Index;

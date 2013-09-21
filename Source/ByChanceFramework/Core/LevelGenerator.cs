@@ -205,16 +205,9 @@ namespace ByChance.Core
 
                     while (keepTrying)
                     {
-                        foreach (var possibleContext in possibleChunk.Contexts)
+                        foreach (var possibleContext in possibleChunk.Contexts.Where(possibleContext => this.Configuration.ContextAlignmentRestriction.CanBeAligned(
+                            possibleContext, freeContext) && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
-                            if (
-                                !this.Configuration.ContextAlignmentRestriction.CanBeAligned(
-                                    possibleContext, freeContext)
-                                || !level.FitsLevelGeometry(freeContext, possibleContext))
-                            {
-                                continue;
-                            }
-
                             chunkCandidates.Add(possibleChunk);
                             candidateContexts.Add(possibleContext.Index);
 

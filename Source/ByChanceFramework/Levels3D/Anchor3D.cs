@@ -38,7 +38,7 @@ namespace ByChance.Levels3D
         /// </summary>
         /// <param name="template">Anchor whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new anchor to.</param>
-        internal Anchor3D(Anchor3D template, Chunk3D source)
+        internal Anchor3D(Anchor3D template, Chunk source)
             : base(template.Tag)
         {
             this.Index = template.Index;

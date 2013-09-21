@@ -72,15 +72,17 @@ namespace ByChance.Configuration.PostProcessing
                 {
                     var secondContext = openContexts[j];
 
-                    if (firstContext.IsAdjacentTo(secondContext, this.Offset)
-                        && configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
+                    if (!firstContext.IsAdjacentTo(secondContext, this.Offset)
+                        || !configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
                     {
-                        firstContext.AlignTo(secondContext);
-
-                        this.LogMessage(
-                            string.Format(
-                                "+ Aligned adjacent contexts at {0} with an offset of {1}.", firstContext, this.Offset));
+                        continue;
                     }
+
+                    firstContext.AlignTo(secondContext);
+
+                    this.LogMessage(
+                        string.Format(
+                            "+ Aligned adjacent contexts at {0} with an offset of {1}.", firstContext, this.Offset));
                 }
             }
         }

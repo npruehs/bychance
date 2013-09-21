@@ -53,7 +53,7 @@ namespace ByChance.Levels3D
         /// </summary>
         /// <param name="template">Context whose attributes to copy.</param>
         /// <param name="source">Chunk to attach the new context to.</param>
-        internal Context3D(Context3D template, Chunk3D source)
+        internal Context3D(Context3D template, Chunk source)
             : base(template.Tag)
         {
             this.Index = template.Index;
