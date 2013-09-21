@@ -10,8 +10,6 @@ namespace ByChance.Levels3D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Vectors;
-
     /// <summary>
     /// Template that is used for creating similar chunks, which
     /// in turn make up a 3D level. Chunk templates define the chunk extents,
@@ -30,7 +28,8 @@ namespace ByChance.Levels3D
         /// </summary>
         /// <param name="extents">Width, height and depth of the chunks to construct a new template for.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+            Justification = "Qualifier is redundant.")]
         public ChunkTemplate3D(Vector3F extents)
             : this(extents, DefaultWeight, string.Empty, false)
         {
@@ -60,7 +59,8 @@ namespace ByChance.Levels3D
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         /// <seealso cref="ChunkTemplate.Tag"/>
         /// <exception cref="ArgumentNullException"><paramref name="tag"/> is null.</exception>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+            Justification = "Qualifier is redundant.")]
         public ChunkTemplate3D(Vector3F extents, string tag)
             : this(extents, DefaultWeight, tag, false)
         {
@@ -74,7 +74,8 @@ namespace ByChance.Levels3D
         /// <param name="extents">Width, height and depth of the chunks to construct a new template for.</param>
         /// <param name="allowChunkRotation">Whether the level generator is allowed to rotate chunks created with the template by 90°, or not.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", Justification = "Qualifier is redundant.")]
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+            Justification = "Qualifier is redundant.")]
         public ChunkTemplate3D(Vector3F extents, bool allowChunkRotation)
             : this(extents, DefaultWeight, string.Empty, allowChunkRotation)
         {

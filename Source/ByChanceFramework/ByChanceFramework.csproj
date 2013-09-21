@@ -38,12 +38,6 @@
     <DocumentationFile>bin\Release\ByChance.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Npruehs.GrabBag.Math">
-      <HintPath>..\..\Vendor\Npruehs.GrabBag\Npruehs.GrabBag.Math.dll</HintPath>
-    </Reference>
-    <Reference Include="Npruehs.GrabBag.Util">
-      <HintPath>..\..\Vendor\Npruehs.GrabBag\Npruehs.GrabBag.Util.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +52,7 @@
     <Compile Include="Configuration\Parameters\IDiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\IDiscardOpenContextsRestriction.cs" />
     <Compile Include="Configuration\PostProcessing\PostProcessingPolicy.cs" />
+    <Compile Include="Core\Random2.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />
     <Compile Include="Levels2D\LevelGenerator2D.cs" />
     <Compile Include="Levels3D\Anchor3D.cs" />
@@ -82,6 +77,11 @@
     <Compile Include="Configuration\PostProcessing\AlignAdjacentContextsPolicy.cs" />
     <Compile Include="Configuration\PostProcessing\DiscardOpenChunksPolicy.cs" />
     <Compile Include="Configuration\PostProcessing\DiscardOpenContextsPolicy.cs" />
+    <Compile Include="Levels3D\BoxF.cs" />
+    <Compile Include="Core\Math2.cs" />
+    <Compile Include="Levels2D\RectangleF.cs" />
+    <Compile Include="Levels2D\Vector2F.cs" />
+    <Compile Include="Levels3D\Vector3F.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,8 +9,6 @@ namespace ByChance.Levels3D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Vectors;
-
     /// <summary>
     /// <para>
     /// Main building block that makes up a 3D level, providing

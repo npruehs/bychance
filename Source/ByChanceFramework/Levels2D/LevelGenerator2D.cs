@@ -9,9 +9,6 @@ namespace ByChance.Levels2D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Vectors;
-    using Npruehs.GrabBag.Util;
-
     /// <summary>
     /// Generates a 3D level based on a given chunk library.
     /// </summary>

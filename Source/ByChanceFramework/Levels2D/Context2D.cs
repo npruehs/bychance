@@ -9,8 +9,6 @@ namespace ByChance.Levels2D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Vectors;
-
     /// <summary>
     /// Describes a position a chunk can be aligned at to another one in a
     /// 2D level.

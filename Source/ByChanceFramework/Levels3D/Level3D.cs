@@ -9,10 +9,6 @@ namespace ByChance.Levels3D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Geometry;
-    using Npruehs.GrabBag.Math.Vectors;
-    using Npruehs.GrabBag.Util;
-
     /// <summary>
     /// 3D level of a given width, height and depth that consists of a number of chunks.
     /// </summary>

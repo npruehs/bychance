@@ -9,10 +9,6 @@ namespace ByChance.Levels2D
 
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Geometry;
-    using Npruehs.GrabBag.Math.Vectors;
-    using Npruehs.GrabBag.Util;
-
     /// <summary>
     /// 2D level of a given width and height that consists of a number of chunks.
     /// </summary>

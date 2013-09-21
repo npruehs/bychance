@@ -10,8 +10,6 @@ namespace ByChance.Core
     using System.Collections.Generic;
     using System.Linq;
 
-    using Npruehs.GrabBag.Util;
-
     /// <summary>
     /// Level that consists of a number of chunks.
     /// <para>

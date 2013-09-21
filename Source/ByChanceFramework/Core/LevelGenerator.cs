@@ -16,8 +16,6 @@ namespace ByChance.Core
     using ByChance.Levels2D;
     using ByChance.Levels3D;
 
-    using Npruehs.GrabBag.Util;
-
     /// <summary>
     /// Generates a level based on a given chunk library.
     /// </summary>
@@ -205,8 +203,13 @@ namespace ByChance.Core
 
                     while (keepTrying)
                     {
-                        foreach (var possibleContext in possibleChunk.Contexts.Where(possibleContext => this.Configuration.ContextAlignmentRestriction.CanBeAligned(
-                            possibleContext, freeContext) && level.FitsLevelGeometry(freeContext, possibleContext)))
+                        foreach (
+                            var possibleContext in
+                                possibleChunk.Contexts.Where(
+                                    possibleContext =>
+                                    this.Configuration.ContextAlignmentRestriction.CanBeAligned(
+                                        possibleContext, freeContext)
+                                    && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
                             chunkCandidates.Add(possibleChunk);
                             candidateContexts.Add(possibleContext.Index);

@@ -7,8 +7,6 @@ namespace ByChance.Levels2D
 {
     using ByChance.Core;
 
-    using Npruehs.GrabBag.Math.Vectors;
-
     /// <summary>
     /// Placeholder for game elements in 2D levels that can be
     /// filled after the level generation process.
