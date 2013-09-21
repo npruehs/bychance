@@ -30,7 +30,7 @@ namespace ByChance.Configuration.PostProcessing
     /// <summary>
     /// <para>
     /// Finds all contexts within the processed level and
-    /// uses the predicate method <see cref="Parameters.DiscardOpenContextsRestriction.ShouldDiscardContext"/> to check
+    /// uses the predicate method <see cref="Parameters.IDiscardOpenContextsRestriction.ShouldDiscardContext"/> to check
     /// whether to discard that context or not. Repeats that process until the
     /// first iteration in which no context is discarded.
     /// </para>
@@ -38,9 +38,9 @@ namespace ByChance.Configuration.PostProcessing
     /// This policy discards all open contexts by default. Set
     /// <see cref="DiscardOpenContextsRestriction"/> to specify your own predicate.
     /// </para>
-    /// <seealso cref="Parameters.DiscardOpenContextsRestriction.ShouldDiscardContext(Context)"/>
+    /// <seealso cref="Parameters.IDiscardOpenContextsRestriction.ShouldDiscardContext(Context)"/>
     /// </summary>
-    public class DiscardOpenContextsPolicy : PostProcessingPolicy
+    public sealed class DiscardOpenContextsPolicy : PostProcessingPolicy
     {
         #region Constructors and Destructors
 
@@ -59,7 +59,7 @@ namespace ByChance.Configuration.PostProcessing
         /// <summary>
         /// Which open contexts should be discarded.
         /// </summary>
-        public DiscardOpenContextsRestriction DiscardOpenContextsRestriction { get; set; }
+        public IDiscardOpenContextsRestriction DiscardOpenContextsRestriction { get; set; }
 
         #endregion
 

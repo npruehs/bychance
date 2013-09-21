@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ContextAlignmentRestriction.cs" company="Nick Pruehs, Denis Vaz Alves">
+// <copyright file="IDiscardOpenChunksRestriction.cs" company="Nick Pruehs, Denis Vaz Alves">
 //   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
 //   
 //   This file is part of the ByChance Framework.
@@ -21,25 +21,23 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ByChance.Configuration.Parameters
 {
+    using ByChance.Configuration.PostProcessing;
     using ByChance.Core;
 
     /// <summary>
-    /// Specifies which chunk contexts may be aligned.
+    /// Specifies which chunks with open contexts should be discarded.
     /// </summary>
-    public sealed class ContextAlignmentRestriction : IContextAlignmentRestriction
+    public interface IDiscardOpenChunksRestriction
     {
         #region Public Methods and Operators
 
         /// <summary>
-        /// Returns <c>true</c>.
+        /// Used by <see cref="DiscardOpenChunksPolicy"/> to check whether to discard the passed chunk
+        /// with open contexts, or not.
         /// </summary>
-        /// <param name="first">First context to check.</param>
-        /// <param name="second">Second context to check.</param>
-        /// <returns><c>true</c></returns>
-        public bool CanBeAligned(Context first, Context second)
-        {
-            return true;
-        }
+        /// <param name="chunk">Chunk to be discarded.</param>
+        /// <returns><c>true</c> if the specified chunk should be discarded, and <c>false</c> otherwise.</returns>
+        bool ShouldBeDiscarded(Chunk chunk);
 
         #endregion
     }

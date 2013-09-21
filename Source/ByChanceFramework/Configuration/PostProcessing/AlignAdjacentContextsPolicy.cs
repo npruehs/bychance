@@ -33,7 +33,7 @@ namespace ByChance.Configuration.PostProcessing
     /// </summary>
     /// <seealso cref="Offset"/>
     /// <seealso cref="ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
-    public class AlignAdjacentContextsPolicy : PostProcessingPolicy
+    public sealed class AlignAdjacentContextsPolicy : PostProcessingPolicy
     {
         #region Constructors and Destructors
 

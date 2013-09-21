@@ -30,7 +30,7 @@ namespace ByChance.Configuration.PostProcessing
     /// <summary>
     /// <para>
     /// Finds all chunks within the processed level that have open contexts and
-    /// uses the predicate method <see cref="Parameters.DiscardOpenChunksRestriction.ShouldBeDiscarded"/> to check
+    /// uses the predicate method <see cref="Parameters.IDiscardOpenChunksRestriction.ShouldBeDiscarded"/> to check
     /// whether to discard that chunk or not. Repeats that process until the
     /// first iteration in which no chunk is discarded.
     /// </para>
@@ -38,9 +38,9 @@ namespace ByChance.Configuration.PostProcessing
     /// This policy discards all chunks with open contexts by default. Set
     /// <see cref="DiscardOpenChunksRestriction"/> to specify your own predicate.
     /// </para>
-    /// <seealso cref="Parameters.DiscardOpenChunksRestriction.ShouldBeDiscarded(Chunk)"/>
+    /// <seealso cref="Parameters.IDiscardOpenChunksRestriction.ShouldBeDiscarded(Chunk)"/>
     /// </summary>
-    public class DiscardOpenChunksPolicy : PostProcessingPolicy
+    public sealed class DiscardOpenChunksPolicy : PostProcessingPolicy
     {
         #region Constructors and Destructors
 
@@ -59,7 +59,7 @@ namespace ByChance.Configuration.PostProcessing
         /// <summary>
         /// Which chunks with open contexts should be discarded.
         /// </summary>
-        public DiscardOpenChunksRestriction DiscardOpenChunksRestriction { get; set; }
+        public IDiscardOpenChunksRestriction DiscardOpenChunksRestriction { get; set; }
 
         #endregion
 

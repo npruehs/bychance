@@ -21,22 +21,23 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ByChance.Configuration.Parameters
 {
+    using ByChance.Configuration.PostProcessing;
     using ByChance.Core;
 
     /// <summary>
     /// Specifies which open contexts should be discarded.
     /// </summary>
-    public class DiscardOpenContextsRestriction
+    public sealed class DiscardOpenContextsRestriction : IDiscardOpenContextsRestriction
     {
         #region Public Methods and Operators
 
         /// <summary>
-        /// Used by this policy to check whether to discard the passed open
-        /// context, or not. Returns <c>true</c> by default.
+        /// Used by <see cref="DiscardOpenContextsPolicy"/> to check whether to discard the passed open
+        /// context, or not. Returns <c>true</c>.
         /// </summary>
         /// <param name="context">Context to be discarded.</param>
-        /// <returns><c>true</c> if the specified context should be discarded, and <c>false</c> otherwise.</returns>
-        public virtual bool ShouldDiscardContext(Context context)
+        /// <returns><c>true</c></returns>
+        public bool ShouldDiscardContext(Context context)
         {
             return true;
         }

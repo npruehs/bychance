@@ -53,6 +53,10 @@
     <Compile Include="Configuration\LevelGeneratorConfiguration.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenContextsRestriction.cs" />
+    <Compile Include="Configuration\Parameters\IChunkDistribution.cs" />
+    <Compile Include="Configuration\Parameters\IContextAlignmentRestriction.cs" />
+    <Compile Include="Configuration\Parameters\IDiscardOpenChunksRestriction.cs" />
+    <Compile Include="Configuration\Parameters\IDiscardOpenContextsRestriction.cs" />
     <Compile Include="Configuration\PostProcessing\PostProcessingPolicy.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />
     <Compile Include="Levels2D\LevelGenerator2D.cs" />

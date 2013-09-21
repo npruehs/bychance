@@ -26,16 +26,13 @@ namespace ByChance.Configuration.Parameters
     /// <summary>
     /// Specifies the distribution of chunk templates within a level.
     /// </summary>
-    public class ChunkDistribution
+    public sealed class ChunkDistribution : IChunkDistribution
     {
         #region Public Methods and Operators
 
         /// <summary>
-        /// Gets the effective weight of a chunk.
         /// <para>
-        /// By default this method returns the weight of the chunk candidate to which <paramref name="secondContext"/> belongs to.
-        /// <paramref name="firstContext"/> and <paramref name="occurrences"/> are passed additionally to provide means of comparisons 
-        /// for custom implementations of the method by clients. 
+        /// Returns the weight of the chunk candidate to which <paramref name="secondContext"/> belongs to.
         /// </para>
         /// </summary>
         /// <param name="firstContext">Open context of the existing chunk to which the new chunk candidate will be attached to.</param>
@@ -45,7 +42,7 @@ namespace ByChance.Configuration.Parameters
         /// already exist in the level.
         /// </param>
         /// <returns>Non-negative integer that represents the effective weight of the chunk candidate.</returns>
-        public virtual int GetEffectiveWeight(Context firstContext, Context secondContext, int occurrences)
+        public int GetEffectiveWeight(Context firstContext, Context secondContext, int occurrences)
         {
             return secondContext.Source.Weight;
         }

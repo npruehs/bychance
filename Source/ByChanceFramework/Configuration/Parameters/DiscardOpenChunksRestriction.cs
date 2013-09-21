@@ -21,22 +21,23 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace ByChance.Configuration.Parameters
 {
+    using ByChance.Configuration.PostProcessing;
     using ByChance.Core;
 
     /// <summary>
     /// Specifies which chunks with open contexts should be discarded.
     /// </summary>
-    public class DiscardOpenChunksRestriction
+    public sealed class DiscardOpenChunksRestriction : IDiscardOpenChunksRestriction
     {
         #region Public Methods and Operators
 
         /// <summary>
-        /// Used by this policy to check whether to discard the passed chunk
-        /// with open contexts, or not. Returns <c>true</c> by default.
+        /// Used by <see cref="DiscardOpenChunksPolicy"/> to check whether to discard the passed chunk
+        /// with open contexts, or not. Returns <c>true</c>.
         /// </summary>
         /// <param name="chunk">Chunk to be discarded.</param>
-        /// <returns><c>true</c> if the specified chunk should be discarded, and <c>false</c> otherwise.</returns>
-        public virtual bool ShouldBeDiscarded(Chunk chunk)
+        /// <returns><c>true</c></returns>
+        public bool ShouldBeDiscarded(Chunk chunk)
         {
             return true;
         }

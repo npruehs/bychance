@@ -37,12 +37,12 @@ namespace ByChance.Configuration
         /// <summary>
         /// Distribution of chunk templates within a level.
         /// </summary>
-        public ChunkDistribution ChunkDistribution { get; set; }
+        public IChunkDistribution ChunkDistribution { get; set; }
 
         /// <summary>
         /// Which chunk contexts may be aligned.
         /// </summary>
-        public ContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
+        public IContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
 
         /// <summary>
         /// Logger interface for writing log messages.
@@ -52,7 +52,7 @@ namespace ByChance.Configuration
         /// <summary>
         /// Post-processing policies that will be applied after the level generation.
         /// </summary>
-        public List<PostProcessingPolicy> PostProcessingPolicies { get; set; }
+        public IList<PostProcessingPolicy> PostProcessingPolicies { get; set; }
 
         #endregion
     }
