@@ -27,9 +27,10 @@ namespace ByChance.Core
     using System.Reflection;
 
     using ByChance.Configuration;
+    using ByChance.Configuration.Parameters;
+    using ByChance.Configuration.PostProcessing;
     using ByChance.Levels2D;
     using ByChance.Levels3D;
-    using ByChance.PostProcessing;
 
     using Npruehs.GrabBag.Util;
 
@@ -38,15 +39,6 @@ namespace ByChance.Core
     /// </summary>
     public abstract class LevelGenerator
     {
-        #region Fields
-
-        /// <summary>
-        /// Post-processing policies that will be applied after the level generation.
-        /// </summary>
-        private readonly List<IPostProcessingPolicy> postProcessingPolicies = new List<IPostProcessingPolicy>();
-
-        #endregion
-
         #region Constructors and Destructors
 
         /// <summary>
@@ -57,28 +49,10 @@ namespace ByChance.Core
             this.Configuration = new LevelGeneratorConfiguration
                 {
                     ChunkDistribution = new ChunkDistribution(), 
-                    ContextAlignmentRestriction = new ContextAlignmentRestriction()
+                    ContextAlignmentRestriction = new ContextAlignmentRestriction(), 
+                    PostProcessingPolicies = new List<PostProcessingPolicy>()
                 };
         }
-
-        #endregion
-
-        #region Delegates
-
-        /// <summary>
-        ///   Logs the specified message.
-        /// </summary>
-        /// <param name="message">Message to log.</param>
-        public delegate void LogDelegate(string message);
-
-        #endregion
-
-        #region Public Events
-
-        /// <summary>
-        /// Log message can be written.
-        /// </summary>
-        public event LogDelegate Log;
 
         #endregion
 
@@ -88,47 +62,6 @@ namespace ByChance.Core
         /// Configuration of this level generator.
         /// </summary>
         public LevelGeneratorConfiguration Configuration { get; set; }
-
-        #endregion
-
-        #region Public Methods and Operators
-
-        /// <summary>
-        /// Adds the passed policy to the list of policies that will be applied after the level generation.
-        /// </summary>
-        /// <param name="policy">Policy to add.</param>
-        /// <seealso cref="postProcessingPolicies"/>
-        /// <exception cref="ArgumentNullException"><paramref name="policy"/> is null.</exception>
-        public void AddPostProcessingPolicy(IPostProcessingPolicy policy)
-        {
-            if (policy == null)
-            {
-                throw new ArgumentNullException("policy");
-            }
-
-            this.postProcessingPolicies.Add(policy);
-        }
-
-        /// <summary>
-        /// Clears the list of post-processing policies that will be applied after the level generation.
-        /// </summary>
-        public void ClearPostProcessingPolicies()
-        {
-            this.postProcessingPolicies.Clear();
-        }
-
-        /// <summary>
-        ///   Logs the specified message.
-        /// </summary>
-        /// <param name="message">Message to log.</param>
-        public void LogMessage(string message)
-        {
-            var handler = this.Log;
-            if (handler != null)
-            {
-                handler(message);
-            }
-        }
 
         #endregion
 
@@ -239,15 +172,15 @@ namespace ByChance.Core
                     }
 
                     // Start post processing.
-                    if (this.postProcessingPolicies.Count > 0)
+                    if (this.Configuration.PostProcessingPolicies.Count > 0)
                     {
                         this.LogMessage("Beginning post-processing.");
 
                         startTime = DateTime.Now;
 
-                        foreach (var policy in this.postProcessingPolicies)
+                        foreach (var policy in this.Configuration.PostProcessingPolicies)
                         {
-                            policy.Process(this, level);
+                            policy.Process(this.Configuration, level);
                         }
 
                         passedTime = DateTime.Now - startTime;
@@ -371,6 +304,18 @@ namespace ByChance.Core
                     chunkQuantities[compatibleContext.Source.Index]++;
                     break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Writes the specified message to the level generation log.
+        /// </summary>
+        /// <param name="message">Message to log.</param>
+        protected void LogMessage(string message)
+        {
+            if (this.Configuration.Logger != null)
+            {
+                this.Configuration.Logger.LogMessage(message);
             }
         }
 

@@ -19,12 +19,12 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Configuration
+namespace ByChance.Configuration.Parameters
 {
     using ByChance.Core;
 
     /// <summary>
-    /// Specified the distribution of chunk templates within a level.
+    /// Specifies the distribution of chunk templates within a level.
     /// </summary>
     public class ChunkDistribution
     {

@@ -19,20 +19,21 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.PostProcessing
+namespace ByChance.Configuration.PostProcessing
 {
     using System;
 
+    using ByChance.Configuration.Parameters;
     using ByChance.Core;
 
     /// <summary>
     /// Aligns all open contexts in the processed level that are within the offset
     /// specified at the construction of this policy and are allowed to be aligned
-    /// according to the level generator that build the processed level.
+    /// according to the specified level generator configuration.
     /// </summary>
     /// <seealso cref="Offset"/>
-    /// <seealso cref="Configuration.ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
-    public class AlignAdjacentContextsPolicy : IPostProcessingPolicy
+    /// <seealso cref="ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
+    public class AlignAdjacentContextsPolicy : PostProcessingPolicy
     {
         #region Constructors and Destructors
 
@@ -62,25 +63,17 @@ namespace ByChance.PostProcessing
         /// <summary>
         /// Aligns all open contexts in the processed level that are within the offset
         /// specified at the construction of this policy and are allowed to be aligned
-        /// according to the level generator that build the processed level.
+        /// according to the specified level generator configuration.
         /// </summary>
         /// <typeparam name="T">Type of the chunks the level consists of.</typeparam>
-        /// <param name="levelGenerator">Level generator that built the level to be processed.</param>
+        /// <param name="configuration">Configuration of the level generator that built the level to be processed.</param>
         /// <param name="level">Level to process.</param>
         /// <seealso cref="Offset"/>
-        /// <seealso cref="Configuration.ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
-        /// <exception cref="ArgumentNullException"><paramref name="levelGenerator"/> or <paramref name="level"/> is <c>null</c>.</exception>
-        public void Process<T>(LevelGenerator levelGenerator, Level<T> level) where T : Chunk
+        /// <seealso cref="ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
+        /// <exception cref="ArgumentNullException"><paramref name="configuration"/> or <paramref name="level"/> is <c>null</c>.</exception>
+        public override void Process<T>(LevelGeneratorConfiguration configuration, Level<T> level)
         {
-            if (levelGenerator == null)
-            {
-                throw new ArgumentNullException("levelGenerator");
-            }
-
-            if (level == null)
-            {
-                throw new ArgumentNullException("level");
-            }
+            base.Process(configuration, level);
 
             var openContexts = level.FindOpenContexts();
             for (var i = 0; i < openContexts.Count - 1; i++)
@@ -96,11 +89,11 @@ namespace ByChance.PostProcessing
                     var secondContext = openContexts[j];
 
                     if (firstContext.IsAdjacentTo(secondContext, this.Offset)
-                        && levelGenerator.Configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
+                        && configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
                     {
                         firstContext.AlignTo(secondContext);
 
-                        levelGenerator.LogMessage(
+                        this.LogMessage(
                             string.Format(
                                 "+ Aligned adjacent contexts at {0} with an offset of {1}.", firstContext, this.Offset));
                     }

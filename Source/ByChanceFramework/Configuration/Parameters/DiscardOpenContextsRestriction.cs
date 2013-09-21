@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ContextAlignmentRestriction.cs" company="Nick Pruehs, Denis Vaz Alves">
+// <copyright file="DiscardOpenContextsRestriction.cs" company="Nick Pruehs, Denis Vaz Alves">
 //   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
 //   
 //   This file is part of the ByChance Framework.
@@ -19,26 +19,24 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Configuration
+namespace ByChance.Configuration.Parameters
 {
     using ByChance.Core;
 
     /// <summary>
-    /// Specifies which chunk contexts may be aligned.
+    /// Specifies which open contexts should be discarded.
     /// </summary>
-    public class ContextAlignmentRestriction
+    public class DiscardOpenContextsRestriction
     {
         #region Public Methods and Operators
 
         /// <summary>
-        /// Checks if the two passed contexts can be aligned, or not.
-        /// This relation is assumed to be symmetric i.e., if <c>first</c> and <c>second</c>
-        /// can be aligned, then <c>second</c> and <c>first</c> can be aligned, too.
+        /// Used by this policy to check whether to discard the passed open
+        /// context, or not. Returns <c>true</c> by default.
         /// </summary>
-        /// <param name="first">First context to check.</param>
-        /// <param name="second">Second context to check.</param>
-        /// <returns><c>true</c>, if the two contexts can be aligned, and <c>false</c> otherwise.</returns>
-        public virtual bool CanBeAligned(Context first, Context second)
+        /// <param name="context">Context to be discarded.</param>
+        /// <returns><c>true</c> if the specified context should be discarded, and <c>false</c> otherwise.</returns>
+        public virtual bool ShouldDiscardContext(Context context)
         {
             return true;
         }

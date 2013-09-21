@@ -47,9 +47,13 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\ChunkDistribution.cs" />
-    <Compile Include="Configuration\ContextAlignmentRestriction.cs" />
+    <Compile Include="Configuration\Logging\ILevelGenerationLogger.cs" />
+    <Compile Include="Configuration\Parameters\ChunkDistribution.cs" />
+    <Compile Include="Configuration\Parameters\ContextAlignmentRestriction.cs" />
     <Compile Include="Configuration\LevelGeneratorConfiguration.cs" />
+    <Compile Include="Configuration\Parameters\DiscardOpenChunksRestriction.cs" />
+    <Compile Include="Configuration\Parameters\DiscardOpenContextsRestriction.cs" />
+    <Compile Include="Configuration\PostProcessing\PostProcessingPolicy.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />
     <Compile Include="Levels2D\LevelGenerator2D.cs" />
     <Compile Include="Levels3D\Anchor3D.cs" />
@@ -71,10 +75,9 @@
     <Compile Include="Core\Level.cs" />
     <Compile Include="Core\LevelGenerator.cs" />
     <Compile Include="Levels3D\LevelGenerator3D.cs" />
-    <Compile Include="PostProcessing\AlignAdjacentContextsPolicy.cs" />
-    <Compile Include="PostProcessing\DiscardOpenChunksPolicy.cs" />
-    <Compile Include="PostProcessing\DiscardOpenContextsPolicy.cs" />
-    <Compile Include="PostProcessing\IPostProcessingPolicy.cs" />
+    <Compile Include="Configuration\PostProcessing\AlignAdjacentContextsPolicy.cs" />
+    <Compile Include="Configuration\PostProcessing\DiscardOpenChunksPolicy.cs" />
+    <Compile Include="Configuration\PostProcessing\DiscardOpenContextsPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

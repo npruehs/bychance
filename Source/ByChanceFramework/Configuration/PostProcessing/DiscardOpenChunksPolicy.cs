@@ -19,53 +19,66 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.PostProcessing
+namespace ByChance.Configuration.PostProcessing
 {
     using System;
     using System.Linq;
 
+    using ByChance.Configuration.Parameters;
     using ByChance.Core;
 
     /// <summary>
     /// <para>
     /// Finds all chunks within the processed level that have open contexts and
-    /// uses the predicate method <see cref="ShouldBeDiscarded"/> to check
+    /// uses the predicate method <see cref="Parameters.DiscardOpenChunksRestriction.ShouldBeDiscarded"/> to check
     /// whether to discard that chunk or not. Repeats that process until the
     /// first iteration in which no chunk is discarded.
     /// </para>
     /// <para>
-    /// This policy discards all chunks with open contexts by default. Override
-    /// <see cref="ShouldBeDiscarded"/> to access the chunk's attributes like
-    /// their position or tag and specify your own predicate.
+    /// This policy discards all chunks with open contexts by default. Set
+    /// <see cref="DiscardOpenChunksRestriction"/> to specify your own predicate.
     /// </para>
-    /// <seealso cref="ShouldBeDiscarded(Chunk)"/>
+    /// <seealso cref="Parameters.DiscardOpenChunksRestriction.ShouldBeDiscarded(Chunk)"/>
     /// </summary>
-    public class DiscardOpenChunksPolicy : IPostProcessingPolicy
+    public class DiscardOpenChunksPolicy : PostProcessingPolicy
     {
+        #region Constructors and Destructors
+
+        /// <summary>
+        /// Constructs a new policy for discarding open chunks.
+        /// </summary>
+        public DiscardOpenChunksPolicy()
+        {
+            this.DiscardOpenChunksRestriction = new DiscardOpenChunksRestriction();
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Which chunks with open contexts should be discarded.
+        /// </summary>
+        public DiscardOpenChunksRestriction DiscardOpenChunksRestriction { get; set; }
+
+        #endregion
+
         #region Public Methods and Operators
 
         /// <summary>
         /// Finds all chunks within the processed level that have open contexts and
-        /// uses the predicate method <see cref="ShouldBeDiscarded"/> to check
+        /// uses the predicate <see cref="DiscardOpenChunksRestriction"/> to check
         /// whether to discard that chunk or not. Repeats that process until the
         /// first iteration in which no chunk is discarded.
         /// </summary>
         /// <typeparam name="T">Type of the chunks the level consists of.</typeparam>
-        /// <param name="levelGenerator">Level generator that built the level to be processed.</param>
+        /// <param name="configuration">Configuration of the level generator that built the level to be processed.</param>
         /// <param name="level">Level to process.</param>
-        /// <seealso cref="ShouldBeDiscarded(Chunk)"/>
+        /// <seealso cref="DiscardOpenChunksRestriction"/>
         /// <exception cref="ArgumentNullException"><paramref name="level"/> or <paramref name="level"/> is <c>null</c>.</exception>
-        public void Process<T>(LevelGenerator levelGenerator, Level<T> level) where T : Chunk
+        public override void Process<T>(LevelGeneratorConfiguration configuration, Level<T> level)
         {
-            if (levelGenerator == null)
-            {
-                throw new ArgumentNullException("levelGenerator");
-            }
-
-            if (level == null)
-            {
-                throw new ArgumentNullException("level");
-            }
+            base.Process(configuration, level);
 
             var continueProcess = true;
             while (continueProcess)
@@ -73,26 +86,15 @@ namespace ByChance.PostProcessing
                 continueProcess = false;
 
                 var openChunks = level.FindOpenChunks();
-                foreach (var chunk in openChunks.Where(this.ShouldBeDiscarded))
+                foreach (var chunk in openChunks.Where(this.DiscardOpenChunksRestriction.ShouldBeDiscarded))
                 {
                     level.RemoveChunk(chunk);
 
-                    levelGenerator.LogMessage(string.Format("+ Removed chunk at {0}.", chunk));
+                    this.LogMessage(string.Format("+ Removed chunk at {0}.", chunk));
 
                     continueProcess = true;
                 }
             }
-        }
-
-        /// <summary>
-        /// Used by this policy to check whether to discard the passed chunk
-        /// with open contexts, or not. Returns <c>true</c> by default.
-        /// </summary>
-        /// <param name="chunk">Chunk to be discarded.</param>
-        /// <returns><c>true</c> if the specified chunk should be discarded, and <c>false</c> otherwise.</returns>
-        public virtual bool ShouldBeDiscarded(Chunk chunk)
-        {
-            return true;
         }
 
         #endregion

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="LevelGeneratorConfiguration.cs" company="Nick Pruehs, Denis Vaz Alves">
+// <copyright file="ILevelGenerationLogger.cs" company="Nick Pruehs, Denis Vaz Alves">
 //   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
 //   
 //   This file is part of the ByChance Framework.
@@ -19,40 +19,20 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Configuration
+namespace ByChance.Configuration.Logging
 {
-    using System.Collections.Generic;
-
-    using ByChance.Configuration.Logging;
-    using ByChance.Configuration.Parameters;
-    using ByChance.Configuration.PostProcessing;
-
     /// <summary>
-    /// Specified level generation parameters, such as which chunk contexts may be aligned, or the distribution of chunk templates within a level.
+    /// Logger interface for writing log messages.
     /// </summary>
-    public class LevelGeneratorConfiguration
+    public interface ILevelGenerationLogger
     {
-        #region Public Properties
+        #region Public Methods and Operators
 
         /// <summary>
-        /// Distribution of chunk templates within a level.
+        /// Writes the specified message to the level generation log.
         /// </summary>
-        public ChunkDistribution ChunkDistribution { get; set; }
-
-        /// <summary>
-        /// Which chunk contexts may be aligned.
-        /// </summary>
-        public ContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
-
-        /// <summary>
-        /// Logger interface for writing log messages.
-        /// </summary>
-        public ILevelGenerationLogger Logger { get; set; }
-
-        /// <summary>
-        /// Post-processing policies that will be applied after the level generation.
-        /// </summary>
-        public List<PostProcessingPolicy> PostProcessingPolicies { get; set; }
+        /// <param name="message">Message to log.</param>
+        void LogMessage(string message);
 
         #endregion
     }

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="LevelGeneratorConfiguration.cs" company="Nick Pruehs, Denis Vaz Alves">
+// <copyright file="ContextAlignmentRestriction.cs" company="Nick Pruehs, Denis Vaz Alves">
 //   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
 //   
 //   This file is part of the ByChance Framework.
@@ -19,40 +19,29 @@
 //   <http://www.gnu.org/licenses/>.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-namespace ByChance.Configuration
+namespace ByChance.Configuration.Parameters
 {
-    using System.Collections.Generic;
-
-    using ByChance.Configuration.Logging;
-    using ByChance.Configuration.Parameters;
-    using ByChance.Configuration.PostProcessing;
+    using ByChance.Core;
 
     /// <summary>
-    /// Specified level generation parameters, such as which chunk contexts may be aligned, or the distribution of chunk templates within a level.
+    /// Specifies which chunk contexts may be aligned.
     /// </summary>
-    public class LevelGeneratorConfiguration
+    public class ContextAlignmentRestriction
     {
-        #region Public Properties
+        #region Public Methods and Operators
 
         /// <summary>
-        /// Distribution of chunk templates within a level.
+        /// Checks if the two passed contexts can be aligned, or not.
+        /// This relation is assumed to be symmetric i.e., if <c>first</c> and <c>second</c>
+        /// can be aligned, then <c>second</c> and <c>first</c> can be aligned, too.
         /// </summary>
-        public ChunkDistribution ChunkDistribution { get; set; }
-
-        /// <summary>
-        /// Which chunk contexts may be aligned.
-        /// </summary>
-        public ContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
-
-        /// <summary>
-        /// Logger interface for writing log messages.
-        /// </summary>
-        public ILevelGenerationLogger Logger { get; set; }
-
-        /// <summary>
-        /// Post-processing policies that will be applied after the level generation.
-        /// </summary>
-        public List<PostProcessingPolicy> PostProcessingPolicies { get; set; }
+        /// <param name="first">First context to check.</param>
+        /// <param name="second">Second context to check.</param>
+        /// <returns><c>true</c>, if the two contexts can be aligned, and <c>false</c> otherwise.</returns>
+        public virtual bool CanBeAligned(Context first, Context second)
+        {
+            return true;
+        }
 
         #endregion
     }
