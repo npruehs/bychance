@@ -36,7 +36,7 @@ namespace ByChance.Levels3D
         /// <seealso cref="Chunk.ChunkTemplate"/>
         /// <exception cref="ArgumentNullException"><paramref name="chunkTemplate"/> is null.</exception>
         /// <exception cref="ArgumentException">Passed template is not of the type <see cref="ChunkTemplate3D"/>.</exception>
-        public Chunk3D(ChunkTemplate chunkTemplate)
+        internal Chunk3D(ChunkTemplate chunkTemplate)
             : base(chunkTemplate)
         {
             // Check the type of the passed template.

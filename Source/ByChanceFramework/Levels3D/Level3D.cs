@@ -226,6 +226,7 @@ namespace ByChance.Levels3D
 
             chunk.SetPosition(startPosition);
 
+            this.Chunks.Clear();
             this.Chunks.Add(chunk);
         }
 
