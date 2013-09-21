@@ -22,6 +22,7 @@
 namespace ByChance.Core
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -42,10 +43,6 @@ namespace ByChance.Core
     /// </summary>
     public abstract class Chunk
     {
-        #region Fields
-
-        #endregion
-
         #region Constructors and Destructors
 
         /// <summary>
@@ -61,8 +58,8 @@ namespace ByChance.Core
                 throw new ArgumentNullException("template");
             }
 
-            this.Contexts = new List<Context>();
-            this.Anchors = new List<Anchor>();
+            this.ChunkContexts = new List<Context>();
+            this.ChunkAnchors = new List<Anchor>();
 
             this.ChunkTemplate = template;
         }
@@ -90,7 +87,18 @@ namespace ByChance.Core
         {
             get
             {
-                return this.Anchors.Count;
+                return this.ChunkAnchors.Count;
+            }
+        }
+
+        /// <summary>
+        /// Anchors that can be filled in this chunk.
+        /// </summary>
+        public IEnumerable<Anchor> Anchors
+        {
+            get
+            {
+                return this.ChunkAnchors;
             }
         }
 
@@ -106,7 +114,18 @@ namespace ByChance.Core
         {
             get
             {
-                return this.Contexts.Count;
+                return this.ChunkContexts.Count;
+            }
+        }
+
+        /// <summary>
+        /// Contexts this chunk can be aligned at.
+        /// </summary>
+        public IEnumerable<Context> Contexts
+        {
+            get
+            {
+                return this.ChunkContexts;
             }
         }
 
@@ -154,12 +173,12 @@ namespace ByChance.Core
         /// <summary>
         /// Anchors that can be filled in this chunk.
         /// </summary>
-        protected List<Anchor> Anchors { get; private set; }
+        protected List<Anchor> ChunkAnchors { get; private set; }
 
         /// <summary>
         /// Contexts this chunk can be aligned at.
         /// </summary>
-        protected List<Context> Contexts { get; private set; }
+        protected List<Context> ChunkContexts { get; private set; }
 
         #endregion
 
@@ -171,7 +190,7 @@ namespace ByChance.Core
         /// <returns>Non-negative integer that represents the total number of aligned contexts of this chunk.</returns>
         public int GetAlignedContextCount()
         {
-            return this.Contexts.Count(context => context.Target != null);
+            return this.ChunkContexts.Count(context => context.Target != null);
         }
 
         /// <summary>
@@ -181,7 +200,7 @@ namespace ByChance.Core
         /// <returns>Anchor at the specified index in the anchor list.</returns>
         public Anchor GetAnchor(int index)
         {
-            return this.Anchors[index];
+            return this.ChunkAnchors[index];
         }
 
         /// <summary>
@@ -191,7 +210,7 @@ namespace ByChance.Core
         /// <returns>Context at the specified index in the context list.</returns>
         public Context GetContext(int index)
         {
-            return this.Contexts[index];
+            return this.ChunkContexts[index];
         }
 
         /// <summary>
@@ -207,7 +226,7 @@ namespace ByChance.Core
                 throw new ArgumentNullException("context");
             }
 
-            if (this.Contexts.Remove(context))
+            if (this.ChunkContexts.Remove(context))
             {
                 context.ClearTarget();
                 return true;

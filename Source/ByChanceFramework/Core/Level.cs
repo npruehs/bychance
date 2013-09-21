@@ -22,6 +22,7 @@
 namespace ByChance.Core
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -34,7 +35,7 @@ namespace ByChance.Core
     /// </para>
     /// </summary>
     /// <typeparam name="T">Type of the chunks this level consists of.</typeparam>
-    public abstract class Level<T>
+    public abstract class Level<T> : IEnumerable<T>
         where T : Chunk
     {
         #region Constructors and Destructors
@@ -54,7 +55,7 @@ namespace ByChance.Core
         /// <summary>
         ///     Total number of chunks that make up this level.
         /// </summary>
-        public int LevelChunkCount
+        public int Count
         {
             get
             {
@@ -109,15 +110,7 @@ namespace ByChance.Core
 
             foreach (var chunk in this.Chunks)
             {
-                for (var i = 0; i < chunk.ContextCount; i++)
-                {
-                    var context = chunk.GetContext(i);
-
-                    if (context.Target == null)
-                    {
-                        openContexts.Add(context);
-                    }
-                }
+                openContexts.AddRange(chunk.Contexts.Where(context => context.Target == null));
             }
 
             return openContexts;
@@ -129,20 +122,7 @@ namespace ByChance.Core
         /// <returns>Non-blocked context of one of the chunks within this level, if there is one, and <c>null</c> otherwise.</returns>
         public Context FindProcessibleContext()
         {
-            foreach (var chunk in this.Chunks)
-            {
-                for (var i = 0; i < chunk.ContextCount; i++)
-                {
-                    var context = chunk.GetContext(i);
-
-                    if (!context.Blocked)
-                    {
-                        return context;
-                    }
-                }
-            }
-
-            return null;
+            return this.Chunks.SelectMany(chunk => chunk.Contexts.Where(context => !context.Blocked)).FirstOrDefault();
         }
 
         /// <summary>
@@ -160,9 +140,20 @@ namespace ByChance.Core
         /// </summary>
         /// <param name="index">Index of the chunk to get.</param>
         /// <returns>Chunk with the specified index in the chunk list.</returns>
-        public T GetLevelChunk(int index)
+        public T GetChunk(int index)
         {
             return this.Chunks[index];
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+        /// </returns>
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this.Chunks.GetEnumerator();
         }
 
         /// <summary>
@@ -181,9 +172,8 @@ namespace ByChance.Core
             if (this.Chunks.Remove((T)chunk))
             {
                 // Clean up newly freed contexts.
-                for (var i = 0; i < chunk.ContextCount; i++)
+                foreach (var context in chunk.Contexts)
                 {
-                    var context = chunk.GetContext(i);
                     context.ClearTarget();
                 }
 
@@ -202,6 +192,21 @@ namespace ByChance.Core
         /// <param name="random">Instance of the random number generator to use for determining the random position
         /// of the starting chunk.</param>
         public abstract void SetRandomStartingChunk(Chunk chunk, Random2 random);
+
+        #endregion
+
+        #region Explicit Interface Methods
+
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>
+        /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+        /// </returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
 
         #endregion
     }

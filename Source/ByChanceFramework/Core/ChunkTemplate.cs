@@ -68,8 +68,8 @@ namespace ByChance.Core
                 throw new ArgumentNullException("tag");
             }
 
-            this.Contexts = new List<Context>();
-            this.Anchors = new List<Anchor>();
+            this.ChunkTemplateContexts = new List<Context>();
+            this.ChunkTemplateAnchors = new List<Anchor>();
 
             this.Weight = weight;
             this.Tag = tag;
@@ -93,7 +93,18 @@ namespace ByChance.Core
         {
             get
             {
-                return this.Anchors.Count;
+                return this.ChunkTemplateAnchors.Count;
+            }
+        }
+
+        /// <summary>
+        /// Anchors that can be filled in chunks created with this template.
+        /// </summary>
+        public IEnumerable<Anchor> Anchors
+        {
+            get
+            {
+                return this.ChunkTemplateAnchors;
             }
         }
 
@@ -104,7 +115,18 @@ namespace ByChance.Core
         {
             get
             {
-                return this.Contexts.Count;
+                return this.ChunkTemplateContexts.Count;
+            }
+        }
+
+        /// <summary>
+        /// Contexts chunks created with this template can be aligned at.
+        /// </summary>
+        public IEnumerable<Context> Contexts
+        {
+            get
+            {
+                return this.ChunkTemplateContexts;
             }
         }
 
@@ -134,12 +156,12 @@ namespace ByChance.Core
         /// <summary>
         /// Anchors that can be filled in chunks created with this template.
         /// </summary>
-        protected internal List<Anchor> Anchors { get; private set; }
+        protected internal List<Anchor> ChunkTemplateAnchors { get; private set; }
 
         /// <summary>
         /// Contexts chunks created with this template can be aligned at.
         /// </summary>
-        protected internal List<Context> Contexts { get; private set; }
+        protected internal List<Context> ChunkTemplateContexts { get; private set; }
 
         #endregion
 
@@ -150,9 +172,9 @@ namespace ByChance.Core
         /// </summary>
         /// <param name="index">Index of the anchor to get.</param>
         /// <returns>Anchor with the specified template-wide unique index.</returns>
-        public Anchor GetAnchorByIndex(int index)
+        public Anchor GetAnchor(int index)
         {
-            return this.Anchors[index];
+            return this.ChunkTemplateAnchors[index];
         }
 
         /// <summary>
@@ -162,7 +184,7 @@ namespace ByChance.Core
         /// <returns>Context with the specified template-wide unique index.</returns>
         public Context GetContext(int index)
         {
-            return this.Contexts[index];
+            return this.ChunkTemplateContexts[index];
         }
 
         #endregion

@@ -22,13 +22,14 @@
 namespace ByChance.Core
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
 
     /// <summary>
     /// Collection of user-defined chunk templates.
     /// </summary>
     /// <typeparam name="T">Type of the chunk templates of this chunk library.</typeparam>
-    public abstract class ChunkLibrary<T>
+    public abstract class ChunkLibrary<T> : IEnumerable<T>
         where T : ChunkTemplate
     {
         #region Fields
@@ -88,6 +89,32 @@ namespace ByChance.Core
 
             chunkTemplate.Index = this.chunkTemplates.Count;
             this.chunkTemplates.Add(chunkTemplate);
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+        /// </returns>
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this.chunkTemplates.GetEnumerator();
+        }
+
+        #endregion
+
+        #region Explicit Interface Methods
+
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>
+        /// An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+        /// </returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
 
         #endregion

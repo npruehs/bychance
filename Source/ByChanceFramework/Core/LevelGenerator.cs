@@ -125,13 +125,12 @@ namespace ByChance.Core
             var effectiveWeights = new List<int>();
 
             Chunk possibleChunk;
-            ChunkTemplate chunkTemplate;
 
             // Initialize log.
             this.LogMessage(
                 string.Format("ByChance Framework version {0}.", Assembly.GetExecutingAssembly().GetName().Version));
 
-            this.LogMessage(string.Format("Level has {0} chunk(s).", level.LevelChunkCount));
+            this.LogMessage(string.Format("Level has {0} chunk(s).", level.Count));
             this.LogMessage(string.Format("Chunk Library has {0} chunk template(s).", chunkLibrary.Count));
             this.LogMessage(string.Format("Random number generator uses a seed of {0}.", random.Seed));
 
@@ -139,11 +138,11 @@ namespace ByChance.Core
             var chunkQuantities = new int[chunkLibrary.Count];
 
             // Check if level has a starting chunk.
-            if (level.LevelChunkCount <= 0)
+            if (level.Count <= 0)
             {
                 // Set starting chunk randomly.
                 var randomChunkIndex = random.NextInt32(chunkLibrary.Count);
-                chunkTemplate = chunkLibrary[randomChunkIndex];
+                var chunkTemplate = chunkLibrary[randomChunkIndex];
                 possibleChunk = this.ConstructChunkFromTemplate(chunkTemplate);
                 level.SetRandomStartingChunk(possibleChunk, random);
             }
@@ -160,14 +159,14 @@ namespace ByChance.Core
                     this.LogMessage(
                         string.Format(
                             "Level Generation took {0}.{1} seconds.", passedTime.Seconds, passedTime.Milliseconds));
-                    this.LogMessage(string.Format("Generated level contains {0} chunks:", level.LevelChunkCount));
+                    this.LogMessage(string.Format("Generated level contains {0} chunks:", level.Count));
 
                     for (var i = 0; i < chunkQuantities.Length; i++)
                     {
                         this.LogMessage(
                             string.Format(
                                 "\t{0}% of the chunks are instances of chunk {1}.", 
-                                chunkQuantities[i] * 100 / level.LevelChunkCount, 
+                                chunkQuantities[i] * 100 / level.Count, 
                                 i));
                     }
 
@@ -214,18 +213,16 @@ namespace ByChance.Core
                 candidateContexts.Clear();
 
                 // Filter chunk library for compatible chunk candidates.
-                for (var i = 0; i < chunkLibrary.Count; i++)
+                foreach (var chunkTemplate in chunkLibrary)
                 {
-                    chunkTemplate = chunkLibrary[i];
                     possibleChunk = this.ConstructChunkFromTemplate(chunkTemplate);
 
                     var keepTrying = true;
 
                     while (keepTrying)
                     {
-                        for (var j = 0; j < possibleChunk.ContextCount; j++)
+                        foreach (var possibleContext in possibleChunk.Contexts)
                         {
-                            var possibleContext = possibleChunk.GetContext(j);
                             if (
                                 !this.Configuration.ContextAlignmentRestriction.CanBeAligned(
                                     possibleContext, freeContext)

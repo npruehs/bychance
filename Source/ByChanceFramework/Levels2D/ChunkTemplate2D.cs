@@ -188,7 +188,7 @@ namespace ByChance.Levels2D
         private void AddAnchor(Anchor2D anchor)
         {
             anchor.Index = this.AnchorCount;
-            this.Anchors.Add(anchor);
+            this.ChunkTemplateAnchors.Add(anchor);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace ByChance.Levels2D
         private void AddContext(Context2D context)
         {
             context.Index = this.ContextCount;
-            this.Contexts.Add(context);
+            this.ChunkTemplateContexts.Add(context);
         }
 
         #endregion

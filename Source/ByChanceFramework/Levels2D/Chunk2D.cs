@@ -67,14 +67,14 @@ namespace ByChance.Levels2D
             this.Extents = chunkTemplate2D.Extents;
 
             // Perform deep copies of the context and anchor lists of the template.
-            foreach (Context2D context in chunkTemplate2D.Contexts)
+            foreach (Context2D context in chunkTemplate2D.ChunkTemplateContexts)
             {
-                this.Contexts.Add(new Context2D(context, this));
+                this.ChunkContexts.Add(new Context2D(context, this));
             }
 
-            foreach (Anchor2D anchor in chunkTemplate2D.Anchors)
+            foreach (Anchor2D anchor in chunkTemplate2D.ChunkTemplateAnchors)
             {
-                this.Anchors.Add(new Anchor2D(anchor, this));
+                this.ChunkAnchors.Add(new Anchor2D(anchor, this));
             }
         }
 
@@ -123,7 +123,7 @@ namespace ByChance.Levels2D
         {
             var center = this.Extents / 2;
 
-            foreach (Context2D context in this.Contexts)
+            foreach (Context2D context in this.ChunkContexts)
             {
                 // Translate context position to chunk origin.
                 var origin = context.RelativePosition - center;
@@ -186,7 +186,7 @@ namespace ByChance.Levels2D
 
             var center = this.Extents / 2;
 
-            foreach (Anchor2D anchor in this.Anchors)
+            foreach (Anchor2D anchor in this.ChunkAnchors)
             {
                 var origin = anchor.RelativePosition - center;
 

@@ -206,7 +206,7 @@ namespace ByChance.Levels3D
         private void AddAnchor(Anchor3D anchor)
         {
             anchor.Index = this.AnchorCount;
-            this.Anchors.Add(anchor);
+            this.ChunkTemplateAnchors.Add(anchor);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace ByChance.Levels3D
         private void AddContext(Context3D context)
         {
             context.Index = this.ContextCount;
-            this.Contexts.Add(context);
+            this.ChunkTemplateContexts.Add(context);
         }
 
         #endregion
