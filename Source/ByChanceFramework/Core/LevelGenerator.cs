@@ -129,6 +129,12 @@ namespace ByChance.Core
                 level.SetRandomStartingChunk(possibleChunk, random);
             }
 
+            // Add starting chunk(s) to chunk quantities.
+            foreach (var chunk in level)
+            {
+                chunkQuantities[chunk.ChunkTemplate.Index]++;
+            }
+            
             // Start main level generation loop.
             while (true)
             {
