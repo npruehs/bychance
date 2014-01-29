@@ -1,8 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LevelGenerator.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2013 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace ByChance.Core
 {
     using System;
@@ -134,7 +135,7 @@ namespace ByChance.Core
             {
                 chunkQuantities[chunk.ChunkTemplate.Index]++;
             }
-            
+
             // Start main level generation loop.
             while (true)
             {
@@ -209,13 +210,12 @@ namespace ByChance.Core
 
                     while (keepTrying)
                     {
-                        foreach (
-                            var possibleContext in
-                                possibleChunk.Contexts.Where(
-                                    possibleContext =>
-                                    this.Configuration.ContextAlignmentRestriction.CanBeAligned(
-                                        possibleContext, freeContext)
-                                    && level.FitsLevelGeometry(freeContext, possibleContext)))
+                        foreach (var possibleContext in
+                            possibleChunk.Contexts.Where(
+                                possibleContext =>
+                                this.Configuration.ContextAlignmentRestriction.CanBeAligned(
+                                    possibleContext, freeContext)
+                                && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
                             chunkCandidates.Add(possibleChunk);
                             candidateContexts.Add(possibleContext.Index);
