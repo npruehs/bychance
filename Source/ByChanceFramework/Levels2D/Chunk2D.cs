@@ -34,7 +34,7 @@ namespace ByChance.Levels2D
         /// <seealso cref="Chunk.ChunkTemplate"/>
         /// <exception cref="ArgumentNullException"><paramref name="chunkTemplate"/> is null.</exception>
         /// <exception cref="ArgumentException"><paramref name="chunkTemplate"/> is not of the type <see cref="ChunkTemplate2D"/>.</exception>
-        internal Chunk2D(ChunkTemplate chunkTemplate)
+        public Chunk2D(ChunkTemplate chunkTemplate)
             : base(chunkTemplate)
         {
             ChunkTemplate2D chunkTemplate2D = chunkTemplate as ChunkTemplate2D;
