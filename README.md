@@ -145,3 +145,78 @@ public class DoorContextAlignmentRestriction : IContextAlignmentRestriction
 levelGenerator.Configuration.ContextAlignmentRestriction = new DoorContextAlignmentRestriction();
 ```
 
+### Post-processing
+
+Since it is the nature of the level generation algorithm to fill out the level boundaries as much as possible, the resulting level often shows unwanted patterns. A typical example is a corridor that leads nowhere. To avoid this, some kind of post-processing is required after the level has been generated.
+
+We implemented a way to run through an arbitrary number of postprocessing steps called *policies* that can greatly improve the layout of the levels. Each level generator holds a list of those policies which is empty by default. You can add several policies to your level generator instance, which are called directly after the level generation process in the order in which they were added.
+
+#### Aligning Adjacent Contexts
+
+The first framework policy checks all open contexts in the level and connects pairs of contexts that are within a certain offset to each other, specified via the constructor of the policy. The probability of this to occur increases if your chunks have similar dimensions and their contexts have similar relative positions.
+
+```csharp
+AlignAdjacentContextsPolicy policy = new AlignAdjacentContextsPolicy(0.1f);
+levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
+```
+
+#### Discarding Open Chunks
+
+The second one finds all chunks within the level that have open contexts and discards them. As deleting chunks opens up previously aligned contexts of neighbouring chunks, this process is repeated until the first iteration in which no chunk is discarded.
+
+```csharp
+DiscardOpenChunksPolicy policy = new DiscardOpenChunksPolicy();
+levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
+```
+
+You can restrict which chunks to discard by specifying your own implementation of IDiscardOpenChunksRestriction for the policy:
+
+```csharp
+public class DiscardOpenFloorsRestriction : IDiscardOpenChunksRestriction
+{
+    public bool ShouldBeDiscarded(Chunk chunk)
+    {
+        // Discard open floors.
+        return chunk.Tag.Equals("Floor");
+    }
+}
+```
+
+```csharp
+DiscardOpenChunksPolicy policy = new DiscardOpenChunksPolicy();
+policy.DiscardOpenChunksRestriction = new DiscardOpenFloorsRestriction();
+levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
+```
+
+#### Discarding Open Contexts
+
+The third framework policy cleans up all open contexts. This policy is useful for discarding unused contexts before drawing the level or performing further operations on it.
+
+```csharp
+DiscardOpenContextsPolicy policy = new DiscardOpenContextsPolicy();
+levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
+```
+
+Just like for open chunks, you can specify which open contexts to discard by providing your own implementation of IDiscardOpenContextsRestriction:
+
+```csharp
+public class DiscardOpenDoorsRestriction : IDiscardOpenContextsRestriction
+{
+    public bool ShouldDiscardContext(Context context)
+    {
+        // Discard doors that are leading nowhere.
+        return context.Tag.Equals("Door");
+    }
+}
+```
+
+```csharp
+DiscardOpenContextsPolicy policy = new DiscardOpenContextsPolicy();
+policy.DiscardOpenContextsRestriction = new DiscardOpenDoorsRestriction();
+levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
+```
+
+#### Creating Custom Post-Processing Policies
+
+You can easily add further policies by implementing the IPostProcessingPolicy interface provided by the framework.
+
