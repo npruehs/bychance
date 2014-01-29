@@ -58,3 +58,38 @@ foreach (Chunk2D chunk in level)
     // Do something with the chunk.
 }
 ```
+
+## Customizing the Level Generation Process
+
+### Weights and Tags
+
+Every chunk has a relative weight that tells the level generator how often a specific chunk should be added to the level. A chunk with a weight of 3 is added to the level about three times as often as a chunk with a weight of 1. The easiest way to specify these weights is by passing them to the constructor for chunk templates:
+
+```csharp
+ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f), 3);
+```
+
+Additionally, chunks and contexts can be tagged in order to enable to definition of domain-specific rules, such as whether two given contexts can be aligned at all. This allows attaching treasure rooms to boss rooms, for example, and will be discussed in detail later.
+
+```csharp
+ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f), "boss");
+```
+
+### Anchors
+
+Every chunk may contain one or more tagged *anchors* describing the relative position at which game elements can be added:
+
+```csharp
+chunkTemplate.AddAnchor(new Vector2F(10f, 10f), "treasure");
+chunkTemplate.AddAnchor(new Vector2F(20f, 20f), "stairs");
+```
+
+### Chunk Rotations
+
+Apart from assigning contexts and anchors to chunk templates, the ByChance Framework also offers the option to allow the rotation of chunks during the level generation process. This can be very useful when defining floor or corner chunks and can keep the number of chunk definitions at a minimum.
+
+```csharp
+ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f), true);
+```
+
+ByChance always rotates by 90° in order to reduce the number of iterations. 3D chunks are always rotated by 90° around the y-axis. If the chunk has been rotated by 360° around the y-axis, it is rotated by 90° around the x-axis after. If the chunk has been rotated by 360° around the x-axis, it is rotated by 90° around the z-axis after. This leads to a total of 64 possible rotations of each 3D chunk. You might want to consider adding rotated versions of the chunk to the chunk library instead in order to trade memory for running time.
