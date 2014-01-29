@@ -18,3 +18,43 @@ The easiest way of integrating ByChance in your project is grabbing the [latest 
 
 ByChance is open source under the MIT license. Feel free to get the [latest sources](https://github.com/npruehs/ByChance/tree/master/Source) from GitHub and add all files to your project.
 
+## Generating Your First Level
+
+ByChance thinks of a game level as a bounded space consisting of a limited number of level building blocks called *chunks*. Each chunk contains information about its extents, its position and rotation as well as about where to align it to the existing level and where to add game elements like enemies, items or levers.
+
+The only thing you need to do before generating your first level is to setup a *chunk library*. This chunk library holds a set of *chunk templates* that is used by the level generator for generating the game levels. For 2D levels this could look like this:
+
+```csharp
+ChunkLibrary2D chunkLibrary = new ChunkLibrary2D();
+```
+
+After having instantiated the chunk library, you need to add chunk templates to be used by the level generator. For 2D levels, you have to specify at least the width and height of these templates:
+
+```csharp
+ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f));
+```
+
+Next, the level generator needs to know how chunks constructed with this template can be put together. ByChance uses to concept of *contexts* for specifying where chunks can be aligned. Every chunk has to contain at least one single context describing the relative position at which it may be aligned to other chunks:
+
+```csharp
+chunkTemplate.AddContext(new Vector2F(15f, 0f));
+chunkTemplate.AddContext(new Vector2F(15f, 50f));
+```
+
+Now, our chunk template has two contexts, one at the top-center and one at the bottom-center. Note that while the framework will work with a chunk library that contains only one chunk template, the resulting level is sure to be dull. The more choices the framework has in regard to chunk templates, the more interesting the final result will be.
+
+As soon as the chunk library has been properly set up, it can be passed to the level generator, along with the desired level size:
+
+```csharp
+LevelGenerator2D levelGenerator = new LevelGenerator2D();
+Level2D level = levelGenerator.GenerateLevel(chunkLibrary, new Vector2F(800f, 600f));
+```
+
+After this, you can access the content of the resulting level by using the accessor methods of the *Level* class:
+
+```csharp
+foreach (Chunk2D chunk in level)
+{
+    // Do something with the chunk.
+}
+```
