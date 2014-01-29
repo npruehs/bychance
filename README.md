@@ -94,26 +94,6 @@ ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f), true
 
 ByChance always rotates by 90° in order to reduce the number of iterations. 3D chunks are always rotated by 90° around the y-axis. If the chunk has been rotated by 360° around the y-axis, it is rotated by 90° around the x-axis after. If the chunk has been rotated by 360° around the x-axis, it is rotated by 90° around the z-axis after. This leads to a total of 64 possible rotations of each 3D chunk. You might want to consider adding rotated versions of the chunk to the chunk library instead in order to trade memory for running time.
 
-## Setting The First Level Chunk
-
-In some cases, you don’t want the framework to pick the first level chunk for you. Let’s assume that you want to place a crossing chunk at the level center, and that this chunk is the first one in your chunk library. Then you can set this chunk as initial level chunk as follows:
-
-```csharp
-// Create empty level.
-Vector2F levelExtents = new Vector2F(800f, 600f);
-Level2D level = new Level2D(levelExtents);
-
-// Set starting chunk.
-Chunk2D startingChunk = new Chunk2D(chunkTemplate);
-Vector2F chunkPosition = (levelExtents - startingChunk.Extents) / 2;
-
-level.SetStartingChunk(startingChunk, chunkPosition);
-
-// Generate level.
-LevelGenerator2D levelGenerator = new LevelGenerator2D();
-levelGenerator.GenerateLevel(chunkLibrary, level);
-```
-
 ## Configuring the Level Generator
 
 For more advanced scenarios, the level generator can be configured with additional parameters. First, you need to import the configuration namespace of the framework:
@@ -220,3 +200,65 @@ levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
 
 You can easily add further policies by implementing the IPostProcessingPolicy interface provided by the framework.
 
+## Adapting the Level Generation Process
+
+### Setting The First Level Chunk
+
+In some cases, you don’t want the framework to pick the first level chunk for you. Let’s assume that you want to place a crossing chunk at the level center, and that this chunk is the first one in your chunk library. Then you can set this chunk as initial level chunk as follows:
+
+```csharp
+// Create empty level.
+Vector2F levelExtents = new Vector2F(800f, 600f);
+Level2D level = new Level2D(levelExtents);
+
+// Set starting chunk.
+Chunk2D startingChunk = new Chunk2D(chunkTemplate);
+Vector2F chunkPosition = (levelExtents - startingChunk.Extents) / 2;
+
+level.SetStartingChunk(startingChunk, chunkPosition);
+
+// Generate level.
+LevelGenerator2D levelGenerator = new LevelGenerator2D();
+levelGenerator.GenerateLevel(chunkLibrary, level);
+```
+
+### Using Level Generator Seeds
+
+If you want to generate a given level again, for example because you built a level editor that is based on the ByChance Framework, you can make use of the level seed. This seed is always written to the log files explained below, and it can be passed to the level generator by instantiating a pseudo-random number generator with the desired seed:
+
+```csharp
+// Set seed.
+long seed = 12345L;
+Random2 random = new Random2(seed);
+
+// Generate level.
+LevelGenerator2D levelGenerator = new LevelGenerator2D();
+Vector2F levelExtents = new Vector2F(800f, 600f);
+Level2D level = levelGenerator.GenerateLevel(chunkLibrary, levelExtents, random);
+```
+
+## Logging with the ByChance Framework
+
+To maximize compatibility with other platforms (such as web players or mobile devices), ByChance no longer uses NLog for writing log files.
+
+You can enable logging by passing your own implementation of ILevelGenerationLogger to the level generator implementation:
+
+```csharp
+public class UnityLevelGenerationLogger : ILevelGenerationLogger
+{
+    /// <summary>
+    /// Logs the specified message to the Unity console.
+    /// </summary>
+    /// <param name="message">Message to log.</param>
+    public void LogMessage(string message)
+    {
+        Debug.Log(message);
+    }
+}
+```
+
+```csharp
+levelGenerator.Configuration.Logger = new UnityLevelGenerationLogger();
+```
+
+The framework uses NLog for writing verbose log output to a file next to the binary of your game called ByChance.log. You can change the logging behaviour in the configuration file NLog.config.
