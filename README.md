@@ -59,7 +59,7 @@ foreach (Chunk2D chunk in level)
 }
 ```
 
-## Customizing the Level Generation Process
+## Customizing the Chunk Library
 
 ### Weights and Tags
 
@@ -93,3 +93,55 @@ ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f), true
 ```
 
 ByChance always rotates by 90° in order to reduce the number of iterations. 3D chunks are always rotated by 90° around the y-axis. If the chunk has been rotated by 360° around the y-axis, it is rotated by 90° around the x-axis after. If the chunk has been rotated by 360° around the x-axis, it is rotated by 90° around the z-axis after. This leads to a total of 64 possible rotations of each 3D chunk. You might want to consider adding rotated versions of the chunk to the chunk library instead in order to trade memory for running time.
+
+## Setting The First Level Chunk
+
+In some cases, you don’t want the framework to pick the first level chunk for you. Let’s assume that you want to place a crossing chunk at the level center, and that this chunk is the first one in your chunk library. Then you can set this chunk as initial level chunk as follows:
+
+```csharp
+// Create empty level.
+Vector2F levelExtents = new Vector2F(800f, 600f);
+Level2D level = new Level2D(levelExtents);
+
+// Set starting chunk.
+Chunk2D startingChunk = new Chunk2D(chunkTemplate);
+Vector2F chunkPosition = (levelExtents - startingChunk.Extents) / 2;
+
+level.SetStartingChunk(startingChunk, chunkPosition);
+
+// Generate level.
+LevelGenerator2D levelGenerator = new LevelGenerator2D();
+levelGenerator.GenerateLevel(chunkLibrary, level);
+```
+
+## Configuring the Level Generator
+
+For more advanced scenarios, the level generator can be configured with additional parameters. First, you need to import the configuration namespace of the framework:
+
+```csharp
+using ByChance.Configuration;
+```
+
+Now, you can access the level generator configuration through the LevelGenerator.Configuration property. The following sections summarize the possiblities of customizing the level generation process.
+
+
+### Restricting Context Alignment
+
+If your chunk library contains many chunks with very similar extents, this can lead to boring repetitive patterns. In the Angry Bots Infinite showcase, we decided to tag door contexts in order to avoid artifacts of this kind: Doors that were intended to lead to other rooms were prevented from being aligned to each other.
+
+This is done by implementing the IContextAlignmentRestriction interface and setting the corresponding property of the level generator configuration:
+
+```csharp
+public class DoorContextAlignmentRestriction : IContextAlignmentRestriction
+{
+    public bool CanBeAligned(Context first, Context second)
+    {
+        return !(first.Tag.Equals("Door") && second.Tag.Equals("Door"));
+    }
+}
+```
+
+```csharp
+levelGenerator.Configuration.ContextAlignmentRestriction = new DoorContextAlignmentRestriction();
+```
+
