@@ -287,6 +287,12 @@ levelGenerator.Configuration.Logger = new UnityLevelGenerationLogger();
 
 The framework uses NLog for writing verbose log output to a file next to the binary of your game called ByChance.log. You can change the logging behaviour in the configuration file NLog.config.
 
+## Best Practice
+
+### Chunk Size
+
+Clearly, the level generation time increases with the number of chunks that are placed. Thus, given a fixed level size, you'll want to use chunks that are bigger than you smallest level unit. For example, if you're generating a map that consists of 128 x 128 tiles, you'll want to define chunks that are bigger that one tile in size.
+
 ## Next Steps
 
 You’ve learned how to integrate the ByChance Framework into your game and how to have the level generator create random levels the way you want them to be. Feel free to take a look at the [API documentation](http://www.levelsbychance.com/api/Index.html) for detailed descriptions of how everything’s tied together. In case you run into any issues, head over to our [issue tracker](https://github.com/npruehs/ByChance/issues) and we'll investigate immediately. If you have any questions, don’t hesitate to ask and drop by at our forums or [write us an e-mail](http://www.levelsbychance.com/impressum).
