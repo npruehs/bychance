@@ -4,6 +4,32 @@ ByChance
 The ByChance Framework allows game developers to provide an infinite amount of unique levels for both 2D and 3D games. Easy to integrate into video games of all genres, ByChance enables you to generate complex levels including all of their game components and comes with useful post-processing algorithms that can be applied afterwards in order to ensure a great gaming experience.
 
 
+## Contents
+
+1. [Getting Started](#getting-started)
+	1. [Getting ByChance Binaries](#getting-bychance-binaries)
+	2. [Getting ByChance Sources](#getting-bychance-sources)
+2. [Generating Your First Level](#generating-your-first-level)
+3. [Customizing the Chunk Library](#customizing-the-chunk-library)
+	1. [Weights and Tags](#weights-and-tags)
+	2. [Anchors](#anchors)
+	3. [Chunk Rotations](#chunk-rotations)
+4. [Configuring the Level Generator](#configuring-the-level-generator)
+	1. [Restricting Context Alignment](#restricting-context-alignment)
+	2. [Modifying Effective Chunk Weights](#modifying-effective-chunk-weights)
+	3. [Post-processing](#post-processing)
+		1. [Aligning Adjacent Contexts](#aligning-adjacent-contexts)
+		2. [Discarding Open Chunks](#discarding-open-chunks)
+		3. [Discarding Open Contexts](#discarding-open-contexts)
+		4. [Creating Custom Post-Processing Policies](#creating-custom-post-processing-policies)
+5. [Adapting the Level Generation Process](#adapting-the-level-generation-process)
+	1. [Setting The First Level Chunk](#setting-the-first-level-chunk)
+	2. [Using Level Generator Seeds](#using-level-generator-seeds)
+6. [Logging with the ByChance Framework](#logging-with-the-bychance-framework)
+7. [Best Practice](#best-practice)
+	1. [Chunk Size](#chunk-size)
+8. [Next Steps](#next-steps)
+
 ## Getting Started
 
 The core of the ByChance Framework is a generic level generation algorithm that is able to construct 2D and 3D levels alike. Thus, you only need to understand the framework fundamentals once, and will then be able to create levels for games of all genres.
