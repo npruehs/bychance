@@ -125,6 +125,30 @@ public class DoorContextAlignmentRestriction : IContextAlignmentRestriction
 levelGenerator.Configuration.ContextAlignmentRestriction = new DoorContextAlignmentRestriction();
 ```
 
+### Modifying Effective Chunk Weights
+
+As we know, every chunk has a relative weight that tells the level generator how often a specific chunk should be added to the level. However, the level generator takes account which contexts these chunks are added at. You can override the weight of a chunk template with respect to the context that is aligned at by providing your own implementation of IChunkDistribution:
+
+```csharp
+public class SealedDoorDistribution : IChunkDistribution
+{
+    public int GetEffectiveWeight(Context firstContext, Context secondContext, int occurrences)
+    {
+        if (firstContext.Tag.Equals("Door") && secondContext.Tag.Equals("SealedDoor"))
+        {
+            return secondContext.Source.Weight / (occurrences + 1);
+        }
+
+        // Default implementation.
+        return secondContext.Source.Weight;
+    }
+}
+```
+
+```csharp
+levelGenerator.Configuration.ChunkDistribution = new SealedDoorDistribution();
+```
+
 ### Post-processing
 
 Since it is the nature of the level generation algorithm to fill out the level boundaries as much as possible, the resulting level often shows unwanted patterns. A typical example is a corridor that leads nowhere. To avoid this, some kind of post-processing is required after the level has been generated.
