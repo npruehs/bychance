@@ -34,7 +34,7 @@ The ByChance Framework allows game developers to provide an infinite amount of u
 
 The core of the ByChance Framework is a generic level generation algorithm that is able to construct 2D and 3D levels alike. Thus, you only need to understand the framework fundamentals once, and will then be able to create levels for games of all genres.
 
-ByChance is a .NET Framework class library written in C# that follows the .NET patterns and idoms presented in the book *Framework Design Guidelines* by Cwalina, Abrams et al. This page will explain the basics of integrating the ByChance Framework for creating random levels in your games. All code samples are written in C#.
+ByChance is a .NET Framework class library written in C# that follows the .NET patterns and idioms presented in the book *Framework Design Guidelines* by Cwalina, Abrams et al. This page will explain the basics of integrating the ByChance Framework for creating random levels in your games. All code samples are written in C#.
 
 ### Getting ByChance Binaries
 
@@ -129,7 +129,7 @@ For more advanced scenarios, the level generator can be configured with addition
 using ByChance.Configuration;
 ```
 
-Now, you can access the level generator configuration through the LevelGenerator.Configuration property. The following sections summarize the possiblities of customizing the level generation process.
+Now, you can access the level generator configuration through the LevelGenerator.Configuration property. The following sections summarize the possibilities of customizing the level generation process.
 
 
 ### Restricting Context Alignment
@@ -180,7 +180,7 @@ levelGenerator.Configuration.ChunkDistribution = new SealedDoorDistribution();
 
 Since it is the nature of the level generation algorithm to fill out the level boundaries as much as possible, the resulting level often shows unwanted patterns. A typical example is a corridor that leads nowhere. To avoid this, some kind of post-processing is required after the level has been generated.
 
-We implemented a way to run through an arbitrary number of postprocessing steps called *policies* that can greatly improve the layout of the levels. Each level generator holds a list of those policies which is empty by default. You can add several policies to your level generator instance, which are called directly after the level generation process in the order in which they were added.
+We implemented a way to run through an arbitrary number of post-processing steps called *policies* that can greatly improve the layout of the levels. Each level generator holds a list of those policies which is empty by default. You can add several policies to your level generator instance, which are called directly after the level generation process in the order in which they were added.
 
 #### Aligning Adjacent Contexts
 
@@ -193,7 +193,7 @@ levelGenerator.Configuration.PostProcessingPolicies.Add(policy);
 
 #### Discarding Open Chunks
 
-The second one finds all chunks within the level that have open contexts and discards them. As deleting chunks opens up previously aligned contexts of neighbouring chunks, this process is repeated until the first iteration in which no chunk is discarded.
+The second one finds all chunks within the level that have open contexts and discards them. As deleting chunks opens up previously aligned contexts of neighboring chunks, this process is repeated until the first iteration in which no chunk is discarded.
 
 ```csharp
 DiscardOpenChunksPolicy policy = new DiscardOpenChunksPolicy();
@@ -312,7 +312,7 @@ public class UnityLevelGenerationLogger : ILevelGenerationLogger
 levelGenerator.Configuration.Logger = new UnityLevelGenerationLogger();
 ```
 
-The framework uses NLog for writing verbose log output to a file next to the binary of your game called ByChance.log. You can change the logging behaviour in the configuration file NLog.config.
+The framework uses NLog for writing verbose log output to a file next to the binary of your game called ByChance.log. You can change the logging behavior in the configuration file NLog.config.
 
 ## Best Practice
 
