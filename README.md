@@ -58,6 +58,7 @@ After having instantiated the chunk library, you need to add chunk templates to 
 
 ```csharp
 ChunkTemplate2D chunkTemplate = new ChunkTemplate2D(new Vector2F(30f, 50f));
+chunkLibrary.AddChunkTemplate(chunkTemplate);
 ```
 
 Next, the level generator needs to know how chunks constructed with this template can be put together. ByChance uses to concept of *contexts* for specifying where chunks can be aligned. Every chunk has to contain at least one single context describing the relative position at which it may be aligned to other chunks:
