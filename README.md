@@ -323,3 +323,5 @@ Clearly, the level generation time increases with the number of chunks that are 
 ## Next Steps
 
 You’ve learned how to integrate the ByChance Framework into your game and how to have the level generator create random levels the way you want them to be. Feel free to take a look at the [API documentation](http://www.levelsbychance.com/api/Index.html) for detailed descriptions of how everything’s tied together. In case you run into any issues, head over to our [issue tracker](https://github.com/npruehs/ByChance/issues) and we'll investigate immediately. If you need help, don’t hesitate to [ask a question](https://github.com/npruehs/ByChance/issues/new).
+
+Finally, when you’re finished creating your awesome game with ByChance, we’d love to [hear from you](mailto:dev@npruehs.de?subject=ByChance Framework Showcase)!
