@@ -209,7 +209,7 @@ namespace ByChance.Levels3D
 
             if (rotationX >= 360)
             {
-                this.Rotation = new Vector3F(0, this.Rotation.X, this.Rotation.Z);
+                this.Rotation = new Vector3F(0, this.Rotation.Y, this.Rotation.Z);
                 return this.RotateZ();
             }
 
