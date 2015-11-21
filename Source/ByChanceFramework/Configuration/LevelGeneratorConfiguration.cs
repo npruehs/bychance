@@ -26,8 +26,9 @@ namespace ByChance.Configuration
 
         /// <summary>
         /// Which chunk contexts may be aligned.
+        /// For two contexts to be aligned, <i>all</i> of these restrictions must be met.
         /// </summary>
-        public IContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
+        public IList<IContextAlignmentRestriction> ContextAlignmentRestrictions { get; set; }
 
         /// <summary>
         /// Logger interface for writing log messages.

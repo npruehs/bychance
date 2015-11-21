@@ -7,6 +7,7 @@
 namespace ByChance.Configuration.PostProcessing
 {
     using System;
+    using System.Linq;
 
     using ByChance.Configuration.Parameters;
     using ByChance.Core;
@@ -74,7 +75,8 @@ namespace ByChance.Configuration.PostProcessing
                     var secondContext = openContexts[j];
 
                     if (!firstContext.IsAdjacentTo(secondContext, this.Offset)
-                        || !configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
+                        || configuration.ContextAlignmentRestrictions.Any(
+                            restriction => !restriction.CanBeAligned(firstContext, secondContext)))
                     {
                         continue;
                     }

@@ -32,7 +32,7 @@ namespace ByChance.Core
             this.Configuration = new LevelGeneratorConfiguration
             {
                 ChunkDistribution = new ChunkDistribution(),
-                ContextAlignmentRestriction = new ContextAlignmentRestriction(),
+                ContextAlignmentRestrictions = new List<IContextAlignmentRestriction>(),
                 PostProcessingPolicies = new List<PostProcessingPolicy>(),
                 TerminationConditions = new List<ITerminationCondition>()
             };
@@ -230,9 +230,9 @@ namespace ByChance.Core
                         foreach (var possibleContext in
                             possibleChunk.Contexts.Where(
                                 possibleContext =>
-                                this.Configuration.ContextAlignmentRestriction.CanBeAligned(
-                                    possibleContext, freeContext)
-                                && level.FitsLevelGeometry(freeContext, possibleContext)))
+                                    this.Configuration.ContextAlignmentRestrictions.All(
+                                        restriction => restriction.CanBeAligned(possibleContext, freeContext))
+                                    && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
                             chunkCandidates.Add(possibleChunk);
                             candidateContexts.Add(possibleContext.Index);
