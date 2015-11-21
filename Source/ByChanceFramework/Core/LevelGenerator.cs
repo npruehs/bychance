@@ -188,7 +188,7 @@ namespace ByChance.Core
                 {
                     var condition = this.Configuration.TerminationConditions[i];
 
-                    if (condition.ConditionIsMet(chunkLibrary, level, this.Configuration))
+                    if (condition.ConditionIsMet(level))
                     {
                         this.LogMessage(
                             string.Format(

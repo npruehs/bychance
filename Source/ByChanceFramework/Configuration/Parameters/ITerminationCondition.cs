@@ -17,14 +17,12 @@ namespace ByChance.Configuration.Parameters
         ///   Returns <c>true</c>, if the level generation should stop, and
         ///   <c>false</c>, otherwise.
         /// </summary>
-        /// <param name="chunkLibrary">Chunk library used for the level generation.</param>
         /// <param name="level">Current generated level.</param>
-        /// <param name="configuration">Current level generation configuration.</param>
         /// <returns>
         ///   <c>true</c>, if the level generation should stop, and
         ///   <c>false</c>, otherwise.
         /// </returns>
-        bool ConditionIsMet(object chunkLibrary, object level, LevelGeneratorConfiguration configuration);
+        bool ConditionIsMet(object level);
 
         #endregion
     }
