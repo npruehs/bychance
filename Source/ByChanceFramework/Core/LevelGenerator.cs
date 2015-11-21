@@ -30,11 +30,12 @@ namespace ByChance.Core
         protected LevelGenerator()
         {
             this.Configuration = new LevelGeneratorConfiguration
-                {
-                    ChunkDistribution = new ChunkDistribution(), 
-                    ContextAlignmentRestriction = new ContextAlignmentRestriction(), 
-                    PostProcessingPolicies = new List<PostProcessingPolicy>()
-                };
+            {
+                ChunkDistribution = new ChunkDistribution(),
+                ContextAlignmentRestriction = new ContextAlignmentRestriction(),
+                PostProcessingPolicies = new List<PostProcessingPolicy>(),
+                TerminationConditions = new List<ITerminationCondition>()
+            };
         }
 
         #endregion
@@ -139,6 +140,7 @@ namespace ByChance.Core
             // Start main level generation loop.
             while (true)
             {
+                // Check if there's any point to expand the current level at.
                 var freeContext = level.FindProcessibleContext();
 
                 if (freeContext == null)
@@ -179,6 +181,21 @@ namespace ByChance.Core
                     }
 
                     return;
+                }
+
+                // Check custom termination conditions.
+                for (var i = 0; i < this.Configuration.TerminationConditions.Count; ++i)
+                {
+                    var condition = this.Configuration.TerminationConditions[i];
+
+                    if (condition.ConditionIsMet(chunkLibrary, level, this.Configuration))
+                    {
+                        this.LogMessage(
+                            string.Format(
+                                "Termination condition {0} is met. Level generation finished.",
+                                condition));
+                        return;
+                    }
                 }
 
                 var chunk2D = freeContext.Source as Chunk2D;

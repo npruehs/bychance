@@ -51,6 +51,8 @@
     <Compile Include="Configuration\Parameters\IContextAlignmentRestriction.cs" />
     <Compile Include="Configuration\Parameters\IDiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\IDiscardOpenContextsRestriction.cs" />
+    <Compile Include="Configuration\Parameters\ITerminationCondition.cs" />
+    <Compile Include="Configuration\Parameters\MaximumChunkCountTerminationCondition.cs" />
     <Compile Include="Configuration\PostProcessing\PostProcessingPolicy.cs" />
     <Compile Include="Core\Random2.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />
