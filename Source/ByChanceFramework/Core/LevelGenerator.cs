@@ -274,7 +274,7 @@ namespace ByChance.Core
                         this.Configuration.ChunkDistribution.GetEffectiveWeight(
                             freeContext, 
                             chunkCandidate.GetContext(candidateContexts[i]), 
-                            chunkQuantities[chunkCandidate.Index]));
+                            level));
                 }
 
                 // Compute the sum of all effective chunk weights.
