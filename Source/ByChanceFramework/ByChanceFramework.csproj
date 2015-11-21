@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Configuration\Logging\ILevelGenerationLogger.cs" />
     <Compile Include="Configuration\Parameters\ChunkDistribution.cs" />
-    <Compile Include="Configuration\Parameters\ContextAlignmentRestriction.cs" />
     <Compile Include="Configuration\LevelGeneratorConfiguration.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenContextsRestriction.cs" />

@@ -231,7 +231,7 @@ namespace ByChance.Core
                             possibleChunk.Contexts.Where(
                                 possibleContext =>
                                     this.Configuration.ContextAlignmentRestrictions.All(
-                                        restriction => restriction.CanBeAligned(possibleContext, freeContext))
+                                        restriction => restriction.CanBeAligned(possibleContext, freeContext, level))
                                     && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
                             chunkCandidates.Add(possibleChunk);

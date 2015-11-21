@@ -22,8 +22,9 @@ namespace ByChance.Configuration.Parameters
         /// </summary>
         /// <param name="first">First context to check.</param>
         /// <param name="second">Second context to check.</param>
+        /// <param name="level">Current generated level.</param>
         /// <returns><c>true</c>, if the two contexts can be aligned, and <c>false</c> otherwise.</returns>
-        bool CanBeAligned(Context first, Context second);
+        bool CanBeAligned(Context first, Context second, object level);
 
         #endregion
     }

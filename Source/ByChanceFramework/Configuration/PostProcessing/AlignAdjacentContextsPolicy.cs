@@ -76,7 +76,7 @@ namespace ByChance.Configuration.PostProcessing
 
                     if (!firstContext.IsAdjacentTo(secondContext, this.Offset)
                         || configuration.ContextAlignmentRestrictions.Any(
-                            restriction => !restriction.CanBeAligned(firstContext, secondContext)))
+                            restriction => !restriction.CanBeAligned(firstContext, secondContext, level)))
                     {
                         continue;
                     }
