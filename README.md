@@ -26,7 +26,8 @@ The ByChance Framework allows game developers to provide an infinite amount of u
 	1. [Setting The First Level Chunk](#setting-the-first-level-chunk)
 	2. [Using Level Generator Seeds](#using-level-generator-seeds)
 6. [Logging with the ByChance Framework](#logging-with-the-bychance-framework)
-7. [Best Practice](#best-practice)
+7. [Extending ByChance](#extending-bychance)
+8. [Best Practice](#best-practice)
 	1. [Chunk Size](#chunk-size)
 8. [Next Steps](#next-steps)
 
@@ -141,7 +142,7 @@ This is done by implementing the IContextAlignmentRestriction interface and sett
 ```csharp
 public class DoorContextAlignmentRestriction : IContextAlignmentRestriction
 {
-    public bool CanBeAligned(Context first, Context second)
+    public bool CanBeAligned(Context first, Context second, object level)
     {
         return !(first.Tag.Equals("Door") && second.Tag.Equals("Door"));
     }
@@ -149,7 +150,7 @@ public class DoorContextAlignmentRestriction : IContextAlignmentRestriction
 ```
 
 ```csharp
-levelGenerator.Configuration.ContextAlignmentRestriction = new DoorContextAlignmentRestriction();
+levelGenerator.Configuration.ContextAlignmentRestrictions.Add(new DoorContextAlignmentRestriction());
 ```
 
 ### Modifying Effective Chunk Weights
@@ -157,23 +158,35 @@ levelGenerator.Configuration.ContextAlignmentRestriction = new DoorContextAlignm
 As we know, every chunk has a relative weight that tells the level generator how often a specific chunk should be added to the level. However, the level generator takes account which contexts these chunks are added at. You can override the weight of a chunk template with respect to the context that is aligned at by providing your own implementation of IChunkDistribution:
 
 ```csharp
-public class SealedDoorDistribution : IChunkDistribution
+public class RampingDifficultyDistribution : IChunkDistribution
 {
-    public int GetEffectiveWeight(Context firstContext, Context secondContext, int occurrences)
+    public int GetEffectiveWeight(Context freeLevelContext, Context chunkCandidateContext, object level)
     {
-        if (firstContext.Tag.Equals("Door") && secondContext.Tag.Equals("SealedDoor"))
-        {
-            return secondContext.Source.Weight / (occurrences + 1);
-        }
+        // Get position of initial chunk.
+        var level3D = (Level3D)level;
+        var initialChunk = level3D.First(chunk => string.Equals(chunk.Tag, "Entry"));
+        var initialContext = initialChunk.GetContext(0);
+        
+        // Get distance to chunk candiate.
+        var chunkCandidate = (Chunk3D)chunkCandidateContext.Source;
+        var distance = chunkCandidate.Position - initialChunk.Position;
 
-        // Default implementation.
-        return secondContext.Source.Weight;
+        if (chunkCandidate.Tag.Equals("Easy"))
+        {
+            // Less easy rooms at the end of the level.
+            return chunkCandidateContext.Source.Weight - (int)distance.Length;
+        }
+        else
+        {
+            // More hard rooms at the end of the level.
+            return chunkCandidateContext.Source.Weight + (int)distance.Length;
+        }
     }
 }
 ```
 
 ```csharp
-levelGenerator.Configuration.ChunkDistribution = new SealedDoorDistribution();
+levelGenerator.Configuration.ChunkDistribution = new RampingDifficultyDistribution();
 ```
 
 ### Post-processing
@@ -313,6 +326,32 @@ levelGenerator.Configuration.Logger = new UnityLevelGenerationLogger();
 ```
 
 The framework uses NLog for writing verbose log output to a file next to the binary of your game called ByChance.log. You can change the logging behavior in the configuration file NLog.config.
+
+## Extending ByChance
+
+By default, the level generation stops as soon as the level can’t be expanded any more in any direction, or more precisely, as soon as no chunk template from the chunk library can be added to any context.
+
+However, you might need a different (earlier) condition to stop level generation, for instance after having added a specific amount of rooms to your dungeon. All you need to do is create a new script deriving from ByChance.Unity.Extension.ByChanceTerminationCondition and implement the method ConditionIsMet:
+
+```csharp
+public class MaximumChunkCountTerminationCondition : ITerminationCondition
+{
+    public int MaximumChunkCount { get; set; }
+
+    public bool ConditionIsMet(object level)
+    {
+        var level3D = (Level3D)level;
+        return level3D.Count >= this.MaximumChunkCount;
+    }
+}
+```
+
+```csharp
+levelGenerator.Configuration.TerminationConditions.Add(new MaximumChunkCountTerminationCondition());
+```
+
+The level generation will stop as soon as *any* termination condition is fulfilled.
+
 
 ## Best Practice
 
