@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ByChance</RootNamespace>
     <AssemblyName>ByChance</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Configuration\Logging\ILevelGenerationLogger.cs" />
     <Compile Include="Configuration\Parameters\ChunkDistribution.cs" />
-    <Compile Include="Configuration\Parameters\ContextAlignmentRestriction.cs" />
     <Compile Include="Configuration\LevelGeneratorConfiguration.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\DiscardOpenContextsRestriction.cs" />
@@ -51,6 +50,8 @@
     <Compile Include="Configuration\Parameters\IContextAlignmentRestriction.cs" />
     <Compile Include="Configuration\Parameters\IDiscardOpenChunksRestriction.cs" />
     <Compile Include="Configuration\Parameters\IDiscardOpenContextsRestriction.cs" />
+    <Compile Include="Configuration\Parameters\ITerminationCondition.cs" />
+    <Compile Include="Configuration\Parameters\MaximumChunkCountTerminationCondition.cs" />
     <Compile Include="Configuration\PostProcessing\PostProcessingPolicy.cs" />
     <Compile Include="Core\Random2.cs" />
     <Compile Include="Levels2D\ChunkLibrary2D.cs" />

@@ -7,6 +7,7 @@
 namespace ByChance.Configuration.PostProcessing
 {
     using System;
+    using System.Linq;
 
     using ByChance.Configuration.Parameters;
     using ByChance.Core;
@@ -17,7 +18,7 @@ namespace ByChance.Configuration.PostProcessing
     /// according to the specified level generator configuration.
     /// </summary>
     /// <seealso cref="Offset"/>
-    /// <seealso cref="ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
+    /// <seealso cref="IContextAlignmentRestriction.CanBeAligned(Context, Context, object)"/>
     public sealed class AlignAdjacentContextsPolicy : PostProcessingPolicy
     {
         #region Constructors and Destructors
@@ -54,7 +55,7 @@ namespace ByChance.Configuration.PostProcessing
         /// <param name="configuration">Configuration of the level generator that built the level to be processed.</param>
         /// <param name="level">Level to process.</param>
         /// <seealso cref="Offset"/>
-        /// <seealso cref="ContextAlignmentRestriction.CanBeAligned(Context, Context)"/>
+        /// <seealso cref="IContextAlignmentRestriction.CanBeAligned(Context, Context, object)"/>
         /// <exception cref="ArgumentNullException"><paramref name="configuration"/> or <paramref name="level"/> is <c>null</c>.</exception>
         public override void Process<T>(LevelGeneratorConfiguration configuration, Level<T> level)
         {
@@ -74,7 +75,8 @@ namespace ByChance.Configuration.PostProcessing
                     var secondContext = openContexts[j];
 
                     if (!firstContext.IsAdjacentTo(secondContext, this.Offset)
-                        || !configuration.ContextAlignmentRestriction.CanBeAligned(firstContext, secondContext))
+                        || configuration.ContextAlignmentRestrictions.Any(
+                            restriction => !restriction.CanBeAligned(firstContext, secondContext, level)))
                     {
                         continue;
                     }

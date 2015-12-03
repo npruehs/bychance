@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LevelGeneratorConfiguration.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2015 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ namespace ByChance.Configuration
     /// </summary>
     public class LevelGeneratorConfiguration
     {
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Distribution of chunk templates within a level.
@@ -26,8 +26,9 @@ namespace ByChance.Configuration
 
         /// <summary>
         /// Which chunk contexts may be aligned.
+        /// For two contexts to be aligned, <i>all</i> of these restrictions must be met.
         /// </summary>
-        public IContextAlignmentRestriction ContextAlignmentRestriction { get; set; }
+        public IList<IContextAlignmentRestriction> ContextAlignmentRestrictions { get; set; }
 
         /// <summary>
         /// Logger interface for writing log messages.
@@ -38,6 +39,12 @@ namespace ByChance.Configuration
         /// Post-processing policies that will be applied after the level generation.
         /// </summary>
         public IList<PostProcessingPolicy> PostProcessingPolicies { get; set; }
+
+        /// <summary>
+        ///   When to stop level generation. The process is stopped if <i>any</i> of
+        ///   these conditions if met.
+        /// </summary>
+        public IList<ITerminationCondition> TerminationConditions { get; set; }
 
         #endregion
     }

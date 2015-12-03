@@ -30,11 +30,12 @@ namespace ByChance.Core
         protected LevelGenerator()
         {
             this.Configuration = new LevelGeneratorConfiguration
-                {
-                    ChunkDistribution = new ChunkDistribution(), 
-                    ContextAlignmentRestriction = new ContextAlignmentRestriction(), 
-                    PostProcessingPolicies = new List<PostProcessingPolicy>()
-                };
+            {
+                ChunkDistribution = new ChunkDistribution(),
+                ContextAlignmentRestrictions = new List<IContextAlignmentRestriction>(),
+                PostProcessingPolicies = new List<PostProcessingPolicy>(),
+                TerminationConditions = new List<ITerminationCondition>()
+            };
         }
 
         #endregion
@@ -139,6 +140,7 @@ namespace ByChance.Core
             // Start main level generation loop.
             while (true)
             {
+                // Check if there's any point to expand the current level at.
                 var freeContext = level.FindProcessibleContext();
 
                 if (freeContext == null)
@@ -181,6 +183,21 @@ namespace ByChance.Core
                     return;
                 }
 
+                // Check custom termination conditions.
+                for (var i = 0; i < this.Configuration.TerminationConditions.Count; ++i)
+                {
+                    var condition = this.Configuration.TerminationConditions[i];
+
+                    if (condition.ConditionIsMet(level))
+                    {
+                        this.LogMessage(
+                            string.Format(
+                                "Termination condition {0} is met. Level generation finished.",
+                                condition));
+                        return;
+                    }
+                }
+
                 var chunk2D = freeContext.Source as Chunk2D;
 
                 if (chunk2D != null)
@@ -213,9 +230,9 @@ namespace ByChance.Core
                         foreach (var possibleContext in
                             possibleChunk.Contexts.Where(
                                 possibleContext =>
-                                this.Configuration.ContextAlignmentRestriction.CanBeAligned(
-                                    possibleContext, freeContext)
-                                && level.FitsLevelGeometry(freeContext, possibleContext)))
+                                    this.Configuration.ContextAlignmentRestrictions.All(
+                                        restriction => restriction.CanBeAligned(possibleContext, freeContext, level))
+                                    && level.FitsLevelGeometry(freeContext, possibleContext)))
                         {
                             chunkCandidates.Add(possibleChunk);
                             candidateContexts.Add(possibleContext.Index);
@@ -257,7 +274,7 @@ namespace ByChance.Core
                         this.Configuration.ChunkDistribution.GetEffectiveWeight(
                             freeContext, 
                             chunkCandidate.GetContext(candidateContexts[i]), 
-                            chunkQuantities[chunkCandidate.Index]));
+                            level));
                 }
 
                 // Compute the sum of all effective chunk weights.
