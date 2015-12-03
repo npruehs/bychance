@@ -30,9 +30,7 @@
   </HelpKINode>
   <HelpKINode Title="AlignAdjacentContextsPolicy class">
     <HelpKINode Title="AlignAdjacentContextsPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
-    <HelpKINode Title="AlignAdjacentContextsPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
     <HelpKINode Title="about AlignAdjacentContextsPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
@@ -47,9 +45,7 @@
   </HelpKINode>
   <HelpKINode Title="Anchor class">
     <HelpKINode Title="Anchor Class" Url="html/T_ByChance_Core_Anchor.htm" />
-    <HelpKINode Title="Anchor Members" Url="html/AllMembers_T_ByChance_Core_Anchor.htm" />
     <HelpKINode Title="about Anchor class" Url="html/T_ByChance_Core_Anchor.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Anchor.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_Anchor__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Anchor.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Anchor.htm" />
@@ -60,9 +56,7 @@
   <HelpKINode Title="Anchor.Tag property" Url="html/P_ByChance_Core_Anchor_Tag.htm" />
   <HelpKINode Title="Anchor2D class">
     <HelpKINode Title="Anchor2D Class" Url="html/T_ByChance_Levels2D_Anchor2D.htm" />
-    <HelpKINode Title="Anchor2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Anchor2D.htm" />
     <HelpKINode Title="about Anchor2D class" Url="html/T_ByChance_Levels2D_Anchor2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_Anchor2D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_Anchor2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_Anchor2D.htm" />
   </HelpKINode>
@@ -70,9 +64,7 @@
   <HelpKINode Title="Anchor2D.RelativePosition property" Url="html/P_ByChance_Levels2D_Anchor2D_RelativePosition.htm" />
   <HelpKINode Title="Anchor3D class">
     <HelpKINode Title="Anchor3D Class" Url="html/T_ByChance_Levels3D_Anchor3D.htm" />
-    <HelpKINode Title="Anchor3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Anchor3D.htm" />
     <HelpKINode Title="about Anchor3D class" Url="html/T_ByChance_Levels3D_Anchor3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_Anchor3D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_Anchor3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_Anchor3D.htm" />
   </HelpKINode>
@@ -97,9 +89,7 @@
   <HelpKINode Title="BottomRight property" Url="html/P_ByChance_Levels2D_RectangleF_BottomRight.htm" />
   <HelpKINode Title="BoxF class">
     <HelpKINode Title="BoxF Class" Url="html/T_ByChance_Levels3D_BoxF.htm" />
-    <HelpKINode Title="BoxF Members" Url="html/AllMembers_T_ByChance_Levels3D_BoxF.htm" />
     <HelpKINode Title="about BoxF class" Url="html/T_ByChance_Levels3D_BoxF.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_BoxF.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_ByChance_Levels3D_BoxF__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_BoxF.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_BoxF.htm" />
@@ -127,188 +117,57 @@
   <HelpKINode Title="BoxF.Y property" Url="html/P_ByChance_Levels3D_BoxF_Y.htm" />
   <HelpKINode Title="BoxF.Z property" Url="html/P_ByChance_Levels3D_BoxF_Z.htm" />
   <HelpKINode Title="ByChance.Configuration namespace" Url="html/N_ByChance_Configuration.htm" />
-  <HelpKINode Title="ByChance.Configuration.LevelGeneratorConfiguration class">
-    <HelpKINode Title="LevelGeneratorConfiguration Class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
-    <HelpKINode Title="LevelGeneratorConfiguration Members" Url="html/AllMembers_T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Configuration.LevelGeneratorConfiguration class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
   <HelpKINode Title="ByChance.Configuration.Logging namespace" Url="html/N_ByChance_Configuration_Logging.htm" />
-  <HelpKINode Title="ByChance.Configuration.Logging.ILevelGenerationLogger interface">
-    <HelpKINode Title="ILevelGenerationLogger Interface" Url="html/T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
-    <HelpKINode Title="ILevelGenerationLogger Members" Url="html/AllMembers_T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Configuration.Logging.ILevelGenerationLogger interface" Url="html/T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
   <HelpKINode Title="ByChance.Configuration.Parameters namespace" Url="html/N_ByChance_Configuration_Parameters.htm" />
-  <HelpKINode Title="ByChance.Configuration.Parameters.ChunkDistribution class">
-    <HelpKINode Title="ChunkDistribution Class" Url="html/T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
-    <HelpKINode Title="ChunkDistribution Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.ContextAlignmentRestriction class">
-    <HelpKINode Title="ContextAlignmentRestriction Class" Url="html/T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-    <HelpKINode Title="ContextAlignmentRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.DiscardOpenChunksRestriction class">
-    <HelpKINode Title="DiscardOpenChunksRestriction Class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="DiscardOpenChunksRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.DiscardOpenContextsRestriction class">
-    <HelpKINode Title="DiscardOpenContextsRestriction Class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="DiscardOpenContextsRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.IChunkDistribution interface">
-    <HelpKINode Title="IChunkDistribution Interface" Url="html/T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
-    <HelpKINode Title="IChunkDistribution Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.IContextAlignmentRestriction interface">
-    <HelpKINode Title="IContextAlignmentRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
-    <HelpKINode Title="IContextAlignmentRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.IDiscardOpenChunksRestriction interface">
-    <HelpKINode Title="IDiscardOpenChunksRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="IDiscardOpenChunksRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.Parameters.IDiscardOpenContextsRestriction interface">
-    <HelpKINode Title="IDiscardOpenContextsRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="IDiscardOpenContextsRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Configuration.Parameters.ChunkDistribution class" Url="html/T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.DiscardOpenChunksRestriction class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.DiscardOpenContextsRestriction class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.IChunkDistribution interface" Url="html/T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.IContextAlignmentRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.IDiscardOpenChunksRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.IDiscardOpenContextsRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.ITerminationCondition interface" Url="html/T_ByChance_Configuration_Parameters_ITerminationCondition.htm" />
+  <HelpKINode Title="ByChance.Configuration.Parameters.MaximumChunkCountTerminationCondition class" Url="html/T_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition.htm" />
   <HelpKINode Title="ByChance.Configuration.PostProcessing namespace" Url="html/N_ByChance_Configuration_PostProcessing.htm" />
-  <HelpKINode Title="ByChance.Configuration.PostProcessing.AlignAdjacentContextsPolicy class">
-    <HelpKINode Title="AlignAdjacentContextsPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
-    <HelpKINode Title="AlignAdjacentContextsPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.PostProcessing.DiscardOpenChunksPolicy class">
-    <HelpKINode Title="DiscardOpenChunksPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
-    <HelpKINode Title="DiscardOpenChunksPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.PostProcessing.DiscardOpenContextsPolicy class">
-    <HelpKINode Title="DiscardOpenContextsPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
-    <HelpKINode Title="DiscardOpenContextsPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Configuration.PostProcessing.PostProcessingPolicy class">
-    <HelpKINode Title="PostProcessingPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
-    <HelpKINode Title="PostProcessingPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Configuration.PostProcessing.AlignAdjacentContextsPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
+  <HelpKINode Title="ByChance.Configuration.PostProcessing.DiscardOpenChunksPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
+  <HelpKINode Title="ByChance.Configuration.PostProcessing.DiscardOpenContextsPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
+  <HelpKINode Title="ByChance.Configuration.PostProcessing.PostProcessingPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
   <HelpKINode Title="ByChance.Core namespace" Url="html/N_ByChance_Core.htm" />
-  <HelpKINode Title="ByChance.Core.Anchor class">
-    <HelpKINode Title="Anchor Class" Url="html/T_ByChance_Core_Anchor.htm" />
-    <HelpKINode Title="Anchor Members" Url="html/AllMembers_T_ByChance_Core_Anchor.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Chunk class">
-    <HelpKINode Title="Chunk Class" Url="html/T_ByChance_Core_Chunk.htm" />
-    <HelpKINode Title="Chunk Members" Url="html/AllMembers_T_ByChance_Core_Chunk.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.ChunkLibrary(Of T) class">
-    <HelpKINode Title="ChunkLibrary(T) Class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="ChunkLibrary(T) Members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.ChunkLibrary&lt;T&gt; class">
-    <HelpKINode Title="ChunkLibrary(T) Class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="ChunkLibrary(T) Members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.ChunkTemplate class">
-    <HelpKINode Title="ChunkTemplate Class" Url="html/T_ByChance_Core_ChunkTemplate.htm" />
-    <HelpKINode Title="ChunkTemplate Members" Url="html/AllMembers_T_ByChance_Core_ChunkTemplate.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Context class">
-    <HelpKINode Title="Context Class" Url="html/T_ByChance_Core_Context.htm" />
-    <HelpKINode Title="Context Members" Url="html/AllMembers_T_ByChance_Core_Context.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Level(Of T) class">
-    <HelpKINode Title="Level(T) Class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="Level(T) Members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Level&lt;T&gt; class">
-    <HelpKINode Title="Level(T) Class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="Level(T) Members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.LevelGenerator class">
-    <HelpKINode Title="LevelGenerator Class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
-    <HelpKINode Title="LevelGenerator Members" Url="html/AllMembers_T_ByChance_Core_LevelGenerator.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Math2 class">
-    <HelpKINode Title="Math2 Class" Url="html/T_ByChance_Core_Math2.htm" />
-    <HelpKINode Title="Math2 Members" Url="html/AllMembers_T_ByChance_Core_Math2.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Core.Random2 class">
-    <HelpKINode Title="Random2 Class" Url="html/T_ByChance_Core_Random2.htm" />
-    <HelpKINode Title="Random2 Members" Url="html/AllMembers_T_ByChance_Core_Random2.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Core.Anchor class" Url="html/T_ByChance_Core_Anchor.htm" />
+  <HelpKINode Title="ByChance.Core.Chunk class" Url="html/T_ByChance_Core_Chunk.htm" />
+  <HelpKINode Title="ByChance.Core.ChunkLibrary(Of T) class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
+  <HelpKINode Title="ByChance.Core.ChunkLibrary&lt;T&gt; class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
+  <HelpKINode Title="ByChance.Core.ChunkTemplate class" Url="html/T_ByChance_Core_ChunkTemplate.htm" />
+  <HelpKINode Title="ByChance.Core.Context class" Url="html/T_ByChance_Core_Context.htm" />
+  <HelpKINode Title="ByChance.Core.Level(Of T) class" Url="html/T_ByChance_Core_Level_1.htm" />
+  <HelpKINode Title="ByChance.Core.Level&lt;T&gt; class" Url="html/T_ByChance_Core_Level_1.htm" />
+  <HelpKINode Title="ByChance.Core.LevelGenerator class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
+  <HelpKINode Title="ByChance.Core.Math2 class" Url="html/T_ByChance_Core_Math2.htm" />
+  <HelpKINode Title="ByChance.Core.Random2 class" Url="html/T_ByChance_Core_Random2.htm" />
   <HelpKINode Title="ByChance.Levels2D namespace" Url="html/N_ByChance_Levels2D.htm" />
-  <HelpKINode Title="ByChance.Levels2D.Anchor2D class">
-    <HelpKINode Title="Anchor2D Class" Url="html/T_ByChance_Levels2D_Anchor2D.htm" />
-    <HelpKINode Title="Anchor2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Anchor2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.Chunk2D class">
-    <HelpKINode Title="Chunk2D Class" Url="html/T_ByChance_Levels2D_Chunk2D.htm" />
-    <HelpKINode Title="Chunk2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Chunk2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.ChunkLibrary2D class">
-    <HelpKINode Title="ChunkLibrary2D Class" Url="html/T_ByChance_Levels2D_ChunkLibrary2D.htm" />
-    <HelpKINode Title="ChunkLibrary2D Members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkLibrary2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.ChunkTemplate2D class">
-    <HelpKINode Title="ChunkTemplate2D Class" Url="html/T_ByChance_Levels2D_ChunkTemplate2D.htm" />
-    <HelpKINode Title="ChunkTemplate2D Members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkTemplate2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.Context2D class">
-    <HelpKINode Title="Context2D Class" Url="html/T_ByChance_Levels2D_Context2D.htm" />
-    <HelpKINode Title="Context2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Context2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.Level2D class">
-    <HelpKINode Title="Level2D Class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
-    <HelpKINode Title="Level2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Level2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.LevelGenerator2D class">
-    <HelpKINode Title="LevelGenerator2D Class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
-    <HelpKINode Title="LevelGenerator2D Members" Url="html/AllMembers_T_ByChance_Levels2D_LevelGenerator2D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.RectangleF class">
-    <HelpKINode Title="RectangleF Class" Url="html/T_ByChance_Levels2D_RectangleF.htm" />
-    <HelpKINode Title="RectangleF Members" Url="html/AllMembers_T_ByChance_Levels2D_RectangleF.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels2D.Vector2F structure">
-    <HelpKINode Title="Vector2F Members" Url="html/AllMembers_T_ByChance_Levels2D_Vector2F.htm" />
-    <HelpKINode Title="Vector2F Structure" Url="html/T_ByChance_Levels2D_Vector2F.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Levels2D.Anchor2D class" Url="html/T_ByChance_Levels2D_Anchor2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.Chunk2D class" Url="html/T_ByChance_Levels2D_Chunk2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.ChunkLibrary2D class" Url="html/T_ByChance_Levels2D_ChunkLibrary2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.ChunkTemplate2D class" Url="html/T_ByChance_Levels2D_ChunkTemplate2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.Context2D class" Url="html/T_ByChance_Levels2D_Context2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.Level2D class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.LevelGenerator2D class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
+  <HelpKINode Title="ByChance.Levels2D.RectangleF class" Url="html/T_ByChance_Levels2D_RectangleF.htm" />
+  <HelpKINode Title="ByChance.Levels2D.Vector2F structure" Url="html/T_ByChance_Levels2D_Vector2F.htm" />
   <HelpKINode Title="ByChance.Levels3D namespace" Url="html/N_ByChance_Levels3D.htm" />
-  <HelpKINode Title="ByChance.Levels3D.Anchor3D class">
-    <HelpKINode Title="Anchor3D Class" Url="html/T_ByChance_Levels3D_Anchor3D.htm" />
-    <HelpKINode Title="Anchor3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Anchor3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.BoxF class">
-    <HelpKINode Title="BoxF Class" Url="html/T_ByChance_Levels3D_BoxF.htm" />
-    <HelpKINode Title="BoxF Members" Url="html/AllMembers_T_ByChance_Levels3D_BoxF.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.Chunk3D class">
-    <HelpKINode Title="Chunk3D Class" Url="html/T_ByChance_Levels3D_Chunk3D.htm" />
-    <HelpKINode Title="Chunk3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Chunk3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.ChunkLibrary3D class">
-    <HelpKINode Title="ChunkLibrary3D Class" Url="html/T_ByChance_Levels3D_ChunkLibrary3D.htm" />
-    <HelpKINode Title="ChunkLibrary3D Members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkLibrary3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.ChunkTemplate3D class">
-    <HelpKINode Title="ChunkTemplate3D Class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
-    <HelpKINode Title="ChunkTemplate3D Members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkTemplate3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.Context3D class">
-    <HelpKINode Title="Context3D Class" Url="html/T_ByChance_Levels3D_Context3D.htm" />
-    <HelpKINode Title="Context3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Context3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.Level3D class">
-    <HelpKINode Title="Level3D Class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
-    <HelpKINode Title="Level3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Level3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.LevelGenerator3D class">
-    <HelpKINode Title="LevelGenerator3D Class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
-    <HelpKINode Title="LevelGenerator3D Members" Url="html/AllMembers_T_ByChance_Levels3D_LevelGenerator3D.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ByChance.Levels3D.Vector3F structure">
-    <HelpKINode Title="Vector3F Members" Url="html/AllMembers_T_ByChance_Levels3D_Vector3F.htm" />
-    <HelpKINode Title="Vector3F Structure" Url="html/T_ByChance_Levels3D_Vector3F.htm" />
-  </HelpKINode>
-  <HelpKINode Title="CanBeAligned method">
-    <HelpKINode Title="ContextAlignmentRestriction.CanBeAligned Method " Url="html/M_ByChance_Configuration_Parameters_ContextAlignmentRestriction_CanBeAligned.htm" />
-    <HelpKINode Title="IContextAlignmentRestriction.CanBeAligned Method " Url="html/M_ByChance_Configuration_Parameters_IContextAlignmentRestriction_CanBeAligned.htm" />
-  </HelpKINode>
+  <HelpKINode Title="ByChance.Levels3D.Anchor3D class" Url="html/T_ByChance_Levels3D_Anchor3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.BoxF class" Url="html/T_ByChance_Levels3D_BoxF.htm" />
+  <HelpKINode Title="ByChance.Levels3D.Chunk3D class" Url="html/T_ByChance_Levels3D_Chunk3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.ChunkLibrary3D class" Url="html/T_ByChance_Levels3D_ChunkLibrary3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.ChunkTemplate3D class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.Context3D class" Url="html/T_ByChance_Levels3D_Context3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.Level3D class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.LevelGenerator3D class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
+  <HelpKINode Title="ByChance.Levels3D.Vector3F structure" Url="html/T_ByChance_Levels3D_Vector3F.htm" />
+  <HelpKINode Title="CanBeAligned method" Url="html/M_ByChance_Configuration_Parameters_IContextAlignmentRestriction_CanBeAligned.htm" />
   <HelpKINode Title="Ceil method" Url="html/M_ByChance_Core_Math2_Ceil.htm" />
   <HelpKINode Title="Center property">
     <HelpKINode Title="BoxF.Center Property " Url="html/P_ByChance_Levels3D_BoxF_Center.htm" />
@@ -316,9 +175,7 @@
   </HelpKINode>
   <HelpKINode Title="Chunk class">
     <HelpKINode Title="Chunk Class" Url="html/T_ByChance_Core_Chunk.htm" />
-    <HelpKINode Title="Chunk Members" Url="html/AllMembers_T_ByChance_Core_Chunk.htm" />
     <HelpKINode Title="about Chunk class" Url="html/T_ByChance_Core_Chunk.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Chunk.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_Chunk__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Chunk.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Chunk.htm" />
@@ -341,24 +198,24 @@
   <HelpKINode Title="Chunk.Weight property" Url="html/P_ByChance_Core_Chunk_Weight.htm" />
   <HelpKINode Title="Chunk2D class">
     <HelpKINode Title="Chunk2D Class" Url="html/T_ByChance_Levels2D_Chunk2D.htm" />
-    <HelpKINode Title="Chunk2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Chunk2D.htm" />
     <HelpKINode Title="about Chunk2D class" Url="html/T_ByChance_Levels2D_Chunk2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_Chunk2D.htm" />
+    <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_Chunk2D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_Chunk2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_Chunk2D.htm" />
   </HelpKINode>
+  <HelpKINode Title="Chunk2D.Chunk2D constructor" Url="html/M_ByChance_Levels2D_Chunk2D__ctor.htm" />
   <HelpKINode Title="Chunk2D.Extents property" Url="html/P_ByChance_Levels2D_Chunk2D_Extents.htm" />
   <HelpKINode Title="Chunk2D.Position property" Url="html/P_ByChance_Levels2D_Chunk2D_Position.htm" />
   <HelpKINode Title="Chunk2D.Rotation property" Url="html/P_ByChance_Levels2D_Chunk2D_Rotation.htm" />
   <HelpKINode Title="Chunk2D.ToString method" Url="html/M_ByChance_Levels2D_Chunk2D_ToString.htm" />
   <HelpKINode Title="Chunk3D class">
     <HelpKINode Title="Chunk3D Class" Url="html/T_ByChance_Levels3D_Chunk3D.htm" />
-    <HelpKINode Title="Chunk3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Chunk3D.htm" />
     <HelpKINode Title="about Chunk3D class" Url="html/T_ByChance_Levels3D_Chunk3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_Chunk3D.htm" />
+    <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_Chunk3D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_Chunk3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_Chunk3D.htm" />
   </HelpKINode>
+  <HelpKINode Title="Chunk3D.Chunk3D constructor" Url="html/M_ByChance_Levels3D_Chunk3D__ctor.htm" />
   <HelpKINode Title="Chunk3D.Extents property" Url="html/P_ByChance_Levels3D_Chunk3D_Extents.htm" />
   <HelpKINode Title="Chunk3D.Position property" Url="html/P_ByChance_Levels3D_Chunk3D_Position.htm" />
   <HelpKINode Title="Chunk3D.Rotation property" Url="html/P_ByChance_Levels3D_Chunk3D_Rotation.htm" />
@@ -367,9 +224,7 @@
   <HelpKINode Title="ChunkContexts property" Url="html/P_ByChance_Core_Chunk_ChunkContexts.htm" />
   <HelpKINode Title="ChunkDistribution class">
     <HelpKINode Title="ChunkDistribution Class" Url="html/T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
-    <HelpKINode Title="ChunkDistribution Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
     <HelpKINode Title="about ChunkDistribution class" Url="html/T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_Parameters_ChunkDistribution__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_ChunkDistribution.htm" />
   </HelpKINode>
@@ -378,9 +233,7 @@
   <HelpKINode Title="ChunkDistribution.GetEffectiveWeight method" Url="html/M_ByChance_Configuration_Parameters_ChunkDistribution_GetEffectiveWeight.htm" />
   <HelpKINode Title="ChunkLibrary(Of T) class">
     <HelpKINode Title="ChunkLibrary(T) Class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="ChunkLibrary(T) Members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="about ChunkLibrary(Of T) class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_ChunkLibrary_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_ChunkLibrary_1.htm" />
@@ -393,9 +246,7 @@
   <HelpKINode Title="ChunkLibrary(Of T).Item property" Url="html/P_ByChance_Core_ChunkLibrary_1_Item.htm" />
   <HelpKINode Title="ChunkLibrary2D class">
     <HelpKINode Title="ChunkLibrary2D Class" Url="html/T_ByChance_Levels2D_ChunkLibrary2D.htm" />
-    <HelpKINode Title="ChunkLibrary2D Members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkLibrary2D.htm" />
     <HelpKINode Title="about ChunkLibrary2D class" Url="html/T_ByChance_Levels2D_ChunkLibrary2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkLibrary2D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_ChunkLibrary2D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_ChunkLibrary2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_ChunkLibrary2D.htm" />
@@ -403,9 +254,7 @@
   <HelpKINode Title="ChunkLibrary2D.ChunkLibrary2D constructor" Url="html/M_ByChance_Levels2D_ChunkLibrary2D__ctor.htm" />
   <HelpKINode Title="ChunkLibrary3D class">
     <HelpKINode Title="ChunkLibrary3D Class" Url="html/T_ByChance_Levels3D_ChunkLibrary3D.htm" />
-    <HelpKINode Title="ChunkLibrary3D Members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkLibrary3D.htm" />
     <HelpKINode Title="about ChunkLibrary3D class" Url="html/T_ByChance_Levels3D_ChunkLibrary3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkLibrary3D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_ChunkLibrary3D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_ChunkLibrary3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_ChunkLibrary3D.htm" />
@@ -413,9 +262,7 @@
   <HelpKINode Title="ChunkLibrary3D.ChunkLibrary3D constructor" Url="html/M_ByChance_Levels3D_ChunkLibrary3D__ctor.htm" />
   <HelpKINode Title="ChunkLibrary&lt;T&gt; class">
     <HelpKINode Title="ChunkLibrary(T) Class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="ChunkLibrary(T) Members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="about ChunkLibrary&lt;T&gt; class" Url="html/T_ByChance_Core_ChunkLibrary_1.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_ChunkLibrary_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_ChunkLibrary_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_ChunkLibrary_1.htm" />
@@ -429,9 +276,7 @@
   <HelpKINode Title="Chunks property" Url="html/P_ByChance_Core_Level_1_Chunks.htm" />
   <HelpKINode Title="ChunkTemplate class">
     <HelpKINode Title="ChunkTemplate Class" Url="html/T_ByChance_Core_ChunkTemplate.htm" />
-    <HelpKINode Title="ChunkTemplate Members" Url="html/AllMembers_T_ByChance_Core_ChunkTemplate.htm" />
     <HelpKINode Title="about ChunkTemplate class" Url="html/T_ByChance_Core_ChunkTemplate.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_ChunkTemplate.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_ChunkTemplate__ctor.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_ByChance_Core_ChunkTemplate.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_ChunkTemplate.htm" />
@@ -454,9 +299,7 @@
   <HelpKINode Title="ChunkTemplate.Weight property" Url="html/P_ByChance_Core_ChunkTemplate_Weight.htm" />
   <HelpKINode Title="ChunkTemplate2D class">
     <HelpKINode Title="ChunkTemplate2D Class" Url="html/T_ByChance_Levels2D_ChunkTemplate2D.htm" />
-    <HelpKINode Title="ChunkTemplate2D Members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkTemplate2D.htm" />
     <HelpKINode Title="about ChunkTemplate2D class" Url="html/T_ByChance_Levels2D_ChunkTemplate2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_ChunkTemplate2D.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_ByChance_Levels2D_ChunkTemplate2D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_ChunkTemplate2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_ChunkTemplate2D.htm" />
@@ -467,9 +310,7 @@
   <HelpKINode Title="ChunkTemplate2D.Extents property" Url="html/P_ByChance_Levels2D_ChunkTemplate2D_Extents.htm" />
   <HelpKINode Title="ChunkTemplate3D class">
     <HelpKINode Title="ChunkTemplate3D Class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
-    <HelpKINode Title="ChunkTemplate3D Members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkTemplate3D.htm" />
     <HelpKINode Title="about ChunkTemplate3D class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_ChunkTemplate3D.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_ByChance_Levels3D_ChunkTemplate3D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_ChunkTemplate3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_ChunkTemplate3D.htm" />
@@ -483,6 +324,10 @@
   <HelpKINode Title="Clamp(Of T) method" Url="html/M_ByChance_Core_Math2_Clamp__1.htm" />
   <HelpKINode Title="Clamp&lt;T&gt; method" Url="html/M_ByChance_Core_Math2_Clamp__1.htm" />
   <HelpKINode Title="ClearTarget method" Url="html/M_ByChance_Core_Context_ClearTarget.htm" />
+  <HelpKINode Title="ConditionIsMet method">
+    <HelpKINode Title="ITerminationCondition.ConditionIsMet Method " Url="html/M_ByChance_Configuration_Parameters_ITerminationCondition_ConditionIsMet.htm" />
+    <HelpKINode Title="MaximumChunkCountTerminationCondition.ConditionIsMet Method " Url="html/M_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition_ConditionIsMet.htm" />
+  </HelpKINode>
   <HelpKINode Title="Configuration property" Url="html/P_ByChance_Core_LevelGenerator_Configuration.htm" />
   <HelpKINode Title="ConstructChunkFromTemplate method">
     <HelpKINode Title="LevelGenerator.ConstructChunkFromTemplate Method " Url="html/M_ByChance_Core_LevelGenerator_ConstructChunkFromTemplate.htm" />
@@ -495,9 +340,7 @@
   </HelpKINode>
   <HelpKINode Title="Context class">
     <HelpKINode Title="Context Class" Url="html/T_ByChance_Core_Context.htm" />
-    <HelpKINode Title="Context Members" Url="html/AllMembers_T_ByChance_Core_Context.htm" />
     <HelpKINode Title="about Context class" Url="html/T_ByChance_Core_Context.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Context.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_Context__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Context.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Context.htm" />
@@ -513,9 +356,7 @@
   <HelpKINode Title="Context.Target property" Url="html/P_ByChance_Core_Context_Target.htm" />
   <HelpKINode Title="Context2D class">
     <HelpKINode Title="Context2D Class" Url="html/T_ByChance_Levels2D_Context2D.htm" />
-    <HelpKINode Title="Context2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Context2D.htm" />
     <HelpKINode Title="about Context2D class" Url="html/T_ByChance_Levels2D_Context2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_Context2D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_Context2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_Context2D.htm" />
   </HelpKINode>
@@ -525,9 +366,7 @@
   <HelpKINode Title="Context2D.ToString method" Url="html/M_ByChance_Levels2D_Context2D_ToString.htm" />
   <HelpKINode Title="Context3D class">
     <HelpKINode Title="Context3D Class" Url="html/T_ByChance_Levels3D_Context3D.htm" />
-    <HelpKINode Title="Context3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Context3D.htm" />
     <HelpKINode Title="about Context3D class" Url="html/T_ByChance_Levels3D_Context3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_Context3D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_Context3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_Context3D.htm" />
   </HelpKINode>
@@ -535,17 +374,7 @@
   <HelpKINode Title="Context3D.IsAdjacentTo method" Url="html/M_ByChance_Levels3D_Context3D_IsAdjacentTo.htm" />
   <HelpKINode Title="Context3D.RelativePosition property" Url="html/P_ByChance_Levels3D_Context3D_RelativePosition.htm" />
   <HelpKINode Title="Context3D.ToString method" Url="html/M_ByChance_Levels3D_Context3D_ToString.htm" />
-  <HelpKINode Title="ContextAlignmentRestriction class">
-    <HelpKINode Title="ContextAlignmentRestriction Class" Url="html/T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-    <HelpKINode Title="ContextAlignmentRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-    <HelpKINode Title="about ContextAlignmentRestriction class" Url="html/T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-    <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_Parameters_ContextAlignmentRestriction__ctor.htm" />
-    <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_ContextAlignmentRestriction.htm" />
-  </HelpKINode>
-  <HelpKINode Title="ContextAlignmentRestriction property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_ContextAlignmentRestriction.htm" />
-  <HelpKINode Title="ContextAlignmentRestriction.CanBeAligned method" Url="html/M_ByChance_Configuration_Parameters_ContextAlignmentRestriction_CanBeAligned.htm" />
-  <HelpKINode Title="ContextAlignmentRestriction.ContextAlignmentRestriction constructor" Url="html/M_ByChance_Configuration_Parameters_ContextAlignmentRestriction__ctor.htm" />
+  <HelpKINode Title="ContextAlignmentRestrictions property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_ContextAlignmentRestrictions.htm" />
   <HelpKINode Title="ContextCount property">
     <HelpKINode Title="Chunk.ContextCount Property " Url="html/P_ByChance_Core_Chunk_ContextCount.htm" />
     <HelpKINode Title="ChunkTemplate.ContextCount Property " Url="html/P_ByChance_Core_ChunkTemplate_ContextCount.htm" />
@@ -564,9 +393,7 @@
   <HelpKINode Title="Depth property" Url="html/P_ByChance_Levels3D_BoxF_Depth.htm" />
   <HelpKINode Title="DiscardOpenChunksPolicy class">
     <HelpKINode Title="DiscardOpenChunksPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
-    <HelpKINode Title="DiscardOpenChunksPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
     <HelpKINode Title="about DiscardOpenChunksPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy.htm" />
@@ -576,9 +403,7 @@
   <HelpKINode Title="DiscardOpenChunksPolicy.Process method" Url="html/Overload_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy_Process.htm" />
   <HelpKINode Title="DiscardOpenChunksRestriction class">
     <HelpKINode Title="DiscardOpenChunksRestriction Class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="DiscardOpenChunksRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
     <HelpKINode Title="about DiscardOpenChunksRestriction class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction.htm" />
   </HelpKINode>
@@ -587,9 +412,7 @@
   <HelpKINode Title="DiscardOpenChunksRestriction.ShouldBeDiscarded method" Url="html/M_ByChance_Configuration_Parameters_DiscardOpenChunksRestriction_ShouldBeDiscarded.htm" />
   <HelpKINode Title="DiscardOpenContextsPolicy class">
     <HelpKINode Title="DiscardOpenContextsPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
-    <HelpKINode Title="DiscardOpenContextsPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
     <HelpKINode Title="about DiscardOpenContextsPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy.htm" />
@@ -599,9 +422,7 @@
   <HelpKINode Title="DiscardOpenContextsPolicy.Process method" Url="html/Overload_ByChance_Configuration_PostProcessing_DiscardOpenContextsPolicy_Process.htm" />
   <HelpKINode Title="DiscardOpenContextsRestriction class">
     <HelpKINode Title="DiscardOpenContextsRestriction Class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="DiscardOpenContextsRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
     <HelpKINode Title="about DiscardOpenContextsRestriction class" Url="html/T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_DiscardOpenContextsRestriction.htm" />
   </HelpKINode>
@@ -694,33 +515,25 @@
   </HelpKINode>
   <HelpKINode Title="IChunkDistribution interface">
     <HelpKINode Title="IChunkDistribution Interface" Url="html/T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
-    <HelpKINode Title="IChunkDistribution Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
     <HelpKINode Title="about IChunkDistribution interface" Url="html/T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_IChunkDistribution.htm" />
   </HelpKINode>
   <HelpKINode Title="IChunkDistribution.GetEffectiveWeight method" Url="html/M_ByChance_Configuration_Parameters_IChunkDistribution_GetEffectiveWeight.htm" />
   <HelpKINode Title="IContextAlignmentRestriction interface">
     <HelpKINode Title="IContextAlignmentRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
-    <HelpKINode Title="IContextAlignmentRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
     <HelpKINode Title="about IContextAlignmentRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_IContextAlignmentRestriction.htm" />
   </HelpKINode>
   <HelpKINode Title="IContextAlignmentRestriction.CanBeAligned method" Url="html/M_ByChance_Configuration_Parameters_IContextAlignmentRestriction_CanBeAligned.htm" />
   <HelpKINode Title="IDiscardOpenChunksRestriction interface">
     <HelpKINode Title="IDiscardOpenChunksRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="IDiscardOpenChunksRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
     <HelpKINode Title="about IDiscardOpenChunksRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction.htm" />
   </HelpKINode>
   <HelpKINode Title="IDiscardOpenChunksRestriction.ShouldBeDiscarded method" Url="html/M_ByChance_Configuration_Parameters_IDiscardOpenChunksRestriction_ShouldBeDiscarded.htm" />
   <HelpKINode Title="IDiscardOpenContextsRestriction interface">
     <HelpKINode Title="IDiscardOpenContextsRestriction Interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="IDiscardOpenContextsRestriction Members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
     <HelpKINode Title="about IDiscardOpenContextsRestriction interface" Url="html/T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction.htm" />
   </HelpKINode>
   <HelpKINode Title="IDiscardOpenContextsRestriction.ShouldDiscardContext method" Url="html/M_ByChance_Configuration_Parameters_IDiscardOpenContextsRestriction_ShouldDiscardContext.htm" />
@@ -730,9 +543,7 @@
   </HelpKINode>
   <HelpKINode Title="ILevelGenerationLogger interface">
     <HelpKINode Title="ILevelGenerationLogger Interface" Url="html/T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
-    <HelpKINode Title="ILevelGenerationLogger Members" Url="html/AllMembers_T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
     <HelpKINode Title="about ILevelGenerationLogger interface" Url="html/T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Logging_ILevelGenerationLogger.htm" />
   </HelpKINode>
   <HelpKINode Title="ILevelGenerationLogger.LogMessage method" Url="html/M_ByChance_Configuration_Logging_ILevelGenerationLogger_LogMessage.htm" />
@@ -756,6 +567,12 @@
     <HelpKINode Title="Context3D.IsAdjacentTo Method " Url="html/M_ByChance_Levels3D_Context3D_IsAdjacentTo.htm" />
   </HelpKINode>
   <HelpKINode Title="Item property" Url="html/P_ByChance_Core_ChunkLibrary_1_Item.htm" />
+  <HelpKINode Title="ITerminationCondition interface">
+    <HelpKINode Title="ITerminationCondition Interface" Url="html/T_ByChance_Configuration_Parameters_ITerminationCondition.htm" />
+    <HelpKINode Title="about ITerminationCondition interface" Url="html/T_ByChance_Configuration_Parameters_ITerminationCondition.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_ITerminationCondition.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ITerminationCondition.ConditionIsMet method" Url="html/M_ByChance_Configuration_Parameters_ITerminationCondition_ConditionIsMet.htm" />
   <HelpKINode Title="Left property">
     <HelpKINode Title="BoxF.Left Property " Url="html/P_ByChance_Levels3D_BoxF_Left.htm" />
     <HelpKINode Title="RectangleF.Left Property " Url="html/P_ByChance_Levels2D_RectangleF_Left.htm" />
@@ -775,9 +592,7 @@
   </HelpKINode>
   <HelpKINode Title="Level(Of T) class">
     <HelpKINode Title="Level(T) Class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="Level(T) Members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="about Level(Of T) class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_Level_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Level_1.htm" />
@@ -797,9 +612,7 @@
   <HelpKINode Title="Level(Of T).SetRandomStartingChunk method" Url="html/M_ByChance_Core_Level_1_SetRandomStartingChunk.htm" />
   <HelpKINode Title="Level2D class">
     <HelpKINode Title="Level2D Class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
-    <HelpKINode Title="Level2D Members" Url="html/AllMembers_T_ByChance_Levels2D_Level2D.htm" />
     <HelpKINode Title="about Level2D class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_Level2D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_Level2D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_Level2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_Level2D.htm" />
@@ -812,9 +625,7 @@
   <HelpKINode Title="Level2D.SetStartingChunk method" Url="html/M_ByChance_Levels2D_Level2D_SetStartingChunk.htm" />
   <HelpKINode Title="Level3D class">
     <HelpKINode Title="Level3D Class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
-    <HelpKINode Title="Level3D Members" Url="html/AllMembers_T_ByChance_Levels3D_Level3D.htm" />
     <HelpKINode Title="about Level3D class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_Level3D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_Level3D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_Level3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_Level3D.htm" />
@@ -827,9 +638,7 @@
   <HelpKINode Title="Level3D.SetStartingChunk method" Url="html/M_ByChance_Levels3D_Level3D_SetStartingChunk.htm" />
   <HelpKINode Title="Level&lt;T&gt; class">
     <HelpKINode Title="Level(T) Class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="Level(T) Members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="about Level&lt;T&gt; class" Url="html/T_ByChance_Core_Level_1.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_Level_1__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Level_1.htm" />
@@ -849,9 +658,7 @@
   <HelpKINode Title="Level&lt;T&gt;.SetRandomStartingChunk method" Url="html/M_ByChance_Core_Level_1_SetRandomStartingChunk.htm" />
   <HelpKINode Title="LevelGenerator class">
     <HelpKINode Title="LevelGenerator Class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
-    <HelpKINode Title="LevelGenerator Members" Url="html/AllMembers_T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="about LevelGenerator class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_LevelGenerator__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_LevelGenerator.htm" />
@@ -864,9 +671,7 @@
   <HelpKINode Title="LevelGenerator.LogMessage method" Url="html/M_ByChance_Core_LevelGenerator_LogMessage.htm" />
   <HelpKINode Title="LevelGenerator2D class">
     <HelpKINode Title="LevelGenerator2D Class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
-    <HelpKINode Title="LevelGenerator2D Members" Url="html/AllMembers_T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="about LevelGenerator2D class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_LevelGenerator2D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_LevelGenerator2D.htm" />
@@ -876,9 +681,7 @@
   <HelpKINode Title="LevelGenerator2D.LevelGenerator2D constructor" Url="html/M_ByChance_Levels2D_LevelGenerator2D__ctor.htm" />
   <HelpKINode Title="LevelGenerator3D class">
     <HelpKINode Title="LevelGenerator3D Class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
-    <HelpKINode Title="LevelGenerator3D Members" Url="html/AllMembers_T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="about LevelGenerator3D class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_LevelGenerator3D__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_LevelGenerator3D.htm" />
@@ -888,18 +691,17 @@
   <HelpKINode Title="LevelGenerator3D.LevelGenerator3D constructor" Url="html/M_ByChance_Levels3D_LevelGenerator3D__ctor.htm" />
   <HelpKINode Title="LevelGeneratorConfiguration class">
     <HelpKINode Title="LevelGeneratorConfiguration Class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
-    <HelpKINode Title="LevelGeneratorConfiguration Members" Url="html/AllMembers_T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
     <HelpKINode Title="about LevelGeneratorConfiguration class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_LevelGeneratorConfiguration__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
   </HelpKINode>
   <HelpKINode Title="LevelGeneratorConfiguration.ChunkDistribution property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_ChunkDistribution.htm" />
-  <HelpKINode Title="LevelGeneratorConfiguration.ContextAlignmentRestriction property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_ContextAlignmentRestriction.htm" />
+  <HelpKINode Title="LevelGeneratorConfiguration.ContextAlignmentRestrictions property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_ContextAlignmentRestrictions.htm" />
   <HelpKINode Title="LevelGeneratorConfiguration.LevelGeneratorConfiguration constructor" Url="html/M_ByChance_Configuration_LevelGeneratorConfiguration__ctor.htm" />
   <HelpKINode Title="LevelGeneratorConfiguration.Logger property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_Logger.htm" />
   <HelpKINode Title="LevelGeneratorConfiguration.PostProcessingPolicies property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_PostProcessingPolicies.htm" />
+  <HelpKINode Title="LevelGeneratorConfiguration.TerminationConditions property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_TerminationConditions.htm" />
   <HelpKINode Title="Logger property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_Logger.htm" />
   <HelpKINode Title="LogMessage method">
     <HelpKINode Title="ILevelGenerationLogger.LogMessage Method " Url="html/M_ByChance_Configuration_Logging_ILevelGenerationLogger_LogMessage.htm" />
@@ -908,9 +710,7 @@
   </HelpKINode>
   <HelpKINode Title="Math2 class">
     <HelpKINode Title="Math2 Class" Url="html/T_ByChance_Core_Math2.htm" />
-    <HelpKINode Title="Math2 Members" Url="html/AllMembers_T_ByChance_Core_Math2.htm" />
     <HelpKINode Title="about Math2 class" Url="html/T_ByChance_Core_Math2.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Math2.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_ByChance_Core_Math2.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Math2.htm" />
   </HelpKINode>
@@ -930,6 +730,17 @@
   <HelpKINode Title="Math2.Sqrt method" Url="html/M_ByChance_Core_Math2_Sqrt.htm" />
   <HelpKINode Title="Math2.Truncate method" Url="html/M_ByChance_Core_Math2_Truncate.htm" />
   <HelpKINode Title="Math2.TwoPi field" Url="html/F_ByChance_Core_Math2_TwoPi.htm" />
+  <HelpKINode Title="MaximumChunkCount property" Url="html/P_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition_MaximumChunkCount.htm" />
+  <HelpKINode Title="MaximumChunkCountTerminationCondition class">
+    <HelpKINode Title="MaximumChunkCountTerminationCondition Class" Url="html/T_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition.htm" />
+    <HelpKINode Title="about MaximumChunkCountTerminationCondition class" Url="html/T_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition.htm" />
+    <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MaximumChunkCountTerminationCondition.ConditionIsMet method" Url="html/M_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition_ConditionIsMet.htm" />
+  <HelpKINode Title="MaximumChunkCountTerminationCondition.MaximumChunkCount property" Url="html/P_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition_MaximumChunkCount.htm" />
+  <HelpKINode Title="MaximumChunkCountTerminationCondition.MaximumChunkCountTerminationCondition constructor" Url="html/M_ByChance_Configuration_Parameters_MaximumChunkCountTerminationCondition__ctor.htm" />
   <HelpKINode Title="Multiply method">
     <HelpKINode Title="Vector2F.Multiply Method " Url="html/Overload_ByChance_Levels2D_Vector2F_Multiply.htm" />
     <HelpKINode Title="Vector3F.Multiply Method " Url="html/Overload_ByChance_Levels3D_Vector3F_Multiply.htm" />
@@ -963,9 +774,7 @@
   <HelpKINode Title="PostProcessingPolicies property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_PostProcessingPolicies.htm" />
   <HelpKINode Title="PostProcessingPolicy class">
     <HelpKINode Title="PostProcessingPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
-    <HelpKINode Title="PostProcessingPolicy Members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
     <HelpKINode Title="about PostProcessingPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Configuration_PostProcessing_PostProcessingPolicy.htm" />
   </HelpKINode>
@@ -982,9 +791,7 @@
   <HelpKINode Title="Process&lt;T&gt; method" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy_Process__1.htm" />
   <HelpKINode Title="Random2 class">
     <HelpKINode Title="Random2 Class" Url="html/T_ByChance_Core_Random2.htm" />
-    <HelpKINode Title="Random2 Members" Url="html/AllMembers_T_ByChance_Core_Random2.htm" />
     <HelpKINode Title="about Random2 class" Url="html/T_ByChance_Core_Random2.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Core_Random2.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_ByChance_Core_Random2__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_Random2.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_Random2.htm" />
@@ -997,9 +804,7 @@
   <HelpKINode Title="Random2.Seed property" Url="html/P_ByChance_Core_Random2_Seed.htm" />
   <HelpKINode Title="RectangleF class">
     <HelpKINode Title="RectangleF Class" Url="html/T_ByChance_Levels2D_RectangleF.htm" />
-    <HelpKINode Title="RectangleF Members" Url="html/AllMembers_T_ByChance_Levels2D_RectangleF.htm" />
     <HelpKINode Title="about RectangleF class" Url="html/T_ByChance_Levels2D_RectangleF.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_RectangleF.htm" />
     <HelpKINode Title="constructor" Url="html/Overload_ByChance_Levels2D_RectangleF__ctor.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_RectangleF.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_RectangleF.htm" />
@@ -1087,6 +892,7 @@
     <HelpKINode Title="Context.Tag Property " Url="html/P_ByChance_Core_Context_Tag.htm" />
   </HelpKINode>
   <HelpKINode Title="Target property" Url="html/P_ByChance_Core_Context_Target.htm" />
+  <HelpKINode Title="TerminationConditions property" Url="html/P_ByChance_Configuration_LevelGeneratorConfiguration_TerminationConditions.htm" />
   <HelpKINode Title="Top property">
     <HelpKINode Title="BoxF.Top Property " Url="html/P_ByChance_Levels3D_BoxF_Top.htm" />
     <HelpKINode Title="RectangleF.Top Property " Url="html/P_ByChance_Levels2D_RectangleF_Top.htm" />
@@ -1107,10 +913,8 @@
   <HelpKINode Title="TwoPi field" Url="html/F_ByChance_Core_Math2_TwoPi.htm" />
   <HelpKINode Title="Union method" Url="html/M_ByChance_Levels2D_RectangleF_Union.htm" />
   <HelpKINode Title="Vector2F structure">
-    <HelpKINode Title="Vector2F Members" Url="html/AllMembers_T_ByChance_Levels2D_Vector2F.htm" />
     <HelpKINode Title="Vector2F Structure" Url="html/T_ByChance_Levels2D_Vector2F.htm" />
     <HelpKINode Title="about Vector2F structure" Url="html/T_ByChance_Levels2D_Vector2F.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels2D_Vector2F.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_Vector2F__ctor.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_ByChance_Levels2D_Vector2F.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_Vector2F.htm" />
@@ -1143,10 +947,8 @@
   <HelpKINode Title="Vector2F.Y property" Url="html/P_ByChance_Levels2D_Vector2F_Y.htm" />
   <HelpKINode Title="Vector2F.Zero field" Url="html/F_ByChance_Levels2D_Vector2F_Zero.htm" />
   <HelpKINode Title="Vector3F structure">
-    <HelpKINode Title="Vector3F Members" Url="html/AllMembers_T_ByChance_Levels3D_Vector3F.htm" />
     <HelpKINode Title="Vector3F Structure" Url="html/T_ByChance_Levels3D_Vector3F.htm" />
     <HelpKINode Title="about Vector3F structure" Url="html/T_ByChance_Levels3D_Vector3F.htm" />
-    <HelpKINode Title="all members" Url="html/AllMembers_T_ByChance_Levels3D_Vector3F.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_Vector3F__ctor.htm" />
     <HelpKINode Title="fields" Url="html/Fields_T_ByChance_Levels3D_Vector3F.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_Vector3F.htm" />
