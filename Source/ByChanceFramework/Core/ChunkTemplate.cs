@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChunkTemplate.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2015 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Whether the level generator is allowed to rotate chunks created with
@@ -121,6 +121,11 @@ namespace ByChance.Core
         public int Index { get; internal set; }
 
         /// <summary>
+        ///   Total size of chunks of this template.
+        /// </summary>
+        public abstract float Size { get; }
+
+        /// <summary>
         /// Category of this chunk template.
         /// Use this category to tell post-processing algorithms whether chunks created with this
         /// template should be discarded if they have open contexts, or not, for example.
@@ -133,10 +138,6 @@ namespace ByChance.Core
         /// chunks of templates with <see cref="Weight"/> 1.
         /// </summary>
         public int Weight { get; protected set; }
-
-        #endregion
-
-        #region Properties
 
         /// <summary>
         /// Anchors that can be filled in chunks created with this template.

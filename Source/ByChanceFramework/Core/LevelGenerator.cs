@@ -40,6 +40,26 @@ namespace ByChance.Core
 
         #endregion
 
+        #region Delegates
+
+        /// <summary>
+        ///   Level generation progress has changed.
+        /// </summary>
+        /// <param name="sender">Level generator.</param>
+        /// <param name="e">Current level generation progress.</param>
+        public delegate void ProgressChangedDelegate(object sender, ProgressChangedEventArgs e);
+
+        #endregion
+
+        #region Events
+
+        /// <summary>
+        ///   Level generation progress has changed.
+        /// </summary>
+        public event ProgressChangedDelegate ProgressChanged;
+
+        #endregion
+
         #region Properties
 
         /// <summary>
@@ -205,6 +225,15 @@ namespace ByChance.Core
 
                 level.AddChunk(freeContext, compatibleContext);
                 this.LogMessage(string.Format("Added chunk with ID {0} to the level.", compatibleChunk.Index));
+
+                // Report progress.
+                var currentSize = level.Sum(chunk => chunk.ChunkTemplate.Size);
+                var maximumSize = level.Size;
+
+                var progress = currentSize / maximumSize;
+
+                var eventArgs = new ProgressChangedEventArgs { Progress = progress };
+                this.OnProgressChanged(eventArgs);
                 return true;
             }
 
@@ -353,6 +382,19 @@ namespace ByChance.Core
 
                 this.LogMessage(
                     string.Format("Post-processing took {0}.{1} seconds.", passedTime.Seconds, passedTime.Milliseconds));
+            }
+        }
+
+        /// <summary>
+        ///   Notifies listeners that level generation progress has changed.
+        /// </summary>
+        /// <param name="e">Current level generation progress.</param>
+        private void OnProgressChanged(ProgressChangedEventArgs e)
+        {
+            var handler = this.ProgressChanged;
+            if (handler != null)
+            {
+                handler(this, e);
             }
         }
 

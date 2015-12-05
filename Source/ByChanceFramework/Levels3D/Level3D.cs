@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Level3D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2015 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -54,6 +54,17 @@ namespace ByChance.Levels3D
         #endregion
 
         #region Public Methods and Operators
+
+        /// <summary>
+        ///   Total available size of this level.
+        /// </summary>
+        public override float Size
+        {
+            get
+            {
+                return this.Extents.X * this.Extents.Y * this.Extents.Z;
+            }
+        }
 
         /// <summary>
         /// Adds a chunk to this level.
