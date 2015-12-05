@@ -103,7 +103,7 @@ namespace ByChance.Core
                 return false;
             }
 
-            return this.AddChunk(chunkLibrary, level, random);
+            return this.AddChunk(chunkLibrary, level, random, freeContext);
         }
 
         /// <summary>
