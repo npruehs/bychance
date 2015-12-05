@@ -18,6 +18,33 @@ namespace ByChance.Levels3D
         #region Public Methods and Operators
 
         /// <summary>
+        ///   Expands the passed level at the specified free context.
+        /// </summary>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        /// <param name="freeContext">Context to expland the level at.</param>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="chunkLibrary"/>, <paramref name="level"/> or <paramref name="random"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="freeContext"/> is already blocked or aligned.
+        /// </exception>
+        /// <returns>
+        ///   <c>true</c>, if another chunk can be added to the level, and
+        ///   <c>false</c>, otherwise.
+        /// </returns>
+        public bool AddChunk(ChunkLibrary3D chunkLibrary, Level3D level, Random2 random, Context3D freeContext)
+        {
+            return this.AddChunk<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random, freeContext);
+        }
+
+        /// <summary>
         ///   Expands the passed level at any free context.
         /// </summary>
         /// <param name="chunkLibrary">

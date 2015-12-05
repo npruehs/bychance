@@ -95,12 +95,6 @@ namespace ByChance.Core
             Level<TChunk> level,
             Random2 random) where TChunkTemplate : ChunkTemplate where TChunk : Chunk
         {
-            this.ValidateParameters(chunkLibrary, level, random);
-
-            var chunkCandidates = new List<Chunk>();
-            var candidateContexts = new List<int>();
-            var effectiveWeights = new List<int>();
-
             // Check if there's any point to expand the current level at.
             var freeContext = level.FindProcessibleContext();
 
@@ -108,6 +102,55 @@ namespace ByChance.Core
             {
                 return false;
             }
+
+            return this.AddChunk(chunkLibrary, level, random);
+        }
+
+        /// <summary>
+        ///   Expands the passed level at the specified free context.
+        /// </summary>
+        /// <typeparam name="TChunkTemplate">Type of the chunk templates in the chunk library.</typeparam>
+        /// <typeparam name="TChunk">Type of the chunks for the level.</typeparam>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        /// <param name="freeContext">Context to expland the level at.</param>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="chunkLibrary"/>, <paramref name="level"/> or <paramref name="random"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="freeContext"/> is already blocked or aligned.
+        /// </exception>
+        /// <returns>
+        ///   <c>true</c>, if another chunk can be added to the level, and
+        ///   <c>false</c>, otherwise.
+        /// </returns>
+        protected bool AddChunk<TChunkTemplate, TChunk>(
+            ChunkLibrary<TChunkTemplate> chunkLibrary,
+            Level<TChunk> level,
+            Random2 random,
+            Context freeContext) where TChunkTemplate : ChunkTemplate where TChunk : Chunk
+        {
+            this.ValidateParameters(chunkLibrary, level, random);
+
+            if (freeContext.Blocked)
+            {
+                throw new ArgumentException("Context is already blocked.", "freeContext");
+            }
+
+            if (freeContext.Target != null)
+            {
+                throw new ArgumentException("Context is already aligned.", "freeContext");
+            }
+
+            var chunkCandidates = new List<Chunk>();
+            var candidateContexts = new List<int>();
+            var effectiveWeights = new List<int>();
 
             // Check custom termination conditions.
             for (var i = 0; i < this.Configuration.TerminationConditions.Count; ++i)
