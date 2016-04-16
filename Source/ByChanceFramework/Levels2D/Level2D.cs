@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Level2D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2015 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -39,16 +39,12 @@ namespace ByChance.Levels2D
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Width and height of this level.
         /// </summary>
         public Vector2F Extents { get; private set; }
-
-        #endregion
-
-        #region Public Methods and Operators
 
         /// <summary>
         ///   Total available size of this level.
@@ -60,6 +56,10 @@ namespace ByChance.Levels2D
                 return this.Extents.X * this.Extents.Y;
             }
         }
+
+        #endregion
+
+        #region Public Methods and Operators
 
         /// <summary>
         /// Adds a chunk to this level.

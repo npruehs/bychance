@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Anchor3D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ namespace ByChance.Levels3D
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Absolute position of this anchor within the level.

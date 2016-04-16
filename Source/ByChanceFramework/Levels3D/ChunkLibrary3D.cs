@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChunkLibrary3D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 

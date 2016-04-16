@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Chunk3D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ namespace ByChance.Levels3D
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Width, height and depth of this chunk.
@@ -142,7 +142,9 @@ namespace ByChance.Levels3D
                                                   + (origin.Y * (float)Math.Cos(this.Rotation.Z)) + center.X;
 
                     anchor.RelativePosition = new Vector3F(
-                        anchorRelativePositionX, anchorRelativePositionY, anchor.RelativePosition.Z);
+                        anchorRelativePositionX,
+                        anchorRelativePositionY,
+                        anchor.RelativePosition.Z);
                 }
             }
 
@@ -158,7 +160,9 @@ namespace ByChance.Levels3D
                                                   + (origin.Z * (float)Math.Cos(this.Rotation.X)) + center.Y;
 
                     anchor.RelativePosition = new Vector3F(
-                        anchor.RelativePosition.X, anchorRelativePositionY, anchorRelativePositionZ);
+                        anchor.RelativePosition.X,
+                        anchorRelativePositionY,
+                        anchorRelativePositionZ);
                 }
             }
 
@@ -174,7 +178,9 @@ namespace ByChance.Levels3D
                                                   + (origin.X * (float)Math.Cos(this.Rotation.Y)) + center.Z;
 
                     anchor.RelativePosition = new Vector3F(
-                        anchorRelativePositionX, anchor.RelativePosition.Y, anchorRelativePositionZ);
+                        anchorRelativePositionX,
+                        anchor.RelativePosition.Y,
+                        anchorRelativePositionZ);
                 }
             }
         }
@@ -199,7 +205,9 @@ namespace ByChance.Levels3D
                 var contextRelativePositionZ = origin.Y + center.Y;
 
                 context.RelativePosition = new Vector3F(
-                    context.RelativePosition.X, contextRelativePositionY, contextRelativePositionZ);
+                    context.RelativePosition.X,
+                    contextRelativePositionY,
+                    contextRelativePositionZ);
             }
 
             // Switch height and depth.
@@ -237,7 +245,9 @@ namespace ByChance.Levels3D
                 var contextRelativePositionZ = -origin.X + center.X;
 
                 context.RelativePosition = new Vector3F(
-                    contextRelativePositionX, context.RelativePosition.Y, contextRelativePositionZ);
+                    contextRelativePositionX,
+                    context.RelativePosition.Y,
+                    contextRelativePositionZ);
             }
 
             // Switch width and depth.
@@ -273,7 +283,9 @@ namespace ByChance.Levels3D
                 var contextRelativePositionY = origin.X + center.X;
 
                 context.RelativePosition = new Vector3F(
-                    contextRelativePositionX, contextRelativePositionY, context.RelativePosition.Z);
+                    contextRelativePositionX,
+                    contextRelativePositionY,
+                    context.RelativePosition.Z);
             }
 
             // Switch width and height.

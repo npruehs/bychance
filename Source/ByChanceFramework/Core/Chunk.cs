@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Chunk.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Whether the level generator is allowed to rotate chunks created with
@@ -149,10 +149,6 @@ namespace ByChance.Core
                 return this.ChunkTemplate.Weight;
             }
         }
-
-        #endregion
-
-        #region Properties
 
         /// <summary>
         /// Anchors that can be filled in this chunk.

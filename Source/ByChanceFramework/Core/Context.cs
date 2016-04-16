@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Context.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Whether this context can be aligned to another one.
@@ -99,7 +99,7 @@ namespace ByChance.Core
             {
                 throw new ArgumentException(
                     "The target context has a different type than the source context. "
-                    + "Aligned contexts have to be of the same type.", 
+                    + "Aligned contexts have to be of the same type.",
                     "other");
             }
 

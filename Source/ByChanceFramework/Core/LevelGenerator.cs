@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LevelGenerator.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2015 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -9,6 +9,7 @@ namespace ByChance.Core
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
 
     using ByChance.Configuration;
     using ByChance.Configuration.Parameters;
@@ -341,9 +342,7 @@ namespace ByChance.Core
 
             // Initialize log.
             this.LogMessage(
-                string.Format(
-                    "ByChance Framework version {0}.",
-                    System.Reflection.Assembly.GetExecutingAssembly().GetName().Version));
+                string.Format("ByChance Framework version {0}.", Assembly.GetExecutingAssembly().GetName().Version));
 
             this.LogMessage(string.Format("Level has {0} chunk(s).", level.Count));
             this.LogMessage(string.Format("Chunk Library has {0} chunk template(s).", chunkLibrary.Count));
