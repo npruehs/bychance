@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="LevelGenerator3D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -16,6 +16,71 @@ namespace ByChance.Levels3D
     public sealed class LevelGenerator3D : LevelGenerator
     {
         #region Public Methods and Operators
+
+        /// <summary>
+        ///   Expands the passed level at the specified free context.
+        /// </summary>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        /// <param name="freeContext">Context to expland the level at.</param>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="chunkLibrary"/>, <paramref name="level"/> or <paramref name="random"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="freeContext"/> is already blocked or aligned.
+        /// </exception>
+        /// <returns>
+        ///   <c>true</c>, if another chunk can be added to the level, and
+        ///   <c>false</c>, otherwise.
+        /// </returns>
+        public bool AddChunk(ChunkLibrary3D chunkLibrary, Level3D level, Random2 random, Context3D freeContext)
+        {
+            return this.AddChunk<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random, freeContext);
+        }
+
+        /// <summary>
+        ///   Expands the passed level at any free context.
+        /// </summary>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="chunkLibrary"/>, <paramref name="level"/> or <paramref name="random"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
+        /// </exception>
+        /// <returns>
+        ///   <c>true</c>, if another chunk can be added to the level, and
+        ///   <c>false</c>, otherwise.
+        /// </returns>
+        public bool AddChunk(ChunkLibrary3D chunkLibrary, Level3D level, Random2 random)
+        {
+            return this.AddChunk<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random);
+        }
+
+        /// <summary>
+        /// Adds a random chunk to the passed level at a random position,
+        /// without checking for any intersections with the level bounds or
+        /// other chunks and without aligning it to any other chunk.
+        /// </summary>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        public void AddRandomChunk(ChunkLibrary3D chunkLibrary, Level3D level, Random2 random)
+        {
+            this.AddRandomChunk<ChunkTemplate3D, Chunk3D>(chunkLibrary, level, random);
+        }
 
         /// <summary>
         /// Generates a 3D level with the given chunk library and level.
@@ -93,6 +158,15 @@ namespace ByChance.Levels3D
             this.GenerateLevel(chunkLibrary, level, random);
 
             return level;
+        }
+
+        /// <summary>
+        ///   Applies all available post-processing policies to the passed level.
+        /// </summary>
+        /// <param name="level">Level to process.</param>
+        public void PostProcessLevel(Level3D level)
+        {
+            this.PostProcessLevel<Chunk3D>(level);
         }
 
         #endregion

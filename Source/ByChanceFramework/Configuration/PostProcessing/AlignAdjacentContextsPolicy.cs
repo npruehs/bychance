@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="AlignAdjacentContextsPolicy.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ namespace ByChance.Configuration.PostProcessing
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Offset within two contexts are to be aligned.
@@ -85,7 +85,9 @@ namespace ByChance.Configuration.PostProcessing
 
                     this.LogMessage(
                         string.Format(
-                            "+ Aligned adjacent contexts at {0} with an offset of {1}.", firstContext, this.Offset));
+                            "+ Aligned adjacent contexts at {0} with an offset of {1}.",
+                            firstContext,
+                            this.Offset));
                 }
             }
         }

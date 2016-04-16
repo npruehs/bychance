@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Level.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         ///     Total number of chunks that make up this level.
@@ -46,9 +46,10 @@ namespace ByChance.Core
             }
         }
 
-        #endregion
-
-        #region Properties
+        /// <summary>
+        ///   Total available size of this level.
+        /// </summary>
+        public abstract float Size { get; }
 
         /// <summary>
         /// Chunks that make up this level. 
@@ -178,7 +179,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Explicit Interface Methods
+        #region Methods
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.

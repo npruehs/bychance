@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChunkTemplate2D.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ namespace ByChance.Levels2D
         /// </summary>
         /// <param name="extents">Width and height of the chunks to construct a new template for.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly",
             Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents)
             : this(extents, DefaultWeight, string.Empty, false)
@@ -60,7 +60,7 @@ namespace ByChance.Levels2D
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
         /// <seealso cref="ChunkTemplate.Tag"/>
         /// <exception cref="ArgumentNullException"><paramref name="tag"/> is null.</exception>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly",
             Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents, string tag)
             : this(extents, DefaultWeight, tag, false)
@@ -75,7 +75,7 @@ namespace ByChance.Levels2D
         /// <param name="extents">Width and height of the chunks to construct a new template for.</param>
         /// <param name="allowChunkRotation">Whether the level generator is allowed to rotate chunks created with the template by 90°, or not.</param>
         /// <seealso cref="ChunkTemplate.DefaultWeight"/>
-        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly", 
+        [SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1126:PrefixCallsCorrectly",
             Justification = "Qualifier is redundant.")]
         public ChunkTemplate2D(Vector2F extents, bool allowChunkRotation)
             : this(extents, DefaultWeight, string.Empty, allowChunkRotation)
@@ -112,12 +112,23 @@ namespace ByChance.Levels2D
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Width and height of the chunks constructed with this template.
         /// </summary>
         public Vector2F Extents { get; private set; }
+
+        /// <summary>
+        ///   Total size of chunks of this template.
+        /// </summary>
+        public override float Size
+        {
+            get
+            {
+                return this.Extents.X * this.Extents.Y;
+            }
+        }
 
         #endregion
 

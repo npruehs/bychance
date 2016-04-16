@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ChunkLibrary.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         ///     Total number of available chunk templates.
@@ -38,10 +38,6 @@ namespace ByChance.Core
                 return this.chunkTemplates.Count;
             }
         }
-
-        #endregion
-
-        #region Public Indexers
 
         /// <summary>
         /// Gets the chunk template with the specified unique index.
@@ -89,7 +85,7 @@ namespace ByChance.Core
 
         #endregion
 
-        #region Explicit Interface Methods
+        #region Methods
 
         /// <summary>
         /// Returns an enumerator that iterates through a collection.

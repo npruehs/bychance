@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="Vector2F.cs" company="Nick Pruehs, Denis Vaz Alves">
-//   Copyright 2011-2014 Nick Pruehs, Denis Vaz Alves.
+//   Copyright 2011-2016 Nick Pruehs, Denis Vaz Alves.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ namespace ByChance.Levels2D
     /// </summary>
     public struct Vector2F : IEquatable<Vector2F>
     {
-        #region Static Fields
+        #region Constants
 
         /// <summary>
         /// Vector with all components set to one.
@@ -63,7 +63,7 @@ namespace ByChance.Levels2D
 
         #endregion
 
-        #region Public Properties
+        #region Properties
 
         /// <summary>
         /// Gets the magnitude of this vector.
@@ -131,6 +131,20 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
+        /// Adds the passed vector to this one, returning the sum of both vectors.
+        /// </summary>
+        /// <param name="v">
+        /// Vector to add.
+        /// </param>
+        /// <returns>
+        /// Sum of both vectors.
+        /// </returns>
+        public Vector2F Add(Vector2F v)
+        {
+            return Add(this, v);
+        }
+
+        /// <summary>
         /// Computes the Euclidean distance between the points at <paramref name="v1"/> and <paramref name="v2"/>.
         /// </summary>
         /// <param name="v1">
@@ -145,6 +159,20 @@ namespace ByChance.Levels2D
         public static float Distance(Vector2F v1, Vector2F v2)
         {
             return Math2.Sqrt(DistanceSquared(v1, v2));
+        }
+
+        /// <summary>
+        /// Computes the Euclidean distance between the points denoted by this vector and <paramref name="v"/>.
+        /// </summary>
+        /// <param name="v">
+        /// Point to compute the distance to.
+        /// </param>
+        /// <returns>
+        /// Euclidean distance between the two points.
+        /// </returns>
+        public float Distance(Vector2F v)
+        {
+            return Distance(this, v);
         }
 
         /// <summary>
@@ -167,6 +195,20 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
+        /// Computes the squared Euclidean distance between the points denoted by this vector and <paramref name="v"/>. Faster than <see cref="Distance(Vector2F)"/>.
+        /// </summary>
+        /// <param name="v">
+        /// Point to compute the squared distance to.
+        /// </param>
+        /// <returns>
+        /// Squared Euclidean distance between the two points.
+        /// </returns>
+        public float DistanceSquared(Vector2F v)
+        {
+            return DistanceSquared(this, v);
+        }
+
+        /// <summary>
         /// Divides the passed vector by the specified scalar.
         /// </summary>
         /// <param name="v">
@@ -184,6 +226,20 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
+        /// Divides this vector by the specified scalar.
+        /// </summary>
+        /// <param name="f">
+        /// Divisor.
+        /// </param>
+        /// <returns>
+        /// Vector divided by the specified scalar.
+        /// </returns>
+        public Vector2F Divide(float f)
+        {
+            return Divide(this, f);
+        }
+
+        /// <summary>
         /// Computes the dot product of the two passed vectors.
         /// </summary>
         /// <param name="v1">
@@ -198,6 +254,69 @@ namespace ByChance.Levels2D
         public static float Dot(Vector2F v1, Vector2F v2)
         {
             return (v1.x * v2.x) + (v1.y * v2.y);
+        }
+
+        /// <summary>
+        /// Computes the dot product of the passed vector and this one.
+        /// </summary>
+        /// <param name="v">
+        /// Vector to compute the dot product of.
+        /// </param>
+        /// <returns>
+        /// Dot product of the two vectors.
+        /// </returns>
+        public float Dot(Vector2F v)
+        {
+            return Dot(this, v);
+        }
+
+        /// <summary>
+        /// Compares the passed vector to this one for equality.
+        /// </summary>
+        /// <param name="obj">
+        /// Vector to compare.
+        /// </param>
+        /// <returns>
+        /// <c>true</c>, if both vectors are equal, and <c>false</c> otherwise.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            return obj is Vector2F && this.Equals((Vector2F)obj);
+        }
+
+        /// <summary>
+        /// Compares the passed vector to this one for equality.
+        /// </summary>
+        /// <param name="other">
+        /// Vector to compare.
+        /// </param>
+        /// <returns>
+        /// <c>true</c>, if both vectors are equal, and <c>false</c> otherwise.
+        /// </returns>
+        public bool Equals(Vector2F other)
+        {
+            return this.x.Equals(other.x) && this.y.Equals(other.y);
+        }
+
+        /// <summary>
+        /// Gets the hash code of this vector.
+        /// </summary>
+        /// <returns>
+        /// Hash code of this vector.
+        /// </returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = this.x.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.y.GetHashCode();
+                return hashCode;
+            }
         }
 
         /// <summary>
@@ -228,6 +347,23 @@ namespace ByChance.Levels2D
             }
 
             return v1 + (l * (v2 - v1));
+        }
+
+        /// <summary>
+        /// Linearly interpolates between the passed vector and this one.
+        /// </summary>
+        /// <param name="v">
+        /// Vector to interpolate.
+        /// </param>
+        /// <param name="l">
+        /// Interpolation parameter. 0 returns this vector, 1 returns <paramref name="v"/>.
+        /// </param>
+        /// <returns>
+        /// Linear interpolation between the two vectors.
+        /// </returns>
+        public Vector2F Lerp(Vector2F v, float l)
+        {
+            return Lerp(this, v, l);
         }
 
         /// <summary>
@@ -265,6 +401,20 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
+        /// Multiplies this vector with the specified scalar.
+        /// </summary>
+        /// <param name="f">
+        /// Scalar to multiply this vector with.
+        /// </param>
+        /// <returns>
+        /// Product of this vector and the scalar.
+        /// </returns>
+        public Vector2F Multiply(float f)
+        {
+            return Multiply(f, this);
+        }
+
+        /// <summary>
         /// Normalizes the passed vector, returning a unit vector with the same orientation.
         /// If the passed vector is the zero vector, the zero vector is returned instead.
         /// </summary>
@@ -288,20 +438,15 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
-        /// Subtracts the second vector from the first one.
+        /// Normalizes this vector, returning a unit vector with the same orientation.
+        /// If this passed vector is the zero vector, the zero vector is returned instead.
         /// </summary>
-        /// <param name="v1">
-        /// Vector to subtract from.
-        /// </param>
-        /// <param name="v2">
-        /// Vector to subtract.
-        /// </param>
         /// <returns>
-        /// Difference of both vectors.
+        /// Normalized vector.
         /// </returns>
-        public static Vector2F Subtract(Vector2F v1, Vector2F v2)
+        public Vector2F Normalize()
         {
-            return v1 - v2;
+            return Normalize(this);
         }
 
         /// <summary>
@@ -424,165 +569,20 @@ namespace ByChance.Levels2D
         }
 
         /// <summary>
-        /// Adds the passed vector to this one, returning the sum of both vectors.
+        /// Subtracts the second vector from the first one.
         /// </summary>
-        /// <param name="v">
-        /// Vector to add.
+        /// <param name="v1">
+        /// Vector to subtract from.
+        /// </param>
+        /// <param name="v2">
+        /// Vector to subtract.
         /// </param>
         /// <returns>
-        /// Sum of both vectors.
+        /// Difference of both vectors.
         /// </returns>
-        public Vector2F Add(Vector2F v)
+        public static Vector2F Subtract(Vector2F v1, Vector2F v2)
         {
-            return Add(this, v);
-        }
-
-        /// <summary>
-        /// Computes the Euclidean distance between the points denoted by this vector and <paramref name="v"/>.
-        /// </summary>
-        /// <param name="v">
-        /// Point to compute the distance to.
-        /// </param>
-        /// <returns>
-        /// Euclidean distance between the two points.
-        /// </returns>
-        public float Distance(Vector2F v)
-        {
-            return Distance(this, v);
-        }
-
-        /// <summary>
-        /// Computes the squared Euclidean distance between the points denoted by this vector and <paramref name="v"/>. Faster than <see cref="Distance(Vector2F)"/>.
-        /// </summary>
-        /// <param name="v">
-        /// Point to compute the squared distance to.
-        /// </param>
-        /// <returns>
-        /// Squared Euclidean distance between the two points.
-        /// </returns>
-        public float DistanceSquared(Vector2F v)
-        {
-            return DistanceSquared(this, v);
-        }
-
-        /// <summary>
-        /// Divides this vector by the specified scalar.
-        /// </summary>
-        /// <param name="f">
-        /// Divisor.
-        /// </param>
-        /// <returns>
-        /// Vector divided by the specified scalar.
-        /// </returns>
-        public Vector2F Divide(float f)
-        {
-            return Divide(this, f);
-        }
-
-        /// <summary>
-        /// Computes the dot product of the passed vector and this one.
-        /// </summary>
-        /// <param name="v">
-        /// Vector to compute the dot product of.
-        /// </param>
-        /// <returns>
-        /// Dot product of the two vectors.
-        /// </returns>
-        public float Dot(Vector2F v)
-        {
-            return Dot(this, v);
-        }
-
-        /// <summary>
-        /// Compares the passed vector to this one for equality.
-        /// </summary>
-        /// <param name="obj">
-        /// Vector to compare.
-        /// </param>
-        /// <returns>
-        /// <c>true</c>, if both vectors are equal, and <c>false</c> otherwise.
-        /// </returns>
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            return obj is Vector2F && this.Equals((Vector2F)obj);
-        }
-
-        /// <summary>
-        /// Compares the passed vector to this one for equality.
-        /// </summary>
-        /// <param name="other">
-        /// Vector to compare.
-        /// </param>
-        /// <returns>
-        /// <c>true</c>, if both vectors are equal, and <c>false</c> otherwise.
-        /// </returns>
-        public bool Equals(Vector2F other)
-        {
-            return this.x.Equals(other.x) && this.y.Equals(other.y);
-        }
-
-        /// <summary>
-        /// Gets the hash code of this vector.
-        /// </summary>
-        /// <returns>
-        /// Hash code of this vector.
-        /// </returns>
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = this.x.GetHashCode();
-                hashCode = (hashCode * 397) ^ this.y.GetHashCode();
-                return hashCode;
-            }
-        }
-
-        /// <summary>
-        /// Linearly interpolates between the passed vector and this one.
-        /// </summary>
-        /// <param name="v">
-        /// Vector to interpolate.
-        /// </param>
-        /// <param name="l">
-        /// Interpolation parameter. 0 returns this vector, 1 returns <paramref name="v"/>.
-        /// </param>
-        /// <returns>
-        /// Linear interpolation between the two vectors.
-        /// </returns>
-        public Vector2F Lerp(Vector2F v, float l)
-        {
-            return Lerp(this, v, l);
-        }
-
-        /// <summary>
-        /// Multiplies this vector with the specified scalar.
-        /// </summary>
-        /// <param name="f">
-        /// Scalar to multiply this vector with.
-        /// </param>
-        /// <returns>
-        /// Product of this vector and the scalar.
-        /// </returns>
-        public Vector2F Multiply(float f)
-        {
-            return Multiply(f, this);
-        }
-
-        /// <summary>
-        /// Normalizes this vector, returning a unit vector with the same orientation.
-        /// If this passed vector is the zero vector, the zero vector is returned instead.
-        /// </summary>
-        /// <returns>
-        /// Normalized vector.
-        /// </returns>
-        public Vector2F Normalize()
-        {
-            return Normalize(this);
+            return v1 - v2;
         }
 
         /// <summary>
