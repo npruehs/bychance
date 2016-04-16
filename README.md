@@ -8,28 +8,29 @@ The ByChance Framework allows game developers to provide an infinite amount of u
 
 1. [Getting Started](#getting-started)
 	1. [Getting ByChance Binaries](#getting-bychance-binaries)
-	2. [Getting ByChance Sources](#getting-bychance-sources)
-2. [Generating Your First Level](#generating-your-first-level)
-3. [Customizing the Chunk Library](#customizing-the-chunk-library)
+	1. [Getting ByChance Sources](#getting-bychance-sources)
+1. [Generating Your First Level](#generating-your-first-level)
+1. [Customizing the Chunk Library](#customizing-the-chunk-library)
 	1. [Weights and Tags](#weights-and-tags)
-	2. [Anchors](#anchors)
-	3. [Chunk Rotations](#chunk-rotations)
-4. [Configuring the Level Generator](#configuring-the-level-generator)
+	1. [Anchors](#anchors)
+	1. [Chunk Rotations](#chunk-rotations)
+1. [Configuring the Level Generator](#configuring-the-level-generator)
 	1. [Restricting Context Alignment](#restricting-context-alignment)
-	2. [Modifying Effective Chunk Weights](#modifying-effective-chunk-weights)
-	3. [Post-processing](#post-processing)
+	1. [Modifying Effective Chunk Weights](#modifying-effective-chunk-weights)
+	1. [Post-processing](#post-processing)
 		1. [Aligning Adjacent Contexts](#aligning-adjacent-contexts)
-		2. [Discarding Open Chunks](#discarding-open-chunks)
-		3. [Discarding Open Contexts](#discarding-open-contexts)
-		4. [Creating Custom Post-Processing Policies](#creating-custom-post-processing-policies)
-5. [Adapting the Level Generation Process](#adapting-the-level-generation-process)
+		1. [Discarding Open Chunks](#discarding-open-chunks)
+		1. [Discarding Open Contexts](#discarding-open-contexts)
+		1. [Creating Custom Post-Processing Policies](#creating-custom-post-processing-policies)
+1. [Adapting the Level Generation Process](#adapting-the-level-generation-process)
 	1. [Setting The First Level Chunk](#setting-the-first-level-chunk)
-	2. [Using Level Generator Seeds](#using-level-generator-seeds)
-6. [Logging with the ByChance Framework](#logging-with-the-bychance-framework)
-7. [Extending ByChance](#extending-bychance)
-8. [Best Practice](#best-practice)
+	1. [Using Level Generator Seeds](#using-level-generator-seeds)
+1. [Level Generation Events](#level-generation-events)
+1. [Logging with the ByChance Framework](#logging-with-the-bychance-framework)
+1. [Extending ByChance](#extending-bychance)
+1. [Best Practice](#best-practice)
 	1. [Chunk Size](#chunk-size)
-8. [Next Steps](#next-steps)
+1. [Next Steps](#next-steps)
 
 ## Getting Started
 
@@ -300,6 +301,11 @@ LevelGenerator2D levelGenerator = new LevelGenerator2D();
 Vector2F levelExtents = new Vector2F(800f, 600f);
 Level2D level = levelGenerator.GenerateLevel(chunkLibrary, levelExtents, random);
 ```
+
+## Level Generation Events
+
+The LevelGenerator will raise the ProgressChanged event whenever a chunk has been added to the current level. You can access the current progress (between 0.0 and 1.0) from the passed ProgressChangedEventArgs object.
+
 
 ## Logging with the ByChance Framework
 
