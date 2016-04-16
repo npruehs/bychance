@@ -18,6 +18,9 @@
     <HelpKINode Title="Level(T).AddChunk Method " Url="html/M_ByChance_Core_Level_1_AddChunk.htm" />
     <HelpKINode Title="Level2D.AddChunk Method " Url="html/M_ByChance_Levels2D_Level2D_AddChunk.htm" />
     <HelpKINode Title="Level3D.AddChunk Method " Url="html/M_ByChance_Levels3D_Level3D_AddChunk.htm" />
+    <HelpKINode Title="LevelGenerator.AddChunk Method " Url="html/Overload_ByChance_Core_LevelGenerator_AddChunk.htm" />
+    <HelpKINode Title="LevelGenerator2D.AddChunk Method " Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_AddChunk.htm" />
+    <HelpKINode Title="LevelGenerator3D.AddChunk Method " Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_AddChunk.htm" />
   </HelpKINode>
   <HelpKINode Title="AddChunkTemplate method" Url="html/M_ByChance_Core_ChunkLibrary_1_AddChunkTemplate.htm" />
   <HelpKINode Title="AddContext method">
@@ -28,6 +31,12 @@
     <HelpKINode Title="Vector2F.Addition Operator " Url="html/M_ByChance_Levels2D_Vector2F_op_Addition.htm" />
     <HelpKINode Title="Vector3F.Addition Operator " Url="html/M_ByChance_Levels3D_Vector3F_op_Addition.htm" />
   </HelpKINode>
+  <HelpKINode Title="AddRandomChunk method">
+    <HelpKINode Title="LevelGenerator2D.AddRandomChunk Method " Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_AddRandomChunk.htm" />
+    <HelpKINode Title="LevelGenerator3D.AddRandomChunk Method " Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_AddRandomChunk.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddRandomChunk(Of TChunkTemplate, TChunk) method" Url="html/M_ByChance_Core_LevelGenerator_AddRandomChunk__2.htm" />
+  <HelpKINode Title="AddRandomChunk&lt;TChunkTemplate, TChunk&gt; method" Url="html/M_ByChance_Core_LevelGenerator_AddRandomChunk__2.htm" />
   <HelpKINode Title="AlignAdjacentContextsPolicy class">
     <HelpKINode Title="AlignAdjacentContextsPolicy Class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
     <HelpKINode Title="about AlignAdjacentContextsPolicy class" Url="html/T_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy.htm" />
@@ -145,7 +154,9 @@
   <HelpKINode Title="ByChance.Core.Level(Of T) class" Url="html/T_ByChance_Core_Level_1.htm" />
   <HelpKINode Title="ByChance.Core.Level&lt;T&gt; class" Url="html/T_ByChance_Core_Level_1.htm" />
   <HelpKINode Title="ByChance.Core.LevelGenerator class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
+  <HelpKINode Title="ByChance.Core.LevelGenerator.ProgressChangedDelegate delegate" Url="html/T_ByChance_Core_LevelGenerator_ProgressChangedDelegate.htm" />
   <HelpKINode Title="ByChance.Core.Math2 class" Url="html/T_ByChance_Core_Math2.htm" />
+  <HelpKINode Title="ByChance.Core.ProgressChangedEventArgs class" Url="html/T_ByChance_Core_ProgressChangedEventArgs.htm" />
   <HelpKINode Title="ByChance.Core.Random2 class" Url="html/T_ByChance_Core_Random2.htm" />
   <HelpKINode Title="ByChance.Levels2D namespace" Url="html/N_ByChance_Levels2D.htm" />
   <HelpKINode Title="ByChance.Levels2D.Anchor2D class" Url="html/T_ByChance_Levels2D_Anchor2D.htm" />
@@ -295,6 +306,7 @@
   <HelpKINode Title="ChunkTemplate.GetAnchor method" Url="html/M_ByChance_Core_ChunkTemplate_GetAnchor.htm" />
   <HelpKINode Title="ChunkTemplate.GetContext method" Url="html/M_ByChance_Core_ChunkTemplate_GetContext.htm" />
   <HelpKINode Title="ChunkTemplate.Index property" Url="html/P_ByChance_Core_ChunkTemplate_Index.htm" />
+  <HelpKINode Title="ChunkTemplate.Size property" Url="html/P_ByChance_Core_ChunkTemplate_Size.htm" />
   <HelpKINode Title="ChunkTemplate.Tag property" Url="html/P_ByChance_Core_ChunkTemplate_Tag.htm" />
   <HelpKINode Title="ChunkTemplate.Weight property" Url="html/P_ByChance_Core_ChunkTemplate_Weight.htm" />
   <HelpKINode Title="ChunkTemplate2D class">
@@ -308,6 +320,7 @@
   <HelpKINode Title="ChunkTemplate2D.AddContext method" Url="html/Overload_ByChance_Levels2D_ChunkTemplate2D_AddContext.htm" />
   <HelpKINode Title="ChunkTemplate2D.ChunkTemplate2D constructor" Url="html/Overload_ByChance_Levels2D_ChunkTemplate2D__ctor.htm" />
   <HelpKINode Title="ChunkTemplate2D.Extents property" Url="html/P_ByChance_Levels2D_ChunkTemplate2D_Extents.htm" />
+  <HelpKINode Title="ChunkTemplate2D.Size property" Url="html/P_ByChance_Levels2D_ChunkTemplate2D_Size.htm" />
   <HelpKINode Title="ChunkTemplate3D class">
     <HelpKINode Title="ChunkTemplate3D Class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
     <HelpKINode Title="about ChunkTemplate3D class" Url="html/T_ByChance_Levels3D_ChunkTemplate3D.htm" />
@@ -319,6 +332,7 @@
   <HelpKINode Title="ChunkTemplate3D.AddContext method" Url="html/Overload_ByChance_Levels3D_ChunkTemplate3D_AddContext.htm" />
   <HelpKINode Title="ChunkTemplate3D.ChunkTemplate3D constructor" Url="html/Overload_ByChance_Levels3D_ChunkTemplate3D__ctor.htm" />
   <HelpKINode Title="ChunkTemplate3D.Extents property" Url="html/P_ByChance_Levels3D_ChunkTemplate3D_Extents.htm" />
+  <HelpKINode Title="ChunkTemplate3D.Size property" Url="html/P_ByChance_Levels3D_ChunkTemplate3D_Size.htm" />
   <HelpKINode Title="ChunkTemplateAnchors property" Url="html/P_ByChance_Core_ChunkTemplate_ChunkTemplateAnchors.htm" />
   <HelpKINode Title="ChunkTemplateContexts property" Url="html/P_ByChance_Core_ChunkTemplate_ChunkTemplateContexts.htm" />
   <HelpKINode Title="Clamp(Of T) method" Url="html/M_ByChance_Core_Math2_Clamp__1.htm" />
@@ -610,6 +624,7 @@
   <HelpKINode Title="Level(Of T).Level constructor" Url="html/M_ByChance_Core_Level_1__ctor.htm" />
   <HelpKINode Title="Level(Of T).RemoveChunk method" Url="html/M_ByChance_Core_Level_1_RemoveChunk.htm" />
   <HelpKINode Title="Level(Of T).SetRandomStartingChunk method" Url="html/M_ByChance_Core_Level_1_SetRandomStartingChunk.htm" />
+  <HelpKINode Title="Level(Of T).Size property" Url="html/P_ByChance_Core_Level_1_Size.htm" />
   <HelpKINode Title="Level2D class">
     <HelpKINode Title="Level2D Class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
     <HelpKINode Title="about Level2D class" Url="html/T_ByChance_Levels2D_Level2D.htm" />
@@ -623,6 +638,7 @@
   <HelpKINode Title="Level2D.Level2D constructor" Url="html/M_ByChance_Levels2D_Level2D__ctor.htm" />
   <HelpKINode Title="Level2D.SetRandomStartingChunk method" Url="html/M_ByChance_Levels2D_Level2D_SetRandomStartingChunk.htm" />
   <HelpKINode Title="Level2D.SetStartingChunk method" Url="html/M_ByChance_Levels2D_Level2D_SetStartingChunk.htm" />
+  <HelpKINode Title="Level2D.Size property" Url="html/P_ByChance_Levels2D_Level2D_Size.htm" />
   <HelpKINode Title="Level3D class">
     <HelpKINode Title="Level3D Class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
     <HelpKINode Title="about Level3D class" Url="html/T_ByChance_Levels3D_Level3D.htm" />
@@ -636,6 +652,7 @@
   <HelpKINode Title="Level3D.Level3D constructor" Url="html/M_ByChance_Levels3D_Level3D__ctor.htm" />
   <HelpKINode Title="Level3D.SetRandomStartingChunk method" Url="html/M_ByChance_Levels3D_Level3D_SetRandomStartingChunk.htm" />
   <HelpKINode Title="Level3D.SetStartingChunk method" Url="html/M_ByChance_Levels3D_Level3D_SetStartingChunk.htm" />
+  <HelpKINode Title="Level3D.Size property" Url="html/P_ByChance_Levels3D_Level3D_Size.htm" />
   <HelpKINode Title="Level&lt;T&gt; class">
     <HelpKINode Title="Level(T) Class" Url="html/T_ByChance_Core_Level_1.htm" />
     <HelpKINode Title="about Level&lt;T&gt; class" Url="html/T_ByChance_Core_Level_1.htm" />
@@ -656,39 +673,56 @@
   <HelpKINode Title="Level&lt;T&gt;.Level constructor" Url="html/M_ByChance_Core_Level_1__ctor.htm" />
   <HelpKINode Title="Level&lt;T&gt;.RemoveChunk method" Url="html/M_ByChance_Core_Level_1_RemoveChunk.htm" />
   <HelpKINode Title="Level&lt;T&gt;.SetRandomStartingChunk method" Url="html/M_ByChance_Core_Level_1_SetRandomStartingChunk.htm" />
+  <HelpKINode Title="Level&lt;T&gt;.Size property" Url="html/P_ByChance_Core_Level_1_Size.htm" />
   <HelpKINode Title="LevelGenerator class">
     <HelpKINode Title="LevelGenerator Class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="about LevelGenerator class" Url="html/T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Core_LevelGenerator__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_LevelGenerator.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_LevelGenerator.htm" />
   </HelpKINode>
+  <HelpKINode Title="LevelGenerator.AddChunk method" Url="html/Overload_ByChance_Core_LevelGenerator_AddChunk.htm" />
+  <HelpKINode Title="LevelGenerator.AddRandomChunk(Of TChunkTemplate, TChunk) method" Url="html/M_ByChance_Core_LevelGenerator_AddRandomChunk__2.htm" />
+  <HelpKINode Title="LevelGenerator.AddRandomChunk&lt;TChunkTemplate, TChunk&gt; method" Url="html/M_ByChance_Core_LevelGenerator_AddRandomChunk__2.htm" />
   <HelpKINode Title="LevelGenerator.Configuration property" Url="html/P_ByChance_Core_LevelGenerator_Configuration.htm" />
   <HelpKINode Title="LevelGenerator.ConstructChunkFromTemplate method" Url="html/M_ByChance_Core_LevelGenerator_ConstructChunkFromTemplate.htm" />
   <HelpKINode Title="LevelGenerator.GenerateLevel(Of TChunkTemplate, TChunk) method" Url="html/M_ByChance_Core_LevelGenerator_GenerateLevel__2.htm" />
   <HelpKINode Title="LevelGenerator.GenerateLevel&lt;TChunkTemplate, TChunk&gt; method" Url="html/M_ByChance_Core_LevelGenerator_GenerateLevel__2.htm" />
   <HelpKINode Title="LevelGenerator.LevelGenerator constructor" Url="html/M_ByChance_Core_LevelGenerator__ctor.htm" />
   <HelpKINode Title="LevelGenerator.LogMessage method" Url="html/M_ByChance_Core_LevelGenerator_LogMessage.htm" />
+  <HelpKINode Title="LevelGenerator.PostProcessLevel(Of TChunk) method" Url="html/M_ByChance_Core_LevelGenerator_PostProcessLevel__1.htm" />
+  <HelpKINode Title="LevelGenerator.PostProcessLevel&lt;TChunk&gt; method" Url="html/M_ByChance_Core_LevelGenerator_PostProcessLevel__1.htm" />
+  <HelpKINode Title="LevelGenerator.ProgressChanged event" Url="html/E_ByChance_Core_LevelGenerator_ProgressChanged.htm" />
+  <HelpKINode Title="LevelGenerator.ProgressChangedDelegate delegate" Url="html/T_ByChance_Core_LevelGenerator_ProgressChangedDelegate.htm" />
   <HelpKINode Title="LevelGenerator2D class">
     <HelpKINode Title="LevelGenerator2D Class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="about LevelGenerator2D class" Url="html/T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels2D_LevelGenerator2D__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels2D_LevelGenerator2D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels2D_LevelGenerator2D.htm" />
   </HelpKINode>
+  <HelpKINode Title="LevelGenerator2D.AddChunk method" Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_AddChunk.htm" />
+  <HelpKINode Title="LevelGenerator2D.AddRandomChunk method" Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_AddRandomChunk.htm" />
   <HelpKINode Title="LevelGenerator2D.ConstructChunkFromTemplate method" Url="html/M_ByChance_Levels2D_LevelGenerator2D_ConstructChunkFromTemplate.htm" />
   <HelpKINode Title="LevelGenerator2D.GenerateLevel method" Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_GenerateLevel.htm" />
   <HelpKINode Title="LevelGenerator2D.LevelGenerator2D constructor" Url="html/M_ByChance_Levels2D_LevelGenerator2D__ctor.htm" />
+  <HelpKINode Title="LevelGenerator2D.PostProcessLevel method" Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_PostProcessLevel.htm" />
   <HelpKINode Title="LevelGenerator3D class">
     <HelpKINode Title="LevelGenerator3D Class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="about LevelGenerator3D class" Url="html/T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="constructor" Url="html/M_ByChance_Levels3D_LevelGenerator3D__ctor.htm" />
+    <HelpKINode Title="events" Url="html/Events_T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Levels3D_LevelGenerator3D.htm" />
     <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Levels3D_LevelGenerator3D.htm" />
   </HelpKINode>
+  <HelpKINode Title="LevelGenerator3D.AddChunk method" Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_AddChunk.htm" />
+  <HelpKINode Title="LevelGenerator3D.AddRandomChunk method" Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_AddRandomChunk.htm" />
   <HelpKINode Title="LevelGenerator3D.ConstructChunkFromTemplate method" Url="html/M_ByChance_Levels3D_LevelGenerator3D_ConstructChunkFromTemplate.htm" />
   <HelpKINode Title="LevelGenerator3D.GenerateLevel method" Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_GenerateLevel.htm" />
   <HelpKINode Title="LevelGenerator3D.LevelGenerator3D constructor" Url="html/M_ByChance_Levels3D_LevelGenerator3D__ctor.htm" />
+  <HelpKINode Title="LevelGenerator3D.PostProcessLevel method" Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_PostProcessLevel.htm" />
   <HelpKINode Title="LevelGeneratorConfiguration class">
     <HelpKINode Title="LevelGeneratorConfiguration Class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
     <HelpKINode Title="about LevelGeneratorConfiguration class" Url="html/T_ByChance_Configuration_LevelGeneratorConfiguration.htm" />
@@ -782,6 +816,12 @@
   <HelpKINode Title="PostProcessingPolicy.PostProcessingPolicy constructor" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy__ctor.htm" />
   <HelpKINode Title="PostProcessingPolicy.Process(Of T) method" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy_Process__1.htm" />
   <HelpKINode Title="PostProcessingPolicy.Process&lt;T&gt; method" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy_Process__1.htm" />
+  <HelpKINode Title="PostProcessLevel method">
+    <HelpKINode Title="LevelGenerator2D.PostProcessLevel Method " Url="html/Overload_ByChance_Levels2D_LevelGenerator2D_PostProcessLevel.htm" />
+    <HelpKINode Title="LevelGenerator3D.PostProcessLevel Method " Url="html/Overload_ByChance_Levels3D_LevelGenerator3D_PostProcessLevel.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PostProcessLevel(Of TChunk) method" Url="html/M_ByChance_Core_LevelGenerator_PostProcessLevel__1.htm" />
+  <HelpKINode Title="PostProcessLevel&lt;TChunk&gt; method" Url="html/M_ByChance_Core_LevelGenerator_PostProcessLevel__1.htm" />
   <HelpKINode Title="Process method">
     <HelpKINode Title="AlignAdjacentContextsPolicy.Process Method " Url="html/Overload_ByChance_Configuration_PostProcessing_AlignAdjacentContextsPolicy_Process.htm" />
     <HelpKINode Title="DiscardOpenChunksPolicy.Process Method " Url="html/Overload_ByChance_Configuration_PostProcessing_DiscardOpenChunksPolicy_Process.htm" />
@@ -789,6 +829,17 @@
   </HelpKINode>
   <HelpKINode Title="Process(Of T) method" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy_Process__1.htm" />
   <HelpKINode Title="Process&lt;T&gt; method" Url="html/M_ByChance_Configuration_PostProcessing_PostProcessingPolicy_Process__1.htm" />
+  <HelpKINode Title="Progress property" Url="html/P_ByChance_Core_ProgressChangedEventArgs_Progress.htm" />
+  <HelpKINode Title="ProgressChanged event" Url="html/E_ByChance_Core_LevelGenerator_ProgressChanged.htm" />
+  <HelpKINode Title="ProgressChangedEventArgs class">
+    <HelpKINode Title="ProgressChangedEventArgs Class" Url="html/T_ByChance_Core_ProgressChangedEventArgs.htm" />
+    <HelpKINode Title="about ProgressChangedEventArgs class" Url="html/T_ByChance_Core_ProgressChangedEventArgs.htm" />
+    <HelpKINode Title="constructor" Url="html/M_ByChance_Core_ProgressChangedEventArgs__ctor.htm" />
+    <HelpKINode Title="methods" Url="html/Methods_T_ByChance_Core_ProgressChangedEventArgs.htm" />
+    <HelpKINode Title="properties" Url="html/Properties_T_ByChance_Core_ProgressChangedEventArgs.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProgressChangedEventArgs.Progress property" Url="html/P_ByChance_Core_ProgressChangedEventArgs_Progress.htm" />
+  <HelpKINode Title="ProgressChangedEventArgs.ProgressChangedEventArgs constructor" Url="html/M_ByChance_Core_ProgressChangedEventArgs__ctor.htm" />
   <HelpKINode Title="Random2 class">
     <HelpKINode Title="Random2 Class" Url="html/T_ByChance_Core_Random2.htm" />
     <HelpKINode Title="about Random2 class" Url="html/T_ByChance_Core_Random2.htm" />
@@ -870,6 +921,12 @@
   <HelpKINode Title="Sin45 field" Url="html/F_ByChance_Core_Math2_Sin45.htm" />
   <HelpKINode Title="Size property">
     <HelpKINode Title="BoxF.Size Property " Url="html/P_ByChance_Levels3D_BoxF_Size.htm" />
+    <HelpKINode Title="ChunkTemplate.Size Property " Url="html/P_ByChance_Core_ChunkTemplate_Size.htm" />
+    <HelpKINode Title="ChunkTemplate2D.Size Property " Url="html/P_ByChance_Levels2D_ChunkTemplate2D_Size.htm" />
+    <HelpKINode Title="ChunkTemplate3D.Size Property " Url="html/P_ByChance_Levels3D_ChunkTemplate3D_Size.htm" />
+    <HelpKINode Title="Level(T).Size Property " Url="html/P_ByChance_Core_Level_1_Size.htm" />
+    <HelpKINode Title="Level2D.Size Property " Url="html/P_ByChance_Levels2D_Level2D_Size.htm" />
+    <HelpKINode Title="Level3D.Size Property " Url="html/P_ByChance_Levels3D_Level3D_Size.htm" />
     <HelpKINode Title="RectangleF.Size Property " Url="html/P_ByChance_Levels2D_RectangleF_Size.htm" />
   </HelpKINode>
   <HelpKINode Title="Source property">
