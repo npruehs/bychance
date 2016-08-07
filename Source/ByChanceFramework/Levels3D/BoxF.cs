@@ -138,7 +138,7 @@ namespace ByChance.Levels3D
         {
             get
             {
-                return (this.Position + this.Size) / 2;
+                return this.Position + (this.Size / 2);
             }
         }
 
