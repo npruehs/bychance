@@ -69,6 +69,49 @@ namespace ByChance.Core
 
         #endregion
 
+        /// <summary>
+        ///   Validates all parameters, logs general information and adds
+        ///   an initial chunk, if required. This is automatically called by
+        ///   <see cref="GenerateLevel{TChunkTemplate,TChunk}"/>. You'll only
+        ///   need to call this if you're generating your whole level by
+        ///   calling <see cref="AddChunk{TChunkTemplate,TChunk}(ChunkLibrary{TChunkTemplate},Level{TChunk},Random2)"/>.
+        /// </summary>
+        /// <typeparam name="TChunkTemplate">Type of the chunk templates in the chunk library.</typeparam>
+        /// <typeparam name="TChunk">Type of the chunks for the level.</typeparam>
+        /// <param name="chunkLibrary">
+        /// Chunk library that holds all chunk templates to use for the level generation.
+        /// </param>
+        /// <param name="level">Level to fill during the level generation process.</param>
+        /// <param name="random">Random number generator to use for the level generation.</param>
+        /// <exception cref="ArgumentNullException">
+        ///     <paramref name="chunkLibrary"/>, <paramref name="level"/> or <paramref name="random"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="chunkLibrary"/> is empty, or the types of <paramref name="chunkLibrary"/> and <paramref name="level"/> don't match.
+        /// </exception>
+        public void InitLevel<TChunkTemplate, TChunk>(
+            ChunkLibrary<TChunkTemplate> chunkLibrary,
+            Level<TChunk> level,
+            Random2 random) where TChunkTemplate : ChunkTemplate where TChunk : Chunk
+        {
+            this.ValidateParameters(chunkLibrary, level, random);
+
+            // Initialize log.
+            this.LogMessage(
+                string.Format("ByChance Framework version {0}.", Assembly.GetExecutingAssembly().GetName().Version));
+
+            this.LogMessage(string.Format("Level has {0} chunk(s).", level.Count));
+            this.LogMessage(string.Format("Chunk Library has {0} chunk template(s).", chunkLibrary.Count));
+            this.LogMessage(string.Format("Random number generator uses a seed of {0}.", random.Seed));
+
+            // Check if level has a starting chunk.
+            if (level.Count <= 0)
+            {
+                // Set starting chunk randomly.
+                this.AddRandomChunk(chunkLibrary, level, random);
+            }
+        }
+
         #region Methods
 
         /// <summary>
@@ -338,25 +381,11 @@ namespace ByChance.Core
             Level<TChunk> level,
             Random2 random) where TChunkTemplate : ChunkTemplate where TChunk : Chunk
         {
-            this.ValidateParameters(chunkLibrary, level, random);
-
-            // Initialize log.
-            this.LogMessage(
-                string.Format("ByChance Framework version {0}.", Assembly.GetExecutingAssembly().GetName().Version));
-
-            this.LogMessage(string.Format("Level has {0} chunk(s).", level.Count));
-            this.LogMessage(string.Format("Chunk Library has {0} chunk template(s).", chunkLibrary.Count));
-            this.LogMessage(string.Format("Random number generator uses a seed of {0}.", random.Seed));
-
             // Start timer.
             var startTime = DateTime.Now;
 
-            // Check if level has a starting chunk.
-            if (level.Count <= 0)
-            {
-                // Set starting chunk randomly.
-                this.AddRandomChunk(chunkLibrary, level, random);
-            }
+            // Setup level generation.
+            this.InitLevel(chunkLibrary, level, random);
 
             // Start main level generation loop.
             while (this.AddChunk(chunkLibrary, level, random))
