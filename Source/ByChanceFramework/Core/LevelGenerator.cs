@@ -69,6 +69,8 @@ namespace ByChance.Core
 
         #endregion
 
+        #region Public Methods and Operators
+
         /// <summary>
         ///   Validates all parameters, logs general information and adds
         ///   an initial chunk, if required. This is automatically called by
@@ -111,6 +113,8 @@ namespace ByChance.Core
                 this.AddRandomChunk(chunkLibrary, level, random);
             }
         }
+
+        #endregion
 
         #region Methods
 
