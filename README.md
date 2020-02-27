@@ -3,6 +3,7 @@ ByChance
 
 The ByChance Framework allows game developers to provide an infinite amount of unique levels for both 2D and 3D games. Easy to integrate into video games of all genres, ByChance enables you to generate complex levels including all of their game components and comes with useful post-processing algorithms that can be applied afterwards in order to ensure a great gaming experience.
 
+The whole framework has been created by Nick Prühs and Denis Vaz Alves for their [Master Thesis](https://onedrive.live.com/?cid=614466D76208072C&id=614466D76208072C%21195&parId=614466D76208072C%21153&o=OneUp).
 
 ## Contents
 
@@ -31,6 +32,7 @@ The ByChance Framework allows game developers to provide an infinite amount of u
 1. [Best Practice](#best-practice)
 	1. [Chunk Size](#chunk-size)
 1. [Next Steps](#next-steps)
+1. [Unity Integration](#unity-integration)
 
 ## Getting Started
 
@@ -370,3 +372,7 @@ Clearly, the level generation time increases with the number of chunks that are 
 You’ve learned how to integrate the ByChance Framework into your game and how to have the level generator create random levels the way you want them to be. Feel free to take a look at the [API documentation](http://www.levelsbychance.com/api/Index.html) for detailed descriptions of how everything’s tied together. In case you run into any issues, head over to our [issue tracker](https://github.com/npruehs/ByChance/issues) and we'll investigate immediately. If you need help, don’t hesitate to [ask a question](https://github.com/npruehs/ByChance/issues/new).
 
 Finally, when you’re finished creating your awesome game with ByChance, we’d love to [hear from you](mailto:dev@npruehs.de?subject=ByChance Framework Showcase)!
+
+## Unity Integration
+
+An integration into the Unity3D game engine is readily available at the [Asset Store](https://www.assetstore.unity3d.com/#/content/14849).
